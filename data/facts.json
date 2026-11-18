@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-17",
+  "asOf": "2026-11-18",
   "launch": {
     "confirmed": [
       {
@@ -25,6 +25,7 @@
       {
         "label": "Xbox Cloud Gaming (Xbox One and Series X|S streaming)",
         "value": "1:00 AM ET on November 19 (06:00 UTC)",
+        "utc": "2026-11-19T06:00:00Z",
         "note": "Microsoft's own time for cloud streaming. Native Xbox Series X|S play follows Rockstar's midnight-local rule.",
         "src": ["xbox_wire_cloud"],
         "status": "confirmed"
@@ -38,9 +39,10 @@
     ],
     "conflict": {
       "title": "Not settled yet: countries with more than one time zone",
-      "body": "Rockstar says the game unlocks at midnight local time in all regions. PlayStation's blog describes a \"rolling midnight launch by country\", running \"as respective countries hit midnight\". In single-time-zone countries both mean the same thing. In the US, Canada, Australia, Brazil and Mexico they could differ: if PlayStation unlocks a whole country at once, western time zones would get the game earlier than their own local midnight (for example, the US West Coast at 9:00 PM PT on Nov 18, if the US store follows Eastern Time). Digital Foundry asked Rockstar to clarify on Nov 10; as of Nov 17 we have not found an answer. The table below uses Rockstar's rule. The countdown on your console's store page is the final word. One clue: the US PlayStation Store game page's data lists the release as 05:00 UTC on Nov 19 (midnight Eastern) for the whole US store, which would match \"by country\" for PS5 in the US. That is page metadata we read on Nov 16, not an announcement.",
+      "body": "Rockstar says the game unlocks at midnight local time in all regions. PlayStation's blog describes a \"rolling midnight launch by country\", running \"as respective countries hit midnight\". In single-time-zone countries both mean the same thing. In the US, Canada, Australia, Brazil and Mexico they could differ: if PlayStation unlocks a whole country at once, western time zones would get the game earlier than their own local midnight (for example, the US West Coast at 9:00 PM PT on Nov 18, if the US store follows Eastern Time). Digital Foundry asked Rockstar to clarify on Nov 10. On launch eve (Nov 18) we re-checked Rockstar Support (still marked last updated Nov 3), the PlayStation Blog post and Digital Foundry's article: none of them has published an answer. The table below uses Rockstar's rule. The countdown on your console's store page is the final word. One clue: the US PlayStation Store game page's data lists the release as 05:00 UTC on Nov 19 (midnight Eastern) for the whole US store, which would match \"by country\" for PS5 in the US. That is page metadata (read on Nov 16 and again on Nov 18, unchanged), not an announcement.",
       "src": ["rs_support_times", "ps_blog_preload", "df_times", "ps_game_page"],
-      "status": "conflict"
+      "status": "conflict",
+      "psUsStoreUtc": "2026-11-19T05:00:00Z"
     },
     "zones": [
       { "city": "Auckland, New Zealand", "tz": "Pacific/Auckland" },
@@ -63,7 +65,8 @@
       { "city": "Mexico City", "tz": "America/Mexico_City" },
       { "city": "Denver (MT)", "tz": "America/Denver" },
       { "city": "Phoenix, Arizona (MST)", "tz": "America/Phoenix" },
-      { "city": "Los Angeles / Vancouver (PT)", "tz": "America/Los_Angeles" },
+      { "city": "Vancouver, Canada", "tz": "America/Vancouver", "label": "PCT (UTC−7)", "note": "B.C. stopped changing clocks on Nov 1, 2026, so Vancouver unlocks an hour before Los Angeles.", "src": ["bc_gov_pct"] },
+      { "city": "Los Angeles / Seattle (PT)", "tz": "America/Los_Angeles" },
       { "city": "Anchorage, Alaska", "tz": "America/Anchorage" },
       { "city": "Honolulu, Hawaii", "tz": "Pacific/Honolulu" }
     ]
@@ -90,7 +93,7 @@
       "price": "$20.00",
       "formats": "Digital add-on for Standard owners. $20.00 is the Xbox price; PlayStation price not verified.",
       "includes": ["Same Ultimate content, added to a Standard copy"],
-      "note": "Xbox.com lists the upgrade at $20.00. The PlayStation Store lists the add-on, but we could not read its price on Nov 17, so we don't state one.",
+      "note": "Xbox.com lists the upgrade at $20.00. The PlayStation Store lists the add-on, but we could not read its price (checked again Nov 18), so we don't state one.",
       "src": ["xbox_upgrade", "xbox_game_page", "ps_game_page", "rs_store_game"],
       "status": "partial"
     }
@@ -116,7 +119,7 @@
     "src": ["rs_preorder", "rs_store_game", "xbox_game_page"]
   },
   "gtaPlus": {
-    "text": "One month of GTA+ comes with digital pre-orders. On PlayStation it must be claimed before March 31 and then auto-renews as a paid subscription unless cancelled. On Xbox it must be redeemed within 180 days of the pre-order.",
+    "text": "One month of GTA+ comes with digital pre-orders. On PlayStation it must be claimed by March 31, 2027 and then auto-renews as a paid subscription unless cancelled. On Xbox it must be redeemed within 180 days of the pre-order.",
     "src": ["ps_game_page", "xbox_game_page"]
   },
   "collectors": {
@@ -143,7 +146,7 @@
     { "label": "PS5 Pro extras", "value": "PSSR upscaling for clarity and ray-traced shadows (Pro only)", "src": ["rs_preload_now", "ps_blog_preload"], "status": "confirmed" },
     { "label": "Xbox One", "value": "Not installable: play by cloud streaming only, at Series S settings", "src": ["xbox_wire_cloud"], "status": "confirmed" },
     { "label": "Remote Play", "value": "Supported on PlayStation and Xbox", "src": ["rs_preload_now"], "status": "confirmed" },
-    { "label": "Day-one patch size", "value": "Not announced", "src": ["rs_support_preload"], "status": "unknown" },
+    { "label": "Day-one patch size", "value": "Not announced by Rockstar (no official patch size or patch notes as of Nov 18)", "src": ["rs_support_preload"], "status": "unknown" },
     { "label": "Final installed size after updates", "value": "Not announced (Rockstar only gives the pre-load figure)", "src": ["rs_support_preload"], "status": "unknown" },
     { "label": "PC system requirements", "value": "Not announced (no PC version announced)", "src": ["rs_preorder"], "status": "unknown" }
   ],
@@ -170,5 +173,53 @@
     { "q": "Can I play on Xbox One?", "a": "Only through Xbox Cloud Gaming, from 1:00 AM ET on November 19, using Xbox Series S graphics settings. You still need to buy the game.", "src": ["xbox_wire_cloud"], "status": "confirmed" },
     { "q": "How long is the story?", "a": "Not announced by Rockstar. We don't repeat unofficial hour counts.", "src": ["rs_vi_site"], "status": "unknown" },
     { "q": "When is the PC version?", "a": "Not announced. Any date you see is a rumor until Rockstar says so.", "src": ["rs_preorder"], "status": "unknown" }
-  ]
+  ],
+  "outYet": {
+    "_note": "Every sentence the /out-yet/ page shows lives here with its sources. out-yet.js only picks a string and fills {placeholders} with times computed on the visitor's device. The build refuses out-yet.js if it contains its own factual wording.",
+    "status": {
+      "src": [
+        "rs_support_times",
+        "ps_blog_preload"
+      ],
+      "staticTitle": "Out at midnight on Thu, Nov 19, your time",
+      "staticTimer": "12:00 AM, your local time",
+      "staticMsg": "Once your own clock passes 12:00 AM on Thu, Nov 19, 2026, GTA VI is out on PS5 and Xbox Series X|S. No JavaScript? Find your city in the table below.",
+      "titleBefore": "Not yet in your time zone",
+      "titleBeforeCaveat": "Not yet by Rockstar's rule",
+      "titleAfter": "Yes, it's out in your time zone",
+      "titleAfterCaveat": "Out by Rockstar's rule",
+      "timerBefore": "Unlocks in {hms}",
+      "timerAfter": "Unlocked at {local}",
+      "msgBefore": "By Rockstar's rule, GTA VI unlocks on PS5 and Xbox Series X|S at 12:00 AM on Thursday, Nov 19 in your time zone{zone}, which is {utc}.",
+      "msgAfter": "It is past midnight on Nov 19 where you are{zone}, so by Rockstar's midnight-local rule GTA VI is out on PS5 and Xbox Series X|S. If your console still shows a countdown, that countdown is the final word.",
+      "worldNone": "Not out anywhere in our table yet. New Zealand is first.",
+      "worldSome": "Out in {n} of the {total} places in our table so far.",
+      "worldAll": "Out in all {total} places in our table.",
+      "cellOut": "Out now",
+      "cellNotYet": "Not yet (in {left})",
+      "cellStatic": "From the time shown"
+    },
+    "cloud": {
+      "src": [
+        "xbox_wire_cloud"
+      ],
+      "static": "Xbox Wire (US) gives 1:00 AM ET on November 19 (06:00 UTC) as the start of cloud streaming. Microsoft adds that cloud gaming availability may vary by market.",
+      "before": "Not yet. Xbox Wire (US) gives 1:00 AM ET, which is {local} your time (in {left}). Availability may vary by market.",
+      "after": "Xbox Wire (US) gave 1:00 AM ET as the start, which was {local} your time. Availability may vary by market."
+    },
+    "ps": {
+      "src": [
+        "ps_blog_preload",
+        "ps_game_page",
+        "rs_support_times"
+      ],
+      "static": "PlayStation describes a \"rolling midnight launch by country\". In countries with several time zones (the US, Canada, Australia, Brazil, Mexico) PS5 might unlock a whole country at once, so it could arrive at a different moment than your local midnight. That is not confirmed. Your console's own store countdown is the final word.",
+      "usWest": "You are in a US time zone west of Eastern. Rockstar's rule gives you midnight local time on both consoles. PlayStation describes a launch \"by country\": if your PlayStation account is on the US store and that store unlocks the whole country at once, as its page data (05:00 UTC on Nov 19) hints, PS5 could unlock at {psus} your time, before your own midnight. That is not confirmed.",
+      "usEast": "You are on US Eastern time. If your PlayStation account is on the US store and that store unlocks the whole country at once, its page data (05:00 UTC on Nov 19) points to midnight Eastern, which is your own midnight too.",
+      "usOther": "Your time zone is a US time zone or territory outside the mainland zones. PlayStation describes a launch \"by country\": if your PlayStation account is on the US store and that store unlocks the whole country at once, as its page data (05:00 UTC on Nov 19) hints, PS5 may arrive at a different moment than your own midnight ({psus} your time). That is not confirmed.",
+      "multi": "{country} has several time zones. PlayStation's \"by country\" wording could mean PS5 unlocks there at a different moment than your local midnight. No per-country time has been published, so we show Rockstar's midnight-local rule.",
+      "single": "If your country has a single time zone, PlayStation's \"by country\" wording and Rockstar's \"midnight local time\" mean the same moment for you.",
+      "tail": "Your console's own store countdown is the final word."
+    }
+  }
 }

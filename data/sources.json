@@ -5,7 +5,7 @@
     "publisher": "Rockstar Newswire",
     "url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
     "published": "2025-11-06",
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official"
   },
   "rs_may26": {
@@ -45,7 +45,7 @@
     "publisher": "Rockstar Newswire",
     "url": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now",
     "published": "2026-11-10",
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official"
   },
   "rs_support_times": {
@@ -53,7 +53,7 @@
     "publisher": "Rockstar Support",
     "url": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s",
     "published": "2026-11-03",
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official"
   },
   "rs_support_preload": {
@@ -61,7 +61,7 @@
     "publisher": "Rockstar Support",
     "url": "https://support.rockstargames.com/articles/7nPqOA2uCbpEQHXx7KVrYd",
     "published": "2026-11-03",
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official"
   },
   "rs_store_game": {
@@ -69,7 +69,7 @@
     "publisher": "Rockstar Store",
     "url": "https://store.rockstargames.com/game/buy-gta-vi",
     "published": null,
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official",
     "live_page": true
   },
@@ -104,7 +104,7 @@
     "publisher": "PlayStation.com (US)",
     "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/",
     "published": null,
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official",
     "live_page": true
   },
@@ -113,7 +113,7 @@
     "publisher": "PlayStation.Blog",
     "url": "https://blog.playstation.com/2026/11/10/pre-load-grand-theft-auto-vi-on-ps5-starting-today/",
     "published": "2026-11-10",
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official"
   },
   "xbox_game_page": {
@@ -121,7 +121,7 @@
     "publisher": "Xbox.com (US)",
     "url": "https://www.xbox.com/en-US/games/grand-theft-auto-vi",
     "published": null,
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official",
     "live_page": true
   },
@@ -131,7 +131,7 @@
     "url": "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi-ultimate-edition-upgrade/9pn4llbr8rch",
     "published": null,
     "live_page": true,
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official"
   },
   "xbox_wire_cloud": {
@@ -139,7 +139,7 @@
     "publisher": "Xbox Wire",
     "url": "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/",
     "published": "2026-11-10",
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "official"
   },
   "rs_album": {
@@ -190,12 +190,20 @@
     "checked": "2026-11-17",
     "kind": "press"
   },
+  "bc_gov_pct": {
+    "title": "No falling back with B.C.'s new time zone code, Pacific Time: PCT",
+    "publisher": "B.C. Gov News",
+    "url": "https://news.gov.bc.ca/releases/2026CITZ0009-001073",
+    "published": "2026-09-17",
+    "checked": "2026-11-18",
+    "kind": "official"
+  },
   "df_times": {
     "title": "Rockstar Officially Confirms GTA 6 Regional Release Times - and They're Not What We Thought",
     "publisher": "Digital Foundry",
     "url": "https://www.digitalfoundry.net/news/2026/11/rockstar-officially-confirms-gta-6-regional-release-times-and-theyre-not-what-we-thought",
     "published": "2026-11-10",
-    "checked": "2026-11-17",
+    "checked": "2026-11-18",
     "kind": "press"
   }
 }

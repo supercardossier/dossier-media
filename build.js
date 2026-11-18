@@ -128,6 +128,8 @@ const cssBuf = fs.readFileSync(path.join(ROOT, 'src/assets/site.css'));
 const jsBuf = fs.readFileSync(path.join(ROOT, 'src/assets/countdown.js'));
 const CSS_HREF = `/assets/site.css?v=${hashOf(cssBuf)}`;
 const JS_SRC = `/assets/countdown.js?v=${hashOf(jsBuf)}`;
+const outYetBuf = fs.readFileSync(path.join(ROOT, 'src/assets/out-yet.js'));
+const OUTYET_SRC = `/assets/out-yet.js?v=${hashOf(outYetBuf)}`;
 
 // Our own simple body-style icons (no game art). 120x48 viewBox, two wheels + body path.
 const ICONS = {
@@ -155,6 +157,7 @@ function iconSvg(kind) {
 // Layout
 // ---------------------------------------------------------------------------
 const NAV = [
+  ['/out-yet/', 'Out yet?'],
   ['/launch-time/', 'Launch time'],
   ['/editions/', 'Editions'],
   ['/cars/', 'Real cars'],
@@ -162,7 +165,8 @@ const NAV = [
   ['/faq/', 'Confirmed facts'],
 ];
 
-function layout({ urlPath, title, description, body, hero = '', countdown = false, noCanonical = false }) {
+function layout({ urlPath, title, description, body, hero = '', countdown = false, scripts = null, noCanonical = false }) {
+  const scriptList = scripts || (countdown ? [JS_SRC] : []);
   if (!title || title.length > 70) throw new Error(`Bad <title> on ${urlPath}: "${title}"`);
   if (!description || description.length > 170) throw new Error(`Bad description length on ${urlPath}`);
   const canonical = SITE_URL + urlPath;
@@ -191,7 +195,7 @@ ${noCanonical ? '' : `<meta property="og:url" content="${esc(canonical)}">\n`}<m
 <link rel="preload" href="/assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-sans-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 ${countdown ? '<link rel="preload" href="/assets/fonts/tilt-neon-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<link rel="stylesheet" href="${CSS_HREF}">
-${countdown ? `<script src="${JS_SRC}" defer></script>\n` : ''}</head>
+${scriptList.map((s) => `<script src="${s}" defer></script>\n`).join('')}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
@@ -258,6 +262,32 @@ function countdownBlock(kind) {
 }
 
 // ---------------------------------------------------------------------------
+// Shared launch-time data (one source of truth for /launch-time/ and /out-yet/)
+// ---------------------------------------------------------------------------
+const ZONE_ROWS = facts.launch.zones.map((z) => ({ ...z, utc: localMidnightUtc(z.tz, 2026, 11, 19) }))
+  .sort((a, b) => a.utc - b.utc);
+// A zone may override the time zone abbreviation (e.g. B.C.'s "PCT"); overrides and notes need a source.
+for (const z of ZONE_ROWS) if (z.label || z.note) requireSources(z.src, `zone ${z.tz}`);
+const zoneLocal = (r) => (r.label ? fmtIn(r.tz, r.utc).replace(/\s\S+$/, ` ${r.label}`) : fmtIn(r.tz, r.utc));
+const ZONE_NOTES = ZONE_ROWS.filter((r) => r.note);
+const zoneNotesHtml = (where) => ZONE_NOTES.map((r) => `<p class="muted small">${esc(r.note)} ${srcLinks(r.src, `${where} ${r.tz}`)}</p>`).join('\n');
+const ZONE_SRC = ZONE_NOTES.flatMap((r) => r.src);
+{
+  // Self-check against figures stated by the sources: NZ 11:00 UTC Nov 18, UK 00:00 UTC, NY 05:00 UTC.
+  const check = { 'Pacific/Auckland': '2026-11-18T11:00:00.000Z', 'Europe/London': '2026-11-19T00:00:00.000Z', 'America/New_York': '2026-11-19T05:00:00.000Z', 'Europe/Berlin': '2026-11-18T23:00:00.000Z' };
+  for (const r of ZONE_ROWS) {
+    if (check[r.tz] && new Date(r.utc).toISOString() !== check[r.tz]) throw new Error(`Time zone math check failed for ${r.tz}`);
+  }
+}
+// Machine-readable instants must agree with the sourced wording shown on the page.
+const CLOUD = facts.launch.confirmed.find((f) => f.utc);
+if (!CLOUD || !/06:00 UTC/.test(CLOUD.value) || CLOUD.utc !== '2026-11-19T06:00:00Z') throw new Error('Build blocked: Xbox Cloud instant does not match its sourced text.');
+const PS_US_UTC = facts.launch.conflict.psUsStoreUtc;
+if (PS_US_UTC !== '2026-11-19T05:00:00Z' || !/05:00 UTC on Nov 19/.test(facts.launch.conflict.body)) throw new Error('Build blocked: PS US store instant does not match its sourced text.');
+const UNLOCK_RULE = facts.launch.confirmed.find((f) => /^Unlock rule/.test(f.label));
+if (!UNLOCK_RULE) throw new Error('Build blocked: unlock rule fact missing.');
+
+// ---------------------------------------------------------------------------
 // Pages
 // ---------------------------------------------------------------------------
 const pages = [];
@@ -266,7 +296,8 @@ const pages = [];
 {
   const L = facts.launch.confirmed;
   const cards = [
-    ['/launch-time/', 'Launch time in every time zone', 'Live countdown plus a 23-zone unlock table. Rockstar: midnight local time on Nov 19.'],
+    ['/out-yet/', 'Is GTA 6 out yet where I am?', 'Launch-day live check for your time zone, with the PlayStation caveat and a city-by-city status table.'],
+    ['/launch-time/', 'Launch time in every time zone', `Live countdown plus a ${facts.launch.zones.length}-zone unlock table. Rockstar: midnight local time on Nov 19.`],
     ['/editions/', 'Editions and platforms compared', 'Standard $79.99, Ultimate $99.99, what the $20 upgrade adds, and which consoles get it.'],
     ['/cars/', 'The real cars behind GTA 6\'s cars', `${CAR_TOTAL} cars from the trailers and edition listings, each matched to a real model and honestly rated.`],
     ['/file-size/', 'File size and console requirements', 'Up to 212 GB to pre-load, no disc, 30 fps target, PS5 Pro extras, Xbox One via cloud.'],
@@ -284,7 +315,8 @@ const pages = [];
 `;
   const body = `
 <section class="intro">
-  <p class="lede">Five sourced tools for launch week. Every number links to Rockstar, PlayStation, Xbox or a named car outlet, with the date we checked it. ${srcLinks(['rs_support_times'], 'home hero')}</p>
+  <p class="lede">Six sourced tools for launch week. Every number links to Rockstar, PlayStation, Xbox or a named car outlet, with the date we checked it. ${srcLinks(['rs_support_times'], 'home hero')}</p>
+  <p class="hero-out"><a href="/out-yet/">Is it out yet where you are? Check live</a></p>
 </section>
 <ul class="tool-list" aria-label="Tools">
 ${cardHtml}
@@ -314,20 +346,15 @@ ${cardHtml}
 {
   const L = facts.launch;
   const confirmedRows = L.confirmed.map((f, i) => `<div class="fact-row"><dt>${esc(f.label)} ${chip(f.status)}</dt><dd><strong>${esc(f.value)}</strong>${f.note ? `<span class="note">${esc(f.note)}</span>` : ''}${srcLinks(f.src, `launch confirmed ${i}`)}</dd></div>`).join('\n');
-  const rows = L.zones.map((z) => ({ ...z, utc: localMidnightUtc(z.tz, 2026, 11, 19) }))
-    .sort((a, b) => a.utc - b.utc);
-  // Self-check against figures stated by the sources: NZ 11:00 UTC Nov 18, UK 00:00 UTC, NY 05:00 UTC.
-  const check = { 'Pacific/Auckland': '2026-11-18T11:00:00.000Z', 'Europe/London': '2026-11-19T00:00:00.000Z', 'America/New_York': '2026-11-19T05:00:00.000Z', 'Europe/Berlin': '2026-11-18T23:00:00.000Z' };
-  for (const r of rows) {
-    if (check[r.tz] && new Date(r.utc).toISOString() !== check[r.tz]) throw new Error(`Time zone math check failed for ${r.tz}`);
-  }
+  const rows = ZONE_ROWS;
   const tableRows = rows.map((r) => {
     const iso = new Date(r.utc).toISOString();
-    return `<tr data-utc="${esc(iso)}"><th scope="row">${esc(r.city)}</th><td data-label="Unlocks (local)">${esc(fmtIn(r.tz, r.utc))}</td><td data-label="In UTC">${esc(fmtUtc(r.utc))}</td><td class="yours" data-label="In your time" data-local-time="${esc(iso)}">-</td></tr>`;
+    return `<tr data-utc="${esc(iso)}"><th scope="row">${esc(r.city)}</th><td data-label="Unlocks (local)">${esc(zoneLocal(r))}</td><td data-label="In UTC">${esc(fmtUtc(r.utc))}</td><td class="yours" data-label="In your time" data-local-time="${esc(iso)}">-</td></tr>`;
   }).join('\n');
   const body = `
 ${pageHeader('Launch time', 'GTA 6 release time in every time zone', 'Rockstar\'s rule: <strong>GTA VI unlocks at midnight local time on Thursday, November 19, 2026</strong>, on both PS5 and Xbox Series X|S. Here is what that means where you are, and the one detail that is still unclear.')}
 ${countdownBlock('main')}
+<p class="out-link">Launch day? <a href="/out-yet/">Check whether GTA 6 is out yet where you are</a>, live, with every major city's status.</p>
 <section aria-labelledby="conf-h">
   <h2 id="conf-h">What is confirmed</h2>
   <dl class="fact-list">${confirmedRows}</dl>
@@ -349,6 +376,7 @@ ${tableRows}
   </table>
   </div>
   <p class="muted small">Your row is highlighted if your clock matches one of these zones. "In your time" needs JavaScript; everything else works without it.</p>
+  ${zoneNotesHtml('launch zone note')}
 </section>
 <section aria-labelledby="tips-h">
   <h2 id="tips-h">Be ready at midnight</h2>
@@ -359,11 +387,92 @@ ${tableRows}
   </ul>
   <p>Full storage details: <a href="/file-size/">GTA 6 file size and requirements</a>.</p>
 </section>
-${sourcesSection(collectSrc(L.confirmed, [L.conflict]).concat(['rs_preload_nov10', 'rs_support_preload', 'rs_preload_now', 'rs_store_game']), 'launch sources')}`;
+${sourcesSection(collectSrc(L.confirmed, [L.conflict]).concat(['rs_preload_nov10', 'rs_support_preload', 'rs_preload_now', 'rs_store_game'], ZONE_SRC), 'launch sources')}`;
   pages.push({
     urlPath: '/launch-time/', file: 'launch-time/index.html', countdown: true,
     title: 'GTA 6 Release Time in Every Time Zone (Live Countdown)',
-    description: 'When does GTA 6 unlock? Rockstar says midnight local time on Nov 19, 2026. Live countdown, a 23-zone table, Xbox Cloud timing and what is still unclear.',
+    description: `When does GTA 6 unlock? Rockstar says midnight local time on Nov 19, 2026. Live countdown, a ${facts.launch.zones.length}-zone table, Xbox Cloud timing and what is still unclear.`,
+    body,
+  });
+}
+
+// OUT YET (launch-day live status) ------------------------------------------
+// Every sentence on this page comes from facts.outYet (sourced). out-yet.js only chooses a string and fills
+// {placeholders} with times computed on the visitor's device; the build refuses it if it carries its own wording.
+{
+  const L = facts.launch;
+  const OY = facts.outYet;
+  for (const k of ['status', 'cloud', 'ps']) requireSources(OY[k].src, `out-yet ${k}`);
+  // Sourced instants must agree with the sentences that mention them.
+  if (!/1:00 AM ET/.test(CLOUD.value) || !['static', 'before', 'after'].every((k) => /1:00 AM ET/.test(OY.cloud[k]))) throw new Error('Build blocked: out-yet cloud wording does not match the Xbox Cloud fact.');
+  if (!['usWest', 'usEast', 'usOther'].every((k) => /05:00 UTC on Nov 19/.test(OY.ps[k]))) throw new Error('Build blocked: out-yet PS wording does not match the PS Store instant.');
+  // out-yet.js may not carry factual wording of its own.
+  const jsText = outYetBuf.toString('utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, ''); // comments are not shown to visitors
+  const literals = jsText.match(/'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"/g) || [];
+  const offenders = literals.filter((x) => /\w+\s+\w+/.test(x) && /PlayStation|PS5|Xbox|Rockstar|UTC|\bET\b|Nov|midnight|unlock|out now/i.test(x));
+  if (offenders.length) throw new Error(`Build blocked: out-yet.js contains unsourced wording: ${offenders.join(', ')}`);
+  const strings = { status: OY.status, cloud: OY.cloud, ps: OY.ps };
+  for (const g of Object.values(strings)) delete g._note;
+  const tableRows = ZONE_ROWS.map((r) => {
+    const iso = new Date(r.utc).toISOString();
+    return `<tr data-tz="${esc(r.tz)}"><th scope="row">${esc(r.city)}</th><td data-label="Unlocks (local)">${esc(zoneLocal(r))}</td><td data-label="In UTC">${esc(fmtUtc(r.utc))}</td><td class="oy-cell" data-label="Out yet?" data-oy-cell="${esc(iso)}">${esc(OY.status.cellStatic)}</td></tr>`;
+  }).join('\n');
+  const first = ZONE_ROWS[0];
+  // Layout-shift guard: each live slot also holds every text it can show (filled with sample values), hidden and
+  // stacked in the same grid cell, so the slot is always as tall as its longest variant and never moves the page.
+  const SAMPLE = { zone: ' (America/Los_Angeles)', utc: 'Nov 19, 08:00 UTC', local: 'Wed, Nov 18, 10:00 PM', hms: '00:00:00', left: '17 h 03 min', psus: 'Wed, Nov 18, 10:00 PM', country: 'Australia', n: '12', total: String(ZONE_ROWS.length) };
+  const fillT = (t) => String(t).replace(/\{(\w+)\}/g, (m, k) => (k in SAMPLE ? SAMPLE[k] : m));
+  const slot = (tag, cls, attrs, shown, variants, id = '') => `<${tag}${id ? ` id="${id}"` : ''} class="${cls} oy-slot"><span ${attrs}>${esc(shown)}</span>${[shown, ...variants].map((v) => `<span class="oy-ghost" aria-hidden="true">${esc(fillT(v))}</span>`).join('')}</${tag}>`;
+  const st = OY.status;
+  const psVariants = ['static', 'usWest', 'usEast', 'usOther', 'multi', 'single'].map((k) => (k === 'static' ? OY.ps.static : `${OY.ps[k]} ${OY.ps.tail}`));
+  const body = `
+${pageHeader('Launch day', 'Is GTA 6 out yet where you are?', 'Rockstar\'s rule: <strong>GTA VI unlocks at midnight local time on Thursday, November 19, 2026</strong>, on PS5 and Xbox Series X|S. This page checks your device\'s time zone live. Nothing is stored or sent anywhere.')}
+<section class="oy" aria-labelledby="oy-h" data-outyet data-target-local="2026-11-19T00:00:00" data-cloud-utc="${esc(CLOUD.utc)}" data-ps-us-utc="${esc(PS_US_UTC)}" data-strings="${esc(JSON.stringify(strings))}">
+  ${slot('h2', 'oy-title', 'data-oy-title', st.staticTitle, [st.titleBefore, st.titleBeforeCaveat, st.titleAfter, st.titleAfterCaveat], 'oy-h')}
+  ${slot('p', 'oy-timer', 'data-oy-timer', st.staticTimer, [st.timerBefore, st.timerAfter])}
+  ${slot('p', 'oy-msg', 'data-oy-msg role="status"', st.staticMsg, [st.msgBefore, st.msgAfter])}
+  ${slot('p', 'oy-world', 'data-oy-world', `First unlock: ${first.city} (${fmtUtc(first.utc)}).`, [st.worldNone, st.worldSome, st.worldAll])}
+  <p class="oy-src">${srcLinks(OY.status.src, 'out-yet rule')}</p>
+</section>
+<div class="oy-grid">
+<section class="callout" aria-labelledby="oy-cloud-h">
+  <h2 id="oy-cloud-h">Xbox Cloud Gaming (Xbox One and streaming)</h2>
+  ${slot('p', 'oy-cloud', 'data-oy-cloud', OY.cloud.static, [OY.cloud.before, OY.cloud.after])}
+  <p>${srcLinks(OY.cloud.src, 'out-yet cloud')}</p>
+</section>
+<section class="callout callout-warn" aria-labelledby="oy-ps-h">
+  <h2 id="oy-ps-h">PlayStation: one caveat ${chip('conflict')}</h2>
+  ${slot('p', 'oy-ps', 'data-oy-ps', OY.ps.static, psVariants.slice(1))}
+  <p>${srcLinks(OY.ps.src, 'out-yet ps caveat')} <a href="/launch-time/#conflict-h">Full details on the launch-time page</a>.</p>
+</section>
+</div>
+<section aria-labelledby="oy-table-h">
+  <h2 id="oy-table-h">Is it out yet around the world?</h2>
+  <p>Rockstar's midnight-local rule for ${ZONE_ROWS.length} major cities and zones, earliest first. The last column updates live. Your own zone is marked "you"; other rows that unlock at the same moment are marked "same time as you". Times are our own conversions of the official rule.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Out-yet status by city">
+  <table class="zones stack">
+    <thead><tr><th scope="col">Where</th><th scope="col">Unlocks (local)</th><th scope="col">Same moment in UTC</th><th scope="col">Out yet?</th></tr></thead>
+    <tbody>
+${tableRows}
+    </tbody>
+  </table>
+  </div>
+  ${zoneNotesHtml('out-yet zone note')}
+</section>
+<section aria-labelledby="oy-how-h">
+  <h2 id="oy-how-h">How this check works</h2>
+  <ul class="ticks">
+    <li>Your browser tells this page its time zone and clock. The check runs on your device; nothing is saved or sent.</li>
+    <li>If your device clock or time zone is wrong, the answer will be too. Your console's store countdown is the final word.</li>
+    <li>Devices with outdated time-zone data (for example in B.C., which stopped changing clocks this month) may show the wrong hour here. The table above is the reference.</li>
+    <li>Want the full schedule and what is confirmed? See <a href="/launch-time/">GTA 6 release time in every time zone</a>.</li>
+  </ul>
+</section>
+${sourcesSection([...OY.status.src, ...OY.cloud.src, ...OY.ps.src, ...L.conflict.src, ...ZONE_SRC], 'out-yet sources')}`;
+  pages.push({
+    urlPath: '/out-yet/', file: 'out-yet/index.html', scripts: [OUTYET_SRC],
+    title: 'Is GTA 6 Out Yet Where I Am? Live Launch-Day Check',
+    description: 'Live check for your time zone: is GTA 6 unlocked yet on PS5 and Xbox Series X|S? Rockstar says midnight local time on Nov 19, 2026. City table and PS5 caveat.',
     body,
   });
 }
@@ -414,7 +523,7 @@ ${plat}
   <ul class="ticks">
     <li>${chip('unknown')} A PC version and its price.</li>
     <li>${chip('unknown')} A disc release. Only a code-in-box physical version has been announced.</li>
-    <li>${chip('unknown')} The PlayStation price of the Ultimate Edition Upgrade (listed, but we couldn't read the price on Nov 17).</li>
+    <li>${chip('unknown')} The PlayStation price of the Ultimate Edition Upgrade (listed, but we couldn't read the price; checked again Nov 18).</li>
   </ul>
 </section>
 ${sourcesSection(collectSrc(E.editions, E.platforms, [E.preorderBonus, E.gtaPlus, E.collectors]).concat(E.ultimateSrc), 'editions sources')}`;
@@ -596,7 +705,7 @@ pages.push({
 <li>No accounts, sign-ups or forms.</li>
 <li>No cookies and no local storage.</li>
 <li>No analytics, ads or third-party scripts, fonts or images.</li>
-<li>The countdown runs in your browser and reads your device's time zone only to show times; nothing is sent anywhere.</li>
+<li>The countdown and the "out yet?" check run in your browser and read your device's time zone only to show times; nothing is sent anywhere.</li>
 <li>Our hosting provider keeps standard server logs (such as IP address and pages requested) for security and operations, under its own privacy policy.</li>
 </ul><p>If this ever changes (for example, if ads are added), this page will be updated first.</p></section>`,
 });
@@ -610,7 +719,7 @@ pages.push({
 <li>Keyboard: everything works with Tab and Enter; focus is always visible.</li>
 <li>Color contrast checked for text and labels on the dark theme; labels never rely on color alone (every chip has a word).</li>
 <li>The countdown does not announce every second to screen readers; the rule is also written out in plain text.</li>
-<li>Pages work without JavaScript, except the live countdown and the "in your time" column.</li>
+<li>Pages work without JavaScript, except the live countdown, the "in your time" column and the live "out yet?" status (which falls back to the plain rule and a city table).</li>
 <li>Respects reduced-motion settings; there are no animations beyond the countdown digits.</li>
 </ul></section>
 <section><h2>Known limits</h2><p>Tested with automated checks and keyboard navigation in Chromium at desktop and phone widths on ${esc(fmtDate(AS_OF))}. Not yet tested with a screen reader on iOS or Android.</p></section>
@@ -648,6 +757,7 @@ fs.writeFileSync(path.join(DIST, '404.html'), layout({
 // Assets
 fs.writeFileSync(path.join(DIST, 'assets/site.css'), cssBuf);
 fs.writeFileSync(path.join(DIST, 'assets/countdown.js'), jsBuf);
+fs.writeFileSync(path.join(DIST, 'assets/out-yet.js'), outYetBuf);
 for (const f of ['favicon.svg', 'og.png', '66a8619d4867c953e5cea981e7b50c5a.txt']) {
   const src = path.join(ROOT, 'src/assets', f);
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, 'assets', f));
