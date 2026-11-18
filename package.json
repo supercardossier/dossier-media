@@ -1,0 +1,14 @@
+{
+  "name": "gta6-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Unofficial GTA 6 launch guide: static site, zero dependencies.",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node build.js",
+    "serve": "node scripts/serve.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "scan:secrets": "node scripts/secret-scan.mjs"
+  }
+}

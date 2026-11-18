@@ -1,0 +1,444 @@
+{
+  "asOf": "2026-11-17",
+  "legend": {
+    "official": "Official name: printed by Rockstar or a console store.",
+    "reported": "Reported name: read off the car on screen or given by the outlet; Rockstar hasn't listed it.",
+    "unnamed": "Name not reported.",
+    "strong": "Strong match: two or more independent car outlets name the same real car.",
+    "likely": "Likely: one car outlet names it, without hedging.",
+    "possible": "Possible: the outlet hedged (\"probably\", \"to my eye\", \"maybe\").",
+    "disputed": "Outlets disagree: the sources name different real cars.",
+    "none": "No real-world match established by a reliable source."
+  },
+  "sections": [
+    {
+      "id": "official",
+      "title": "Named by Rockstar: launch bonus vehicles",
+      "intro": "These names come straight from Rockstar and the console stores (Ultimate Edition and the pre-order bonus). Those listings don't name any real-world inspiration, so the real-car line is a sourced match from car outlets or left blank.",
+      "seen": "Ultimate Edition and pre-order listings",
+      "cars": [
+        {
+          "game": "Vapid Ganado",
+          "nameStatus": "official",
+          "body": "pickup",
+          "role": "Jason's \"well-worn\" low-riding pickup; the Ultimate Edition adds a Ganado Retro Build",
+          "real": "Ford Ranchero",
+          "match": "likely",
+          "why": "The Drive identified a hero Vapid \"modeled after the real-life Ford Ranchero\" in Trailer 2, before its name was public. Rockstar later described the Ganado as Jason's low-riding Vapid pickup. Linking the two is our inference, so we call it likely, not confirmed.",
+          "src": ["ps_game_page", "drive_t2"]
+        },
+        {
+          "game": "'95 Grotti Cheetah",
+          "nameStatus": "official",
+          "body": "supercar",
+          "role": "Ultimate Edition: \"Grotti's signature mid '90s sports car\" with a retro-futuristic livery",
+          "real": null,
+          "match": "none",
+          "why": "No outlet has tied this exact model to a real car. (The Drive matched the older Grotti Cheetah Classic to the Ferrari Testarossa; see Trailer 1 below.) Separately, West Coast Customs built a real-life Grotti Cheetah, described by Hypebeast as a mid-engined '90s supercar with a 4.9-liter naturally aspirated V8.",
+          "src": ["ps_game_page", "hypebeast_wcc"]
+        },
+        {
+          "game": "'67 Vapid Dominator Buggy",
+          "nameStatus": "official",
+          "body": "offroad",
+          "role": "Ultimate Edition: a \"Mud Club monster\" for the backwoods of Mount Kalaga, kept at the Paradise Garage in Watson Bay",
+          "real": null,
+          "match": "none",
+          "why": "Not identified by a reliable source yet.",
+          "src": ["ps_game_page", "xbox_wire_cloud"]
+        },
+        {
+          "game": "'55 Vapid Stanier Sedan",
+          "nameStatus": "official",
+          "body": "classic",
+          "role": "Pre-order bonus (Vintage Vice City Pack), comes with a garage",
+          "real": null,
+          "match": "none",
+          "why": "Not identified by a reliable source yet.",
+          "src": ["rs_store_game"]
+        },
+        {
+          "game": "Dinka Enduro",
+          "nameStatus": "official",
+          "body": "bike",
+          "role": "Ultimate Edition: Jason's Army-fatigue safehouse motorcycle",
+          "real": null,
+          "match": "none",
+          "why": "Not identified by a reliable source yet.",
+          "src": ["ps_game_page"]
+        },
+        {
+          "game": "Shitzu Squalo",
+          "nameStatus": "official",
+          "body": "boat",
+          "role": "Ultimate Edition: pink-and-blue boat at Washington Beach",
+          "real": null,
+          "match": "none",
+          "why": "Not identified by a reliable source yet.",
+          "src": ["ps_game_page"]
+        }
+      ]
+    },
+    {
+      "id": "trailer1",
+      "title": "Trailer 1 (December 5, 2023)",
+      "intro": "Car-spotting from The Drive (Dec 5, 2023) and Jalopnik (Dec 6, 2023).",
+      "seen": "Trailer 1",
+      "cars": [
+        {
+          "game": "Pfister Comet S2",
+          "nameStatus": "reported",
+          "body": "sports",
+          "role": "Lined up with other exotics on a main road",
+          "real": "Porsche 911 (992 generation)",
+          "match": "strong",
+          "why": "The Drive: 992 Porsche 911. Jalopnik: \"undoubtedly inspired by the modern Porsche 911 Cabriolet\".",
+          "src": ["drive_t1", "jalopnik_t1"]
+        },
+        {
+          "game": "Grotti Cheetah Classic",
+          "nameStatus": "reported",
+          "body": "supercar",
+          "role": "'80s wedge in the exotic line-up",
+          "real": "Ferrari Testarossa",
+          "match": "strong",
+          "why": "Both outlets name the Testarossa.",
+          "src": ["drive_t1", "jalopnik_t1"]
+        },
+        {
+          "game": "Grotti Carbonizzare",
+          "nameStatus": "reported",
+          "body": "sports",
+          "role": "Red GT car, returning from GTA V",
+          "real": "Aston Martin V12 Zagato",
+          "match": "strong",
+          "why": "Both outlets name the V12 Zagato.",
+          "src": ["drive_t1", "jalopnik_t1"]
+        },
+        {
+          "game": "Invetero Coquette D10",
+          "nameStatus": "reported",
+          "body": "sports",
+          "role": "Seen in Trailer 1 and again in Trailer 2 traffic",
+          "real": "Chevrolet Corvette (C8)",
+          "match": "likely",
+          "why": "The Drive names the C8 Corvette in both trailers (one outlet). West Coast Customs' real Coquette build uses a 6.2-liter V8.",
+          "src": ["drive_t1", "drive_t2", "hypebeast_wcc"]
+        },
+        {
+          "game": "Declasse Tulip (getaway car)",
+          "nameStatus": "reported",
+          "body": "muscle",
+          "role": "The orange car Jason and Lucia drift at the end of Trailer 1; back again in Trailer 2",
+          "real": "Chevrolet Chevelle / Malibu, c. 1970",
+          "match": "strong",
+          "why": "The Drive says it shares much with a second-gen Chevy Malibu \"circa 1970\" and calls it a \"Malibu knock-off\" in Trailer 2. Jalopnik says it \"most resembles a Chevy Chevelle\". In that era the Malibu was the Chevelle's top trim, so both point at the same car.",
+          "src": ["drive_t1", "jalopnik_t1", "drive_t2"]
+        },
+        {
+          "game": "Albany Buccaneer (blue lowrider)",
+          "nameStatus": "reported",
+          "body": "classic",
+          "role": "Lowrider on a mural-lined side street",
+          "real": "Buick Riviera (1st gen) or Chevrolet Impala",
+          "match": "disputed",
+          "why": "The Drive: \"similar to a first-gen Buick Riviera\". Jalopnik: the blue lowrider is Impala-inspired. West Coast Customs later built a real Buccaneer as a 1960s lowrider with a 7.5-liter V8.",
+          "src": ["drive_t1", "jalopnik_t1", "hypebeast_wcc"]
+        },
+        {
+          "game": "Declasse Tulip M-100 (pink donk)",
+          "nameStatus": "reported",
+          "body": "classic",
+          "role": "Pink donk in the same street scene",
+          "real": "Chevrolet Malibu (4th gen) or Chevrolet Monte Carlo",
+          "match": "disputed",
+          "why": "The Drive: \"giving fourth-gen Chevy Malibu\". Jalopnik: the hot pink car is Monte Carlo-inspired.",
+          "src": ["drive_t1", "jalopnik_t1"]
+        },
+        {
+          "game": "Green sedan (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "sedan",
+          "role": "Parked in the lowrider scene; a \"High Rollerz\" club car later",
+          "real": "Chrysler 300",
+          "match": "strong",
+          "why": "Both outlets point to the Chrysler 300.",
+          "src": ["drive_t1", "jalopnik_t1"]
+        },
+        {
+          "game": "Single-cab stepside pickup (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "pickup",
+          "role": "At the convenience store in the final shots",
+          "real": "Chevrolet C/K 1500 (GMT400) Sportside",
+          "match": "strong",
+          "why": "The Drive: \"GMT400 Sport Side bed\". Jalopnik: \"single cab, stepside GMT400\".",
+          "src": ["drive_t1", "jalopnik_t1"]
+        },
+        {
+          "game": "Police sedan (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "sedan",
+          "role": "Vice City police cruiser, plus a pink civilian one doing donuts",
+          "real": "Ford Crown Victoria",
+          "match": "strong",
+          "why": "Both outlets spot Crown Vic-style cruisers. The Drive also sees Ford Explorer-based Police Interceptor Utility and Ford Taurus interceptors; Jalopnik sees a Chevy Tahoe-style SUV.",
+          "src": ["drive_t1", "jalopnik_t1"]
+        },
+        {
+          "game": "Pegassi Zorrusso",
+          "nameStatus": "reported",
+          "body": "supercar",
+          "role": "A woman stands up in it about 24 seconds in",
+          "real": "Italdesign Zerouno / Lamborghini Aventador variants",
+          "match": "likely",
+          "why": "The Drive calls it \"an amalgamation\" of those cars.",
+          "src": ["drive_t1"]
+        },
+        {
+          "game": "Grotti Furia",
+          "nameStatus": "reported",
+          "body": "supercar",
+          "role": "Just ahead of the Zorrusso",
+          "real": "Pininfarina Battista / Ferrari F8 Tributo",
+          "match": "possible",
+          "why": "The Drive: its closest cousins are \"probably\" those two.",
+          "src": ["drive_t1"]
+        },
+        {
+          "game": "Bravado Gauntlet Hellfire",
+          "nameStatus": "reported",
+          "body": "muscle",
+          "role": "Passing the exotic line-up; an interior shot came with Trailer 2's images",
+          "real": "Dodge Challenger SRT Hellcat mixed with Chevrolet Camaro",
+          "match": "likely",
+          "why": "The Drive, in both trailer write-ups (one outlet).",
+          "src": ["drive_t1", "drive_t2"]
+        },
+        {
+          "game": "Bravado Banshee",
+          "nameStatus": "reported",
+          "body": "sports",
+          "role": "Striped roadster at the top of a frame in Trailer 1; at an intersection in Trailer 2",
+          "real": "Dodge Viper",
+          "match": "likely",
+          "why": "The Drive, in both trailer write-ups (one outlet).",
+          "src": ["drive_t1", "drive_t2"]
+        },
+        {
+          "game": "Vapid Chino (custom)",
+          "nameStatus": "reported",
+          "body": "classic",
+          "role": "In opposing traffic in the lowrider scene",
+          "real": "Mid-'60s Lincoln Continental or late-'60s Chrysler New Yorker",
+          "match": "possible",
+          "why": "The Drive offers both, with \"or maybe\".",
+          "src": ["drive_t1"]
+        },
+        {
+          "game": "Older Pfister Comet",
+          "nameStatus": "reported",
+          "body": "sports",
+          "role": "Silver car passed by a dirt-bike gang",
+          "real": "Porsche 911 (964 generation)",
+          "match": "likely",
+          "why": "The Drive.",
+          "src": ["drive_t1"]
+        },
+        {
+          "game": "'80s muscle car in the road-rage scene (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "muscle",
+          "role": "Road-rage clip",
+          "real": "Chevrolet Camaro",
+          "match": "likely",
+          "why": "Jalopnik.",
+          "src": ["jalopnik_t1"]
+        },
+        {
+          "game": "Dually pickup at the gas station (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "pickup",
+          "role": "Filling up at the pumps",
+          "real": "Ram 3500",
+          "match": "likely",
+          "why": "Jalopnik.",
+          "src": ["jalopnik_t1"]
+        },
+        {
+          "game": "NSX-like supercar (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "sports",
+          "role": "Out of focus in an early highway shot",
+          "real": "Acura NSX",
+          "match": "likely",
+          "why": "Jalopnik, which spots an NSX-like car again in the Extended Look.",
+          "src": ["jalopnik_t1", "jalopnik_el"]
+        }
+      ]
+    },
+    {
+      "id": "trailer2",
+      "title": "Trailer 2 (May 6, 2025)",
+      "intro": "Car-spotting from The Drive (May 6, 2025).",
+      "seen": "Trailer 2",
+      "cars": [
+        {
+          "game": "Vapid \"Caracara\" pickup",
+          "nameStatus": "reported",
+          "body": "pickup",
+          "role": "Modern pickup a main cast member (Brian) arrives in; \"Caracara\" is on the hood decal",
+          "real": "Ford F-150 Raptor",
+          "match": "likely",
+          "why": "The Drive reads the decal: a caracara is a bird of prey, \"you know, like a raptor\".",
+          "src": ["drive_t2"]
+        },
+        {
+          "game": "Bravado Bison (incl. a dually)",
+          "nameStatus": "reported",
+          "body": "pickup",
+          "role": "One tows a jet-ski; a dual-rear-wheel Bison drags a safe or vault",
+          "real": "Ram pickup",
+          "match": "likely",
+          "why": "The Drive calls the Bison \"a Ram equivalent\".",
+          "src": ["drive_t2"]
+        },
+        {
+          "game": "Schafter (updated)",
+          "nameStatus": "reported",
+          "body": "sedan",
+          "role": "At a Vice City intersection with the Banshee and Comet",
+          "real": "Mercedes-Benz S-Class",
+          "match": "likely",
+          "why": "The Drive.",
+          "src": ["drive_t2"]
+        }
+      ]
+    },
+    {
+      "id": "extended",
+      "title": "\"An Extended Look\" (August 27, 2026)",
+      "intro": "Car-spotting from Jalopnik (Aug 28, 2026) after Rockstar's 26-minute gameplay video.",
+      "seen": "An Extended Look",
+      "cars": [
+        {
+          "game": "Sentinel convertible",
+          "nameStatus": "reported",
+          "body": "sports",
+          "role": "Jason's red convertible: the first driving gameplay we see",
+          "real": "BMW 3 Series Convertible (E30)",
+          "match": "likely",
+          "why": "Jalopnik, which also notes a hardtop Sentinel already exists in GTA Online.",
+          "src": ["jalopnik_el"]
+        },
+        {
+          "game": "Red hero muscle car (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "muscle",
+          "role": "Jason breaks into it after the opening mission",
+          "real": "Chevrolet Chevelle",
+          "match": "likely",
+          "why": "Jalopnik: \"seemingly inspired by the Chevy Chevelle\".",
+          "src": ["jalopnik_el"]
+        },
+        {
+          "game": "Schafter (Lucia's chase car)",
+          "nameStatus": "reported",
+          "body": "sedan",
+          "role": "Black sedan in the big police chase",
+          "real": "Mercedes-Benz E-Class (W212)",
+          "match": "likely",
+          "why": "Jalopnik. A newer Schafter at the closing car meet looks like a pre-facelift W213 E-Class.",
+          "src": ["jalopnik_el"]
+        },
+        {
+          "game": "Luxury convoy SUV (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "suv",
+          "role": "The black SUV the player drives out of the airport",
+          "real": "Rolls-Royce Cullinan",
+          "match": "strong",
+          "why": "Jalopnik calls it \"very obviously inspired by\" the Cullinan here; The Drive spotted a green Cullinan lookalike in Trailer 1.",
+          "src": ["jalopnik_el", "drive_t1"]
+        },
+        {
+          "game": "Police car (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "sedan",
+          "role": "The common cop car in the chase",
+          "real": "Dodge Charger",
+          "match": "likely",
+          "why": "Jalopnik (\"not the Ford Taurus like it is in GTA V\").",
+          "src": ["jalopnik_el"]
+        },
+        {
+          "game": "Track-race coupe (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "sports",
+          "role": "The player's car in the new circuit racing",
+          "real": "BMW M4",
+          "match": "likely",
+          "why": "Jalopnik. Rivals on track look like a Challenger, a Charger, GTA's Mustang equivalent and an Infiniti G35.",
+          "src": ["jalopnik_el"]
+        },
+        {
+          "game": "Street-race JDM car (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "sports",
+          "role": "Stickered night street race, with neon underglow",
+          "real": "Nissan Skyline GT-R (R32)",
+          "match": "likely",
+          "why": "Jalopnik.",
+          "src": ["jalopnik_el"]
+        },
+        {
+          "game": "Street-race exotics (names not reported)",
+          "nameStatus": "unnamed",
+          "body": "supercar",
+          "role": "Same night street race",
+          "real": "Porsche Cayman; Lamborghini Diablo; Ferrari SF90",
+          "match": "possible",
+          "why": "Jalopnik: Cayman, plus two exotics that \"to my eye\" look like a Diablo and an SF90.",
+          "src": ["jalopnik_el"]
+        },
+        {
+          "game": "Hypercar at the party (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "supercar",
+          "role": "A partygoer films themself in the driver's seat",
+          "real": "Bugatti Chiron",
+          "match": "likely",
+          "why": "Jalopnik.",
+          "src": ["jalopnik_el"]
+        },
+        {
+          "game": "Lifted pickup (name not reported)",
+          "nameStatus": "unnamed",
+          "body": "pickup",
+          "role": "Rumbles past a jogger in Vice City",
+          "real": "Ford F-150 (lifted)",
+          "match": "likely",
+          "why": "Jalopnik.",
+          "src": ["jalopnik_el"]
+        }
+      ],
+      "traffic": {
+        "text": "Also spotted in Extended Look traffic, per Jalopnik (likely matches, names not reported): previous-gen Dodge Challenger, Dodge Charger, Audi TT, Ram 1500, 10th-gen Honda Accord, modern Chevrolet Camaro convertible, new-gen Range Rover, Chevrolet Suburban, Toyota RAV4, third-gen BMW X5, a high-performance Cadillac sedan, a big Lincoln SUV, a purple C7 Corvette, Audi A4, Mercedes G-Class, a pink Lamborghini-like supercar on a tow truck, a yellow Crown Victoria taxi, Dodge Durango and Buick Roadmaster.",
+        "src": ["jalopnik_el"]
+      }
+    }
+  ],
+  "builds": {
+    "title": "Real cars built from GTA 6 cars",
+    "intro": "Ahead of the launch, West Coast Customs in Los Angeles built real versions of six in-game custom cars. Specs below are from the build sheets as reported by Hypebeast (Nov 6, 2026); they describe the real builds, not in-game stats.",
+    "cars": [
+      { "game": "Grotti Cheetah", "detail": "Mid-engined '90s supercar, 4.9-liter naturally aspirated V8, \"Vice City fade\" paint" },
+      { "game": "Albany Buccaneer", "detail": "Restored 1960s lowrider, 7.5-liter V8, candy-apple green, air ride" },
+      { "game": "Progen Emerus", "detail": "Track car, twin-turbo 4.0-liter V8, candy orange" },
+      { "game": "Invetero Coquette", "detail": "Mid-engined, 6.2-liter naturally aspirated V8, pink and purple \"Yeti Camo\"" },
+      { "game": "Albany Manana", "detail": "1970s donk, 7.7-liter V8, Vice City blue with gold trim" },
+      { "game": "Pegassi Tempesta", "detail": "Mid-engined police build in Vice Beach Police Department livery" }
+    ],
+    "src": ["hypebeast_wcc"]
+  }
+}

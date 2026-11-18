@@ -1,0 +1,201 @@
+{
+  "_note": "Every fact on the site points at one of these ids. 'published' = date on the source itself; 'checked' = the day we last read it. 'kind' = official (Rockstar, Sony, Microsoft) or press (independent outlet).",
+  "rs_nov19": {
+    "title": "Grand Theft Auto VI is Now Set to Launch November 19, 2026",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
+    "published": "2025-11-06",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_may26": {
+    "title": "Grand Theft Auto VI is Now Coming May 26, 2026",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/258aa538o412ok/grand-theft-auto-vi-is-now-coming-may-26-2026",
+    "published": "2025-05-02",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_trailer1": {
+    "title": "Grand Theft Auto VI - Watch Trailer 1 Now",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/8978kok9385a82/grand-theft-auto-vi-watch-trailer-1-now",
+    "published": "2023-12-05",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_preorder": {
+    "title": "Pre-Order Grand Theft Auto VI on June 25",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/5171972o3ak5oa/pre-order-grand-theft-auto-vi-on-june-25",
+    "published": "2026-06-24",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_preload_nov10": {
+    "title": "Grand Theft Auto VI Pre-Load Begins on November 10",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
+    "published": "2026-11-03",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_preload_now": {
+    "title": "Pre-Load Grand Theft Auto VI Now",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now",
+    "published": "2026-11-10",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_support_times": {
+    "title": "Grand Theft Auto VI regional pre-load and release times on PlayStation 5 and XBOX Series X|S",
+    "publisher": "Rockstar Support",
+    "url": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s",
+    "published": "2026-11-03",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_support_preload": {
+    "title": "Grand Theft Auto VI Pre-Load FAQ",
+    "publisher": "Rockstar Support",
+    "url": "https://support.rockstargames.com/articles/7nPqOA2uCbpEQHXx7KVrYd",
+    "published": "2026-11-03",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_store_game": {
+    "title": "Grand Theft Auto VI (Rockstar Store pre-order page)",
+    "publisher": "Rockstar Store",
+    "url": "https://store.rockstargames.com/game/buy-gta-vi",
+    "published": null,
+    "checked": "2026-11-17",
+    "kind": "official",
+    "live_page": true
+  },
+  "rs_store_collectors": {
+    "title": "Grand Theft Auto VI: The Goodtime State - Vice City Collection",
+    "publisher": "Rockstar Store",
+    "url": "https://store.rockstargames.com/merchandise/gtavi-goodtime-state-vice-city-collection",
+    "published": null,
+    "checked": "2026-11-17",
+    "kind": "official",
+    "live_page": true
+  },
+  "rs_collectors_news": {
+    "title": "Pre-Order The Goodtime State - Vice City Collection Now While Supplies Last",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/9k2a49ook82o57/pre-order-the-goodtime-state-vice-city-collection-now-while-supplies-l",
+    "published": "2026-09-24",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_vi_site": {
+    "title": "Grand Theft Auto VI official site",
+    "publisher": "Rockstar Games",
+    "url": "https://www.rockstargames.com/VI",
+    "published": null,
+    "checked": "2026-11-17",
+    "kind": "official",
+    "live_page": true
+  },
+  "ps_game_page": {
+    "title": "Grand Theft Auto VI - PS5 Games",
+    "publisher": "PlayStation.com (US)",
+    "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/",
+    "published": null,
+    "checked": "2026-11-17",
+    "kind": "official",
+    "live_page": true
+  },
+  "ps_blog_preload": {
+    "title": "Pre-load Grand Theft Auto VI on PS5 starting today",
+    "publisher": "PlayStation.Blog",
+    "url": "https://blog.playstation.com/2026/11/10/pre-load-grand-theft-auto-vi-on-ps5-starting-today/",
+    "published": "2026-11-10",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "xbox_game_page": {
+    "title": "Grand Theft Auto VI: Coming November 19, 2026 to XBOX Series X|S",
+    "publisher": "Xbox.com (US)",
+    "url": "https://www.xbox.com/en-US/games/grand-theft-auto-vi",
+    "published": null,
+    "checked": "2026-11-17",
+    "kind": "official",
+    "live_page": true
+  },
+  "xbox_upgrade": {
+    "title": "Grand Theft Auto VI: Ultimate Edition Upgrade",
+    "publisher": "Microsoft Store (Xbox.com, US)",
+    "url": "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi-ultimate-edition-upgrade/9pn4llbr8rch",
+    "published": null,
+    "live_page": true,
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "xbox_wire_cloud": {
+    "title": "Grand Theft Auto VI Comes to XBOX One and XBOX Series X|S Through XBOX Cloud Gaming on November 19",
+    "publisher": "Xbox Wire",
+    "url": "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/",
+    "published": "2026-11-10",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "rs_album": {
+    "title": "Announcing Grand Theft Auto VI: The Album, Coming November 19",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/7599a881942544/announcing-grand-theft-auto-vi-the-album-coming-november-19",
+    "published": "2026-09-17",
+    "checked": "2026-11-17",
+    "kind": "official"
+  },
+  "drive_t1": {
+    "title": "Let's Go Car Spotting in Grand Theft Auto VI's First Trailer",
+    "publisher": "The Drive (Adam Ismail)",
+    "url": "https://www.thedrive.com/news/the-most-interesting-cars-in-grand-theft-auto-vis-first-trailer",
+    "published": "2023-12-05",
+    "checked": "2026-11-17",
+    "kind": "press"
+  },
+  "jalopnik_t1": {
+    "title": "These Are The Cars Of Grand Theft Auto VI And The Real-Life Models That Inspired Them",
+    "publisher": "Jalopnik (José Rodríguez Jr.)",
+    "url": "https://www.jalopnik.com/these-are-the-cars-of-grand-theft-auto-vi-and-the-real-1851075808/",
+    "published": "2023-12-06",
+    "checked": "2026-11-17",
+    "kind": "press"
+  },
+  "drive_t2": {
+    "title": "New GTA 6 Trailer Is Here, and Vice City's Cars Have Never Looked Better",
+    "publisher": "The Drive (Byron Hurd)",
+    "url": "https://www.thedrive.com/news/new-gta-6-trailer-is-here-and-vice-citys-cars-have-never-looked-better",
+    "published": "2025-05-06",
+    "checked": "2026-11-17",
+    "kind": "press"
+  },
+  "jalopnik_el": {
+    "title": "All The New Cars We Spotted In GTA VI's Extended Look Trailer, And Their Real-Life Counterparts",
+    "publisher": "Jalopnik (Chris Tsui)",
+    "url": "https://www.jalopnik.com/2246499/cars-in-grand-theft-auto-gta-6-extended-look-trailer-real-life-counterparts/",
+    "published": "2026-08-28",
+    "checked": "2026-11-17",
+    "kind": "press"
+  },
+  "hypebeast_wcc": {
+    "title": "The 'Grand Theft Auto VI' Custom In-Game Cars Have Come to Life",
+    "publisher": "Hypebeast",
+    "url": "https://hypebeast.com/2026/11/grand-theft-auto-vi-gta6-real-in-game-cars",
+    "published": "2026-11-06",
+    "checked": "2026-11-17",
+    "kind": "press"
+  },
+  "df_times": {
+    "title": "Rockstar Officially Confirms GTA 6 Regional Release Times - and They're Not What We Thought",
+    "publisher": "Digital Foundry",
+    "url": "https://www.digitalfoundry.net/news/2026/11/rockstar-officially-confirms-gta-6-regional-release-times-and-theyre-not-what-we-thought",
+    "published": "2026-11-10",
+    "checked": "2026-11-17",
+    "kind": "press"
+  }
+}

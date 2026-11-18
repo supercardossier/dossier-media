@@ -1,0 +1,174 @@
+{
+  "asOf": "2026-11-17",
+  "launch": {
+    "confirmed": [
+      {
+        "label": "Release date",
+        "value": "Thursday, November 19, 2026",
+        "src": ["rs_nov19", "rs_support_times"],
+        "status": "confirmed"
+      },
+      {
+        "label": "Unlock rule (PS5 and Xbox Series X|S)",
+        "value": "Midnight local time on November 19, 2026, in all regions",
+        "note": "Rockstar's wording: \"Grand Theft Auto VI will release midnight local time on November 19, 2026, in all regions for both PlayStation 5 and XBOX Series X|S.\"",
+        "src": ["rs_support_times"],
+        "status": "confirmed"
+      },
+      {
+        "label": "Where the rollout begins (PlayStation)",
+        "value": "12:00 AM NZDT on Nov 19 in New Zealand",
+        "note": "PlayStation's wording: a rolling midnight launch \"beginning at 12:00AM NZDT in New Zealand\". In UTC that is 11:00 on Nov 18 (our conversion; NZDT is UTC+13).",
+        "src": ["ps_blog_preload", "rs_support_times"],
+        "status": "confirmed"
+      },
+      {
+        "label": "Xbox Cloud Gaming (Xbox One and Series X|S streaming)",
+        "value": "1:00 AM ET on November 19 (06:00 UTC)",
+        "note": "Microsoft's own time for cloud streaming. Native Xbox Series X|S play follows Rockstar's midnight-local rule.",
+        "src": ["xbox_wire_cloud"],
+        "status": "confirmed"
+      },
+      {
+        "label": "Pre-load (already open)",
+        "value": "PS5: from midnight local time, Nov 10. Xbox Series X|S: from 12:00 AM GMT, Nov 10 (global).",
+        "src": ["rs_support_times", "rs_preload_nov10"],
+        "status": "confirmed"
+      }
+    ],
+    "conflict": {
+      "title": "Not settled yet: countries with more than one time zone",
+      "body": "Rockstar says the game unlocks at midnight local time in all regions. PlayStation's blog describes a \"rolling midnight launch by country\", running \"as respective countries hit midnight\". In single-time-zone countries both mean the same thing. In the US, Canada, Australia, Brazil and Mexico they could differ: if PlayStation unlocks a whole country at once, western time zones would get the game earlier than their own local midnight (for example, the US West Coast at 9:00 PM PT on Nov 18, if the US store follows Eastern Time). Digital Foundry asked Rockstar to clarify on Nov 10; as of Nov 17 we have not found an answer. The table below uses Rockstar's rule. The countdown on your console's store page is the final word. One clue: the US PlayStation Store game page's data lists the release as 05:00 UTC on Nov 19 (midnight Eastern) for the whole US store, which would match \"by country\" for PS5 in the US. That is page metadata we read on Nov 16, not an announcement.",
+      "src": ["rs_support_times", "ps_blog_preload", "df_times", "ps_game_page"],
+      "status": "conflict"
+    },
+    "zones": [
+      { "city": "Auckland, New Zealand", "tz": "Pacific/Auckland" },
+      { "city": "Sydney / Melbourne, Australia", "tz": "Australia/Sydney" },
+      { "city": "Brisbane, Australia", "tz": "Australia/Brisbane" },
+      { "city": "Tokyo, Japan", "tz": "Asia/Tokyo" },
+      { "city": "Seoul, South Korea", "tz": "Asia/Seoul" },
+      { "city": "Perth, Australia", "tz": "Australia/Perth" },
+      { "city": "Singapore / Manila", "tz": "Asia/Singapore" },
+      { "city": "Bangkok / Jakarta", "tz": "Asia/Bangkok" },
+      { "city": "India (IST)", "tz": "Asia/Kolkata" },
+      { "city": "Dubai, UAE", "tz": "Asia/Dubai" },
+      { "city": "Moscow / Istanbul", "tz": "Europe/Moscow" },
+      { "city": "Johannesburg / Cairo", "tz": "Africa/Johannesburg" },
+      { "city": "Berlin / Paris / Madrid (CET)", "tz": "Europe/Berlin" },
+      { "city": "London / Dublin / Lisbon", "tz": "Europe/London" },
+      { "city": "São Paulo, Brazil", "tz": "America/Sao_Paulo" },
+      { "city": "New York / Toronto (ET)", "tz": "America/New_York" },
+      { "city": "Chicago / Dallas (CT)", "tz": "America/Chicago" },
+      { "city": "Mexico City", "tz": "America/Mexico_City" },
+      { "city": "Denver (MT)", "tz": "America/Denver" },
+      { "city": "Phoenix, Arizona (MST)", "tz": "America/Phoenix" },
+      { "city": "Los Angeles / Vancouver (PT)", "tz": "America/Los_Angeles" },
+      { "city": "Anchorage, Alaska", "tz": "America/Anchorage" },
+      { "city": "Honolulu, Hawaii", "tz": "Pacific/Honolulu" }
+    ]
+  },
+  "editions": [
+    {
+      "name": "Standard Edition",
+      "price": "$79.99",
+      "formats": "Digital (PlayStation Store, Microsoft Store) or Code-in-Box",
+      "includes": ["Grand Theft Auto VI", "Pre-order bonus: Vintage Vice City Pack (purchases before Nov 20)", "One free month of GTA+ (digital pre-orders)"],
+      "src": ["ps_game_page", "xbox_game_page", "rs_store_game"],
+      "status": "confirmed"
+    },
+    {
+      "name": "Ultimate Edition",
+      "price": "$99.99",
+      "formats": "Digital only",
+      "includes": ["Grand Theft Auto VI", "Ultimate Edition Upgrade (list below)", "Pre-order bonus: Vintage Vice City Pack", "One free month of GTA+ (digital pre-orders)"],
+      "src": ["ps_game_page", "xbox_game_page", "rs_preorder"],
+      "status": "confirmed"
+    },
+    {
+      "name": "Ultimate Edition Upgrade (add-on)",
+      "price": "$20.00",
+      "formats": "Digital add-on for Standard owners. $20.00 is the Xbox price; PlayStation price not verified.",
+      "includes": ["Same Ultimate content, added to a Standard copy"],
+      "note": "Xbox.com lists the upgrade at $20.00. The PlayStation Store lists the add-on, but we could not read its price on Nov 17, so we don't state one.",
+      "src": ["xbox_upgrade", "xbox_game_page", "ps_game_page", "rs_store_game"],
+      "status": "partial"
+    }
+  ],
+  "ultimateContents": [
+    { "item": "'95 Grotti Cheetah", "detail": "Grotti's signature mid-'90s sports car with a retro-futuristic livery" },
+    { "item": "Jason's safehouse vehicles", "detail": "Army-fatigue Dinka Enduro motorcycle and a Crest Kayak" },
+    { "item": "Shitzu Squalo", "detail": "Pink-and-blue boat docked at Washington Beach, with a weapons crate" },
+    { "item": "'67 Vapid Dominator Buggy + Paradise Garage", "detail": "Off-roader; garage in Watson Bay with a weapon locker" },
+    { "item": "Hawk & Little Morgan revolvers", "detail": "His-and-hers revolvers" },
+    { "item": "Personalized weapon variants", "detail": "Engraved Girardi ES9 (Jason) and Klose K17 (Lucia) pistols" },
+    { "item": "Vice City Style", "detail": "Exclusive outfits, hairstyles and tattoos" },
+    { "item": "Goodtime Gear", "detail": "Apparel inspired by the in-game TV character Macca the Gator" },
+    { "item": "Ganado Retro Build", "detail": "Exclusive mods for Jason's Vapid Ganado pickup" },
+    { "item": "Classic Car Collection", "detail": "Commission to find and restore abandoned classic and project cars" },
+    { "item": "PTT Youngin$ Compound", "detail": "A gang compound to raid for special items" },
+    { "item": "Ultimate-only businesses", "detail": "Rideout Customs, Sara's Unisex Salon, Stock 305, Electric Fang Tattoo, One-Eyed Willie's" }
+  ],
+  "ultimateSrc": ["ps_game_page", "xbox_wire_cloud", "rs_store_game"],
+  "preorderBonus": {
+    "items": ["'55 Vapid Stanier Sedan and garage", "Outfits and hairstyles", "Exclusive weapon pattern"],
+    "rule": "All pre-orders and purchases before November 20, 2026 (Rockstar). Microsoft Store wording: purchase prior to 19 November 2026 23:59:59.",
+    "src": ["rs_preorder", "rs_store_game", "xbox_game_page"]
+  },
+  "gtaPlus": {
+    "text": "One month of GTA+ comes with digital pre-orders. On PlayStation it must be claimed before March 31 and then auto-renews as a paid subscription unless cancelled. On Xbox it must be redeemed within 180 days of the pre-order.",
+    "src": ["ps_game_page", "xbox_game_page"]
+  },
+  "collectors": {
+    "name": "The Goodtime State – Vice City Collection (Collector's Box)",
+    "price": "$399.99",
+    "text": "Merchandise only: the game is sold separately. Includes a Macca the Gator figure, Oakley Frogskins sunglasses, a New Era 9FORTY hat, a crossbody bag, shot glass, pins, stickers and a double-sided poster with a map of Leonida. Arrives November 19; marked Ages 18+.",
+    "src": ["rs_store_collectors", "rs_collectors_news"]
+  },
+  "platforms": [
+    { "platform": "PlayStation 5", "status": "Yes (native)", "src": ["rs_preorder", "ps_game_page"], "level": "confirmed" },
+    { "platform": "PlayStation 5 Pro", "status": "Yes, PS5 Pro Enhanced: PSSR upscaling and ray-traced shadows only on Pro", "src": ["ps_game_page", "rs_preload_now", "ps_blog_preload"], "level": "confirmed" },
+    { "platform": "Xbox Series X", "status": "Yes (native)", "src": ["rs_preorder", "xbox_game_page"], "level": "confirmed" },
+    { "platform": "Xbox Series S", "status": "Yes (native)", "src": ["xbox_wire_cloud"], "level": "confirmed" },
+    { "platform": "Xbox One", "status": "Cloud streaming only (Xbox Cloud Gaming), from 1:00 AM ET Nov 19, using Series S graphics settings", "src": ["xbox_wire_cloud", "rs_preload_now"], "level": "confirmed" },
+    { "platform": "PlayStation 4", "status": "No. Sony: \"will not be available for PlayStation 4\"", "src": ["ps_game_page"], "level": "confirmed" },
+    { "platform": "PC", "status": "Not announced", "src": ["rs_preorder"], "level": "unknown", "note": "Rockstar's announcements list PS5 and Xbox Series X|S only. Reports of a PC date are unconfirmed, so we don't list one." },
+    { "platform": "Nintendo Switch / Switch 2", "status": "Not announced", "src": ["rs_preorder"], "level": "unknown" }
+  ],
+  "storage": [
+    { "label": "Free space needed to pre-load", "value": "Up to 212 GB, depending on your device", "src": ["rs_preload_nov10", "rs_support_preload"], "status": "confirmed" },
+    { "label": "PlayStation's own advice", "value": "Clear a minimum of 212 GB on your PS5", "src": ["ps_game_page"], "status": "confirmed" },
+    { "label": "Disc?", "value": "No disc. The physical version is a code in a box; you still download the game", "src": ["rs_store_game", "rs_preorder"], "status": "confirmed" },
+    { "label": "Target frame rate", "value": "30 frames per second on both console families", "src": ["rs_preload_now"], "status": "confirmed" },
+    { "label": "PS5 Pro extras", "value": "PSSR upscaling for clarity and ray-traced shadows (Pro only)", "src": ["rs_preload_now", "ps_blog_preload"], "status": "confirmed" },
+    { "label": "Xbox One", "value": "Not installable: play by cloud streaming only, at Series S settings", "src": ["xbox_wire_cloud"], "status": "confirmed" },
+    { "label": "Remote Play", "value": "Supported on PlayStation and Xbox", "src": ["rs_preload_now"], "status": "confirmed" },
+    { "label": "Day-one patch size", "value": "Not announced", "src": ["rs_support_preload"], "status": "unknown" },
+    { "label": "Final installed size after updates", "value": "Not announced (Rockstar only gives the pre-load figure)", "src": ["rs_support_preload"], "status": "unknown" },
+    { "label": "PC system requirements", "value": "Not announced (no PC version announced)", "src": ["rs_preorder"], "status": "unknown" }
+  ],
+  "autoDownload": [
+    { "platform": "PS5", "text": "Turn on auto-downloads and leave the console on or in Rest Mode.", "src": ["rs_support_preload"] },
+    { "platform": "Xbox Series X|S", "text": "Turn on automatic updates and leave the console on or in Sleep mode.", "src": ["rs_support_preload"] }
+  ],
+  "faq": [
+    { "q": "When does GTA 6 come out?", "a": "Thursday, November 19, 2026, on PlayStation 5 and Xbox Series X|S.", "src": ["rs_nov19", "rs_preorder"], "status": "confirmed" },
+    { "q": "What time does GTA 6 unlock?", "a": "Midnight local time on November 19 in all regions, per Rockstar. PlayStation says its rolling launch begins at 12:00 AM NZDT in New Zealand (11:00 UTC on Nov 18, our conversion) and goes \"by country\", which may matter in countries with several time zones; see our launch-time page.", "src": ["rs_support_times", "ps_blog_preload"], "status": "confirmed" },
+    { "q": "How much does GTA 6 cost?", "a": "$79.99 for the Standard Edition and $99.99 for the Ultimate Edition in the US. Xbox sells the Ultimate upgrade for $20.00.", "src": ["ps_game_page", "xbox_game_page", "xbox_upgrade"], "status": "confirmed" },
+    { "q": "Is GTA 6 on PS4, Xbox One or PC?", "a": "Not on PS4. Xbox One can only stream it through Xbox Cloud Gaming. A PC version has not been announced.", "src": ["ps_game_page", "xbox_wire_cloud", "rs_preorder"], "status": "confirmed" },
+    { "q": "Is there a disc version?", "a": "No disc has been announced. The physical version is a download code in a box, available from November 12.", "src": ["rs_store_game", "rs_preorder"], "status": "confirmed" },
+    { "q": "How big is the download?", "a": "The pre-load needs up to 212 GB of free space, depending on your console.", "src": ["rs_preload_nov10", "rs_support_preload"], "status": "confirmed" },
+    { "q": "Is GTA 6 single-player or online?", "a": "Rockstar calls Grand Theft Auto VI \"a single player experience\". No online mode for GTA VI has been announced.", "src": ["rs_preorder", "ps_game_page"], "status": "confirmed" },
+    { "q": "Where is GTA 6 set?", "a": "The state of Leonida, including modern-day Vice City.", "src": ["rs_nov19", "rs_trailer1"], "status": "confirmed" },
+    { "q": "Who are the main characters?", "a": "Jason and Lucia. Xbox's store media names them Jason Duval and Lucia Caminos.", "src": ["rs_vi_site", "xbox_game_page"], "status": "confirmed" },
+    { "q": "What is GTA 6 rated?", "a": "ESRB M (Mature 17+) for Blood and Gore, Intense Violence, Mature Humor, Nudity, Strong Language, Strong Sexual Content, and Use of Drugs and Alcohol, with In-Game Purchases.", "src": ["rs_preload_nov10", "ps_game_page"], "status": "confirmed" },
+    { "q": "What frame rate does it run at?", "a": "Rockstar says it targets 30 frames per second on both console families. PS5 Pro adds PSSR upscaling and ray-traced shadows.", "src": ["rs_preload_now"], "status": "confirmed" },
+    { "q": "What do you get for pre-ordering?", "a": "The Vintage Vice City Pack ('55 Vapid Stanier Sedan and garage, outfits and hairstyles, an exclusive weapon pattern) for purchases before Nov 20, plus a free month of GTA+ with digital pre-orders.", "src": ["rs_preorder", "rs_store_game"], "status": "confirmed" },
+    { "q": "How many times was GTA 6 delayed?", "a": "Twice. Trailer 1 (Dec 5, 2023) said 2025. On May 2, 2025 Rockstar moved it to May 26, 2026. On Nov 6, 2025 it moved again to November 19, 2026.", "src": ["rs_trailer1", "rs_may26", "rs_nov19"], "status": "confirmed" },
+    { "q": "Is there an official soundtrack album?", "a": "Yes. Grand Theft Auto VI: The Album (34 tracks, with Atlantic Records) launches November 19.", "src": ["rs_album"], "status": "confirmed" },
+    { "q": "Will there be an official map?", "a": "Rockstar says a printable cover-art poster and map of Leonida will be a free download on the official site on November 19, and a physical double-sided poster will sell for $0.99 at the Rockstar Store shortly after launch.", "src": ["rs_preload_nov10"], "status": "confirmed" },
+    { "q": "Can I play on Xbox One?", "a": "Only through Xbox Cloud Gaming, from 1:00 AM ET on November 19, using Xbox Series S graphics settings. You still need to buy the game.", "src": ["xbox_wire_cloud"], "status": "confirmed" },
+    { "q": "How long is the story?", "a": "Not announced by Rockstar. We don't repeat unofficial hour counts.", "src": ["rs_vi_site"], "status": "unknown" },
+    { "q": "When is the PC version?", "a": "Not announced. Any date you see is a rumor until Rockstar says so.", "src": ["rs_preorder"], "status": "unknown" }
+  ]
+}
