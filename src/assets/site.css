@@ -245,3 +245,27 @@ tr.is-you th::after { content: "  (you)"; color: #ffb3d6; font-weight: 800; }
   .sign { border-color: CanvasText; }
   .cd-num, .sign-top { text-shadow: none; }
 }
+
+/* ---------- /out-yet/ live status (night shift, Nov 18; restyled for the Leonida system).
+   Each live slot stacks its hidden variants in one grid cell, so text changes never shift the layout. ---------- */
+tr.is-same { background: rgba(255, 61, 154, 0.07); }
+tr.is-same th::after { content: "  (same time as you)"; color: var(--sand-dim); font-weight: 700; }
+.hero-out, .out-link { font-weight: 700; margin: 4px 0 10px; }
+.oy { background: var(--dusk); border: 1px solid var(--line); border-radius: 12px; padding: 14px 20px 8px; margin: 18px 0 8px; box-shadow: inset 4px 0 0 var(--gold); }
+.oy.is-out { box-shadow: inset 4px 0 0 var(--aqua), 0 0 24px rgba(60, 242, 214, 0.18); }
+.oy-slot { display: grid; }
+.oy-slot > span { grid-area: 1 / 1; }
+.oy-ghost { visibility: hidden; }
+.oy-title { margin: 0.2em 0 0.25em; font-size: clamp(1.7rem, 4.4vw, 2.5rem); }
+.oy-timer { font-family: var(--neon); font-variant-numeric: tabular-nums; font-size: clamp(1.6rem, 6vw, 2.8rem); line-height: 1.2; margin: 0 0 6px; color: #fff2f9; text-shadow: 0 0 10px var(--pink), 0 0 26px rgba(255, 61, 154, 0.6); }
+.oy.is-out .oy-timer { text-shadow: 0 0 10px var(--aqua), 0 0 26px rgba(60, 242, 214, 0.6); }
+.oy-msg { max-width: 70ch; margin: 0 0 6px; }
+.oy-world { color: var(--sand-dim); font-size: 0.97rem; margin: 0 0 6px; }
+.oy-src { margin: 0 0 6px; }
+.oy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 0 20px; align-items: start; }
+.oy-grid .callout { margin: 14px 0; }
+.zones td.oy-cell { font-weight: 700; color: var(--sand-dim); }
+.zones td.oy-yes { color: var(--aqua); }
+.zones td.oy-no { color: var(--gold); }
+@media (min-width: 641px) { .zones td.oy-cell { width: 13em; } }
+@media (max-width: 640px) { .oy { padding: 12px 14px 6px; } .oy-grid { grid-template-columns: 1fr; } }
