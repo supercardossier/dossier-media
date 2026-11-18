@@ -1,0 +1,6 @@
+/* Safehouse (admin) additions on top of site.css */
+.lock { font-size: 0.9rem; color: var(--night); background: var(--aqua); border-radius: 6px; padding: 3px 10px; font-weight: 700; }
+.todo { list-style: none; padding: 0; margin: 0; }
+.todo li { padding: 14px 0 12px 34px; border-bottom: 1px solid var(--line); position: relative; }
+.todo li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 16px; height: 16px; border: 2px solid var(--orange); border-radius: 4px; }
+.tool-row h2 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }

@@ -147,8 +147,8 @@ function iconSvg(kind) {
   const wheels = kind === 'boat' ? ''
     : kind === 'bike' ? '<circle cx="30" cy="34" r="8"/><circle cx="90" cy="34" r="8"/>'
       : '<circle cx="30" cy="36" r="8"/><circle cx="90" cy="36" r="8"/>';
-  const water = kind === 'boat' ? '<path d="M2 44 Q 16 40 30 44 T 58 44 T 86 44 T 118 44" fill="none" stroke="#2ee6c9" stroke-width="2"/>' : '';
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48" width="120" height="48"><path d="${body}" fill="#2ee6c9"/><g fill="#0d1020" stroke="#2ee6c9" stroke-width="3">${wheels}</g>${water}</svg>\n`;
+  const water = kind === 'boat' ? '<path d="M2 44 Q 16 40 30 44 T 58 44 T 86 44 T 118 44" fill="none" stroke="#3cf2d6" stroke-width="2"/>' : '';
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48" width="120" height="48"><path d="${body}" fill="#ff8a3d"/><g fill="#1a0b2e" stroke="#ff8a3d" stroke-width="3">${wheels}</g>${water}</svg>\n`;
 }
 
 // ---------------------------------------------------------------------------
@@ -162,7 +162,7 @@ const NAV = [
   ['/faq/', 'Confirmed facts'],
 ];
 
-function layout({ urlPath, title, description, body, countdown = false, noCanonical = false }) {
+function layout({ urlPath, title, description, body, hero = '', countdown = false, noCanonical = false }) {
   if (!title || title.length > 70) throw new Error(`Bad <title> on ${urlPath}: "${title}"`);
   if (!description || description.length > 170) throw new Error(`Bad description length on ${urlPath}`);
   const canonical = SITE_URL + urlPath;
@@ -177,7 +177,7 @@ function layout({ urlPath, title, description, body, countdown = false, noCanoni
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-${noCanonical ? '' : `<link rel="canonical" href="${esc(canonical)}">\n`}${INDEXABLE ? '' : '<meta name="robots" content="noindex, nofollow">\n'}<meta name="theme-color" content="#0d1020">
+${noCanonical ? '' : `<link rel="canonical" href="${esc(canonical)}">\n`}${INDEXABLE ? '' : '<meta name="robots" content="noindex, nofollow">\n'}<meta name="theme-color" content="#1a0b2e">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(SITE_NAME)}">
 <meta property="og:title" content="${esc(title)}">
@@ -188,21 +188,24 @@ ${noCanonical ? '' : `<meta property="og:url" content="${esc(canonical)}">\n`}<m
 <meta property="og:image:alt" content="GTA 6 Tools: unofficial launch guide">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="${CSS_HREF}">
+<link rel="preload" href="/assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+${countdown ? '<link rel="preload" href="/assets/fonts/tilt-neon-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<link rel="stylesheet" href="${CSS_HREF}">
 ${countdown ? `<script src="${JS_SRC}" defer></script>\n` : ''}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="/"><span class="brand-sun" aria-hidden="true"></span>${esc(SITE_NAME)} <span class="brand-tag">unofficial</span></a>
+    <a class="brand" href="/"><span class="brand-sun" aria-hidden="true"></span><span class="brand-name">${esc(SITE_NAME)}</span><span class="brand-tag">unofficial fan guide</span></a>
     <nav aria-label="Main" class="nav">${nav}</nav>
   </div>
 </header>
-<main id="main" class="wrap">
+${hero}<main id="main" class="wrap">
 ${body}
 </main>
 <div class="ad-slot wrap" data-ad-slot="below-content" hidden></div>
 <footer class="site-footer">
+  <div class="horizon" aria-hidden="true"></div>
   <div class="wrap">
     <p class="disclaimer"><strong>${esc(DISCLAIMER)}</strong> Grand Theft Auto, GTA VI and related names are trademarks of Take-Two Interactive. We use no Rockstar logos, artwork or screenshots.</p>
     <p>Facts checked ${esc(fmtDate(AS_OF))}. Every fact links to its source. Spot an error? It will be fixed. See <a href="/about/">how we source facts</a>.</p>
@@ -216,7 +219,6 @@ ${body}
 
 function pageHeader(kicker, h1, lede) {
   return `<header class="page-head">
-  <p class="kicker">${esc(kicker)}</p>
   <h1>${esc(h1)}</h1>
   <p class="lede">${lede}</p>
   <p class="asof">Facts checked <time datetime="${esc(AS_OF)}">${esc(fmtDate(AS_OF))}</time></p>
@@ -242,7 +244,8 @@ function collectSrc(...lists) {
 
 function countdownBlock(kind) {
   const id = kind === 'hero' ? 'cd-hero' : 'cd-main';
-  return `<div class="countdown-box" id="${id}">
+  return `<div class="countdown-box sign" id="${id}">
+  <p class="sign-top" aria-hidden="true">Open at midnight</p>
   <div class="countdown" data-countdown data-target-local="2026-11-19T00:00:00" role="timer" aria-live="off" aria-label="Time until midnight on November 19 in your time zone">
     <div class="cd-unit"><span class="cd-num" data-unit="d">--</span><span class="cd-lbl">days</span></div>
     <div class="cd-unit"><span class="cd-num" data-unit="h">--</span><span class="cd-lbl">hours</span></div>
@@ -269,16 +272,21 @@ const pages = [];
     ['/file-size/', 'File size and console requirements', 'Up to 212 GB to pre-load, no disc, 30 fps target, PS5 Pro extras, Xbox One via cloud.'],
     ['/faq/', 'Everything confirmed so far', '18 straight answers with sources, and a clear list of what is still not announced.'],
   ];
-  const cardHtml = cards.map(([href, h, p]) => `<li class="tool-card"><a href="${href}"><h2>${esc(h)}</h2><p>${esc(p)}</p><span class="go" aria-hidden="true">Open →</span></a></li>`).join('\n');
-  const body = `
-<section class="hero">
-  <p class="kicker">Unofficial GTA 6 launch guide</p>
-  <h1>GTA 6 unlocks in <span class="accent">your</span> time zone at midnight, Thursday Nov 19</h1>
-  <p class="lede">Five sourced tools for launch week. Every number links to Rockstar, PlayStation, Xbox or a named car outlet, with the date we checked it.</p>
-  ${countdownBlock('hero')}
-  <p class="hero-src">${srcLinks(['rs_support_times'], 'home hero')}</p>
+  const cardHtml = cards.map(([href, h, p]) => `<li class="tool-row"><a href="${href}"><h2>${esc(h)}</h2><p>${esc(p)}</p></a></li>`).join('\n');
+  const hero = `<section class="hero" aria-labelledby="hero-h">
+  <div class="sky" aria-hidden="true"></div>
+  <img class="skyline" src="/assets/skyline.svg" alt="" width="1600" height="420">
+  <div class="wrap hero-inner">
+    <h1 id="hero-h">GTA 6 unlocks at midnight on November 19, wherever you are</h1>
+    ${countdownBlock('hero')}
+  </div>
 </section>
-<ul class="tool-grid" aria-label="Tools">
+`;
+  const body = `
+<section class="intro">
+  <p class="lede">Five sourced tools for launch week. Every number links to Rockstar, PlayStation, Xbox or a named car outlet, with the date we checked it. ${srcLinks(['rs_support_times'], 'home hero')}</p>
+</section>
+<ul class="tool-list" aria-label="Tools">
 ${cardHtml}
 </ul>
 <section class="quick" aria-labelledby="quick-h">
@@ -295,7 +303,7 @@ ${cardHtml}
   <p>We only state what Rockstar, Sony or Microsoft has published, or what a named outlet reported, and we say which. Anything not announced is labeled <span class="chip chip-unknown">Not announced</span> instead of guessed. Read more about <a href="/about/">our sourcing rules</a>.</p>
 </section>`;
   pages.push({
-    urlPath: '/', file: 'index.html', countdown: true,
+    urlPath: '/', file: 'index.html', countdown: true, hero,
     title: 'GTA 6 Tools: Launch Countdown, Editions, Real Cars & Facts',
     description: 'Unofficial GTA 6 launch guide: live countdown to midnight Nov 19, editions and prices, real cars behind the game\'s cars, file size and confirmed facts, all sourced.',
     body, srcIds: ['rs_support_times', 'rs_nov19', 'rs_preorder', 'ps_game_page', 'xbox_game_page', 'xbox_wire_cloud', 'rs_preload_nov10'],
@@ -644,6 +652,11 @@ for (const f of ['favicon.svg', 'og.png', '66a8619d4867c953e5cea981e7b50c5a.txt'
   const src = path.join(ROOT, 'src/assets', f);
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, 'assets', f));
   else console.warn(`WARNING: src/assets/${f} missing`);
+}
+for (const f of ['skyline.svg', 'grain.svg']) fs.copyFileSync(path.join(ROOT, 'src/assets', f), path.join(DIST, 'assets', f));
+fs.mkdirSync(path.join(DIST, 'assets/fonts'), { recursive: true });
+for (const f of fs.readdirSync(path.join(ROOT, 'src/assets/fonts'))) {
+  if (/\.(woff2|txt)$/.test(f)) fs.copyFileSync(path.join(ROOT, 'src/assets/fonts', f), path.join(DIST, 'assets/fonts', f));
 }
 for (const k of Object.keys(ICONS)) fs.writeFileSync(path.join(DIST, `assets/icons/${k}.svg`), iconSvg(k));
 
