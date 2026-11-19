@@ -770,6 +770,36 @@ for (const f of fs.readdirSync(path.join(ROOT, 'src/assets/fonts'))) {
 }
 for (const k of Object.keys(ICONS)) fs.writeFileSync(path.join(DIST, `assets/icons/${k}.svg`), iconSvg(k));
 
+// Cloudflare Pages: mirror vercel.json's security headers into dist/_headers, so both hosts
+// serve identical headers from one source of truth. Rules apply in file order; a later rule that
+// re-sets a header from "/*" first detaches it ("! Name"), because Pages would otherwise join both values.
+{
+  const vj = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8'));
+  const out = [];
+  const global = new Set();
+  for (const rule of vj.headers || []) {
+    const m = /^((?:\/[A-Za-z0-9._-]+)*)\/\(\.\*\)$/.exec(rule.source);
+    let pattern;
+    if (m) pattern = `${m[1]}/*`;
+    else if (/^(\/[A-Za-z0-9._-]+)+$/.test(rule.source)) pattern = rule.source;
+    else throw new Error(`Build blocked: cannot translate header source "${rule.source}" to _headers.`);
+    out.push(pattern);
+    for (const { key, value } of rule.headers) {
+      if (!/^[A-Za-z0-9-]+$/.test(key) || /[\r\n]/.test(value)) throw new Error(`Build blocked: unsafe header ${key}`);
+      const line = `  ${key}: ${value}`;
+      if (line.length > 2000) throw new Error(`Build blocked: _headers line too long for ${key}`);
+      if (pattern !== '/*' && global.has(key.toLowerCase())) out.push(`  ! ${key}`);
+      out.push(line);
+      if (pattern === '/*') global.add(key.toLowerCase());
+    }
+  }
+  // Pages keeps only the last block per pattern, so extra global headers go inside the first "/*" block.
+  if (out.filter((l) => !l.startsWith(' ')).length !== new Set(out.filter((l) => !l.startsWith(' '))).size) throw new Error('Build blocked: duplicate _headers pattern');
+  if (!out.includes('/*')) throw new Error('Build blocked: _headers needs a /* rule');
+  if (!INDEXABLE) out.splice(out.indexOf('/*') + 1, 0, '  X-Robots-Tag: noindex, nofollow');
+  fs.writeFileSync(path.join(DIST, '_headers'), out.join('\n') + '\n');
+}
+
 // robots.txt + sitemap.xml
 const indexable = pages.filter((p) => !['/privacy/', '/accessibility/'].includes(p.urlPath));
 fs.writeFileSync(path.join(DIST, 'robots.txt'), INDEXABLE
