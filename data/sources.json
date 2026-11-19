@@ -53,7 +53,7 @@
     "publisher": "Rockstar Support",
     "url": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s",
     "published": "2026-11-03",
-    "checked": "2026-11-18",
+    "checked": "2026-11-19",
     "kind": "official"
   },
   "rs_support_preload": {
@@ -61,7 +61,7 @@
     "publisher": "Rockstar Support",
     "url": "https://support.rockstargames.com/articles/7nPqOA2uCbpEQHXx7KVrYd",
     "published": "2026-11-03",
-    "checked": "2026-11-18",
+    "checked": "2026-11-19",
     "kind": "official"
   },
   "rs_store_game": {
@@ -95,7 +95,7 @@
     "publisher": "Rockstar Games",
     "url": "https://www.rockstargames.com/VI",
     "published": null,
-    "checked": "2026-11-17",
+    "checked": "2026-11-19",
     "kind": "official",
     "live_page": true
   },
@@ -204,6 +204,57 @@
     "url": "https://www.digitalfoundry.net/news/2026/11/rockstar-officially-confirms-gta-6-regional-release-times-and-theyre-not-what-we-thought",
     "published": "2026-11-10",
     "checked": "2026-11-18",
+    "kind": "press"
+  },
+  "ps_support_gta": {
+    "title": "Grand Theft Auto VI support (US)",
+    "publisher": "PlayStation Support (US)",
+    "url": "https://www.playstation.com/en-us/support/games/gta-vi-support/",
+    "published": null,
+    "checked": "2026-11-19",
+    "kind": "official",
+    "live_page": true
+  },
+  "ps_support_x_update": {
+    "title": "PS5 system software update required before playing Grand Theft Auto VI (post on X)",
+    "publisher": "PlayStation Support US (@PS_Support_US)",
+    "url": "https://x.com/PS_Support_US/status/2122863683881619685",
+    "published": "2026-11-17",
+    "checked": "2026-11-19",
+    "kind": "official",
+    "_time": "2026-11-18T01:25:17Z (8:25 PM ET, Nov 17)"
+  },
+  "rs_vi_media": {
+    "title": "Grand Theft Auto VI: Media & Artwork",
+    "publisher": "Rockstar Games",
+    "url": "https://www.rockstargames.com/VI/media",
+    "published": null,
+    "checked": "2026-11-19",
+    "kind": "official",
+    "live_page": true
+  },
+  "vice_us_out": {
+    "title": "GTA 6 Is Now Out in the US and Canada – PS5 Download Size and Game Sharing Explained",
+    "publisher": "Vice (Brent Koepp)",
+    "url": "https://www.vice.com/en/article/gta-6-us-canada-launch-ps5-download-size-game-sharing/",
+    "published": "2026-11-19",
+    "checked": "2026-11-19",
+    "kind": "press"
+  },
+  "newsweek_us": {
+    "title": "PlayStation Users Report Access Issues Hours Before GTA VI Launch",
+    "publisher": "Newsweek (Jesus Mesa)",
+    "url": "https://www.newsweek.com/playstation-users-report-access-issues-hours-before-gta-vi-launch-12736310",
+    "published": "2026-11-18",
+    "checked": "2026-11-19",
+    "kind": "press"
+  },
+  "kotaku_ps5_update": {
+    "title": "PS5 Gets Last-Minute Software Update That's Required To Play GTA 6",
+    "publisher": "Kotaku (Ethan Gach)",
+    "url": "https://kotaku.com/ps5-gets-last-minute-software-update-thats-required-to-play-gta-6-2000757868",
+    "published": "2026-11-17",
+    "checked": "2026-11-19",
     "kind": "press"
   }
 }

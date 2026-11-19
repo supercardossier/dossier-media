@@ -41,6 +41,7 @@
   var target = localTarget(root.getAttribute('data-target-local'));
   var cloudUtc = Date.parse(root.getAttribute('data-cloud-utc') || '');
   var psUsUtc = Date.parse(root.getAttribute('data-ps-us-utc') || '');
+  var lastUtc = Date.parse(root.getAttribute('data-last-utc') || '');
   if (target === null) return;
 
   var fmtLong = null;
@@ -119,22 +120,23 @@
   function tick() {
     var now = Date.now();
     var left = target - now;
-    var state = left > 0 ? 'before' : 'after';
+    // 'all' = midnight has also passed in the last zone of the table (and here).
+    var state = left > 0 ? 'before' : (!isNaN(lastUtc) && now >= lastUtc ? 'all' : 'after');
     var vals = { zone: zoneLabel, utc: utcLabel(target), local: when(target), hms: hms(left) };
 
     if (state === 'before') {
       if (el.timer) el.timer.textContent = fill(S.status.timerBefore, vals);
-    } else if (el.timer && lastState !== 'after') {
+    } else if (el.timer && (lastState === '' || lastState === 'before')) {
       el.timer.textContent = fill(S.status.timerAfter, vals);
     }
 
     if (state !== lastState) {
-      root.classList.toggle('is-out', state === 'after');
+      root.classList.toggle('is-out', state !== 'before');
       root.classList.toggle('is-waiting', state === 'before');
       if (el.title) {
         el.title.textContent = state === 'before'
           ? (caveatBefore ? S.status.titleBeforeCaveat : S.status.titleBefore)
-          : (caveatAfter ? S.status.titleAfterCaveat : S.status.titleAfter);
+          : state === 'all' ? S.status.titleAll : (caveatAfter ? S.status.titleAfterCaveat : S.status.titleAfter);
       }
       if (el.msg) el.msg.textContent = fill(state === 'before' ? S.status.msgBefore : S.status.msgAfter, vals);
       lastState = state;

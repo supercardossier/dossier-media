@@ -23,7 +23,7 @@ function esc(v) {
 }
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 function fmtDate(iso) { const [y, m, d] = iso.split('-').map(Number); return `${MONTHS[m - 1]} ${d}, ${y}`; }
-function daysSince(iso) { return Math.floor((BUILT_AT - new Date(iso + 'T12:00:00Z')) / 86400000); }
+function daysSince(iso) { return Math.max(0, Math.floor((BUILT_AT - new Date(iso + 'T12:00:00Z')) / 86400000)); }
 
 const srcIds = Object.keys(sources).filter((k) => !k.startsWith('_'));
 for (const id of srcIds) if (!/^https:\/\//.test(sources[id].url)) throw new Error(`Admin build blocked: source ${id} is not https`);

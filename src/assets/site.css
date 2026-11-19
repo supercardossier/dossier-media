@@ -117,7 +117,14 @@ main.wrap { overflow-x: clip; }
   text-shadow: 0 0 4px #ffd3ea, 0 0 12px var(--pink), 0 0 28px var(--pink), 0 0 56px rgba(255, 61, 154, 0.55); }
 .cd-lbl { display: block; font-size: 0.9rem; color: var(--sand-dim); margin-top: 2px; }
 .cd-note { font-size: 0.95rem; color: var(--sand); margin: 12px 0 2px; max-width: 58ch; }
-.countdown-box.is-live .cd-num { color: #e9fffb; text-shadow: 0 0 4px #c9fff6, 0 0 14px var(--aqua), 0 0 34px var(--aqua); }
+/* Digits and the "out now" face share one grid cell; only visibility changes, so the sign never resizes. */
+.cd-face { display: grid; }
+.cd-face > * { grid-area: 1 / 1; }
+.cd-out { margin: 0; align-self: center; visibility: hidden; }
+.countdown-box.is-out .countdown { visibility: hidden; }
+.countdown-box.is-out .cd-out { visibility: visible; }
+.cd-out-big { font-family: var(--neon); font-size: clamp(2.7rem, 10vw, 5.6rem); line-height: 1; color: #e9fffb; text-shadow: 0 0 4px #c9fff6, 0 0 14px var(--aqua), 0 0 34px var(--aqua); }
+.cd-out-small { font-size: 1.05rem; color: var(--sand); margin-top: 6px; }
 .hero .cd-note { text-shadow: 0 1px 10px rgba(26, 11, 46, 0.8); }
 @keyframes neon-on { 0% { opacity: 0.12; } 9% { opacity: 1; } 12% { opacity: 0.25; } 18% { opacity: 1; } 34% { opacity: 0.55; } 38% { opacity: 1; } 100% { opacity: 1; } }
 
@@ -243,7 +250,7 @@ tr.is-you th::after { content: "  (you)"; color: #ffb3d6; font-weight: 800; }
 }
 @media (forced-colors: active) {
   .sign { border-color: CanvasText; }
-  .cd-num, .sign-top { text-shadow: none; }
+  .cd-num, .sign-top, .cd-out-big { text-shadow: none; }
 }
 
 /* ---------- /out-yet/ live status (night shift, Nov 18; restyled for the Leonida system).

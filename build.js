@@ -80,6 +80,7 @@ function srcLinks(ids, where, label = 'Source') {
 const STATUS = {
   confirmed: ['Confirmed', 'chip-ok'],
   partial: ['Partly confirmed', 'chip-warn'],
+  reported: ['Reported', 'chip-warn'],
   conflict: ['Unclear', 'chip-warn'],
   unknown: ['Not announced', 'chip-unknown'],
 };
@@ -246,19 +247,34 @@ function collectSrc(...lists) {
   return out;
 }
 
+// The sign has three live states (before your midnight / out in your zone / out everywhere). Every text it can show
+// comes from facts.launchState (sourced) and is also stacked invisibly in the same grid cell ("ghosts"), so a state
+// change never moves the page. Without JavaScript it shows the text for the build's launch phase (see PHASE).
 function countdownBlock(kind) {
   const id = kind === 'hero' ? 'cd-hero' : 'cd-main';
-  return `<div class="countdown-box sign" id="${id}">
-  <p class="sign-top" aria-hidden="true">Open at midnight</p>
-  <div class="countdown" data-countdown data-target-local="2026-11-19T00:00:00" role="timer" aria-live="off" aria-label="Time until midnight on November 19 in your time zone">
-    <div class="cd-unit"><span class="cd-num" data-unit="d">--</span><span class="cd-lbl">days</span></div>
-    <div class="cd-unit"><span class="cd-num" data-unit="h">--</span><span class="cd-lbl">hours</span></div>
-    <div class="cd-unit"><span class="cd-num" data-unit="m">--</span><span class="cd-lbl">min</span></div>
-    <div class="cd-unit"><span class="cd-num" data-unit="s">--</span><span class="cd-lbl">sec</span></div>
+  const LS = facts.launchState;
+  const SAMPLE = { zone: ' (America/Argentina/Buenos_Aires)', utc: 'Nov 19, 03:00 UTC', last: 'Wed, Nov 18, 10:00 PM' };
+  const fillT = (t) => String(t).replace(/\{(\w+)\}/g, (m, k) => (k in SAMPLE ? SAMPLE[k] : m));
+  const ghosts = (variants) => variants.map((v) => `<span class="oy-ghost" aria-hidden="true">${esc(fillT(v))}</span>`).join('');
+  const out = PHASE !== 'pre';
+  const top = PHASE === 'all' ? LS.topAfter : LS.topBefore;
+  const big = PHASE === 'all' ? LS.outBig : LS.rollBig;
+  const small = PHASE === 'all' ? LS.outAll : LS.rollSmall;
+  const note = { pre: LS.noteStatic, rolling: LS.noteRolling, all: LS.noteAllStatic }[PHASE];
+  return `<div class="countdown-box sign${out ? ' is-out' : ''}" id="${id}" data-cd-box data-target-local="2026-11-19T00:00:00" data-last-utc="${esc(LAST_ISO)}" data-strings="${esc(JSON.stringify(CD_STRINGS))}">
+  <p class="sign-top oy-slot" aria-hidden="true"><span data-cd-top>${esc(top)}</span>${ghosts([LS.topBefore, LS.topAfter])}</p>
+  <div class="cd-face">
+    <div class="countdown" role="timer" aria-live="off" aria-label="Time until midnight on November 19 in your time zone">
+      <div class="cd-unit"><span class="cd-num" data-unit="d">--</span><span class="cd-lbl">days</span></div>
+      <div class="cd-unit"><span class="cd-num" data-unit="h">--</span><span class="cd-lbl">hours</span></div>
+      <div class="cd-unit"><span class="cd-num" data-unit="m">--</span><span class="cd-lbl">min</span></div>
+      <div class="cd-unit"><span class="cd-num" data-unit="s">--</span><span class="cd-lbl">sec</span></div>
+    </div>
+    <p class="cd-out"><span class="cd-out-big oy-slot"><span data-cd-big>${esc(big)}</span>${ghosts([LS.outBig, LS.rollBig])}</span><span class="cd-out-small oy-slot"><span data-cd-small>${esc(small)}</span>${ghosts([LS.outHere, LS.outAll, LS.rollSmall])}</span></p>
   </div>
-  <p class="cd-note" data-cd-note>Counting down to 12:00 AM on Thursday, Nov 19, 2026 in your own time zone, which is when Rockstar says the game unlocks.</p>
-  <noscript><p class="cd-note">The live countdown needs JavaScript. The rule is simple: midnight on November 19 where you live.</p></noscript>
-</div>`;
+  <p class="cd-note oy-slot"><span data-cd-note>${esc(note)}</span>${ghosts([LS.noteStatic, LS.noteRolling, LS.noteAllStatic, LS.noteBefore, LS.noteHere, LS.noteAll])}</p>
+${PHASE === 'all' ? '' : `  <noscript><p class="cd-note">The live countdown needs JavaScript. The rule is simple: midnight on November 19 where you live.</p></noscript>
+`}</div>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -286,6 +302,33 @@ const PS_US_UTC = facts.launch.conflict.psUsStoreUtc;
 if (PS_US_UTC !== '2026-11-19T05:00:00Z' || !/05:00 UTC on Nov 19/.test(facts.launch.conflict.body)) throw new Error('Build blocked: PS US store instant does not match its sourced text.');
 const UNLOCK_RULE = facts.launch.confirmed.find((f) => /^Unlock rule/.test(f.label));
 if (!UNLOCK_RULE) throw new Error('Build blocked: unlock rule fact missing.');
+// Launch phase at build time: 'pre' (before New Zealand's midnight), 'rolling', or 'all' (midnight has passed in the
+// last zone of the table, UTC-11). It only picks the no-JavaScript text, which must be true from the build onwards;
+// the scripts take over live. BUILD_NOW=<ISO time> overrides the clock (for tests).
+const FIRST_MS = ZONE_ROWS[0].utc;
+const LAST_MS = ZONE_ROWS[ZONE_ROWS.length - 1].utc;
+const LAST_ISO = new Date(LAST_MS).toISOString();
+if (new Date(FIRST_MS).toISOString() !== '2026-11-18T11:00:00.000Z' || LAST_ISO !== '2026-11-19T11:00:00.000Z') throw new Error('Build blocked: first/last unlock instants changed; update the launchState wording.');
+const NOW_MS = process.env.BUILD_NOW ? Date.parse(process.env.BUILD_NOW) : Date.now();
+if (Number.isNaN(NOW_MS)) throw new Error('Build blocked: BUILD_NOW is not a valid date.');
+const PHASE = NOW_MS < FIRST_MS ? 'pre' : NOW_MS < LAST_MS ? 'rolling' : 'all';
+{
+  const LS = facts.launchState;
+  requireSources(LS.src, 'launch state');
+  if (![LS.noteRolling, LS.noteAllStatic, facts.outYet.status.staticMsgAll].every((t) => /11:00 UTC on Nov 19/.test(t)) || !/11:00 UTC on Nov 18/.test(LS.noteRolling)) throw new Error('Build blocked: launch-state wording does not match the first/last unlock instants.');
+}
+const CD_STRINGS = Object.fromEntries(Object.entries(facts.launchState).filter(([k]) => !['_note', 'src'].includes(k)));
+// Script files may not carry factual wording of their own (their sentences come from sourced data attributes).
+function assertNoWording(buf, name) {
+  const jsText = buf.toString('utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, ''); // comments are not shown to visitors
+  const literals = jsText.match(/'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"/g) || [];
+  const offenders = literals.filter((x) => /\w+\s+\w+/.test(x) && /PlayStation|PS5|Xbox|Rockstar|UTC|\bET\b|Nov|midnight|unlock|out now|everywhere|rolling/i.test(x));
+  if (offenders.length) throw new Error(`Build blocked: ${name} contains unsourced wording: ${offenders.join(', ')}`);
+}
+assertNoWording(jsBuf, 'countdown.js');
+// FAQ items marked showFrom "launch" only appear in builds made after the first unlock.
+for (const f of facts.faq) if (f.showFrom && f.showFrom !== 'launch') throw new Error(`Build blocked: unknown showFrom "${f.showFrom}".`);
+const FAQ_ITEMS = facts.faq.filter((f) => !f.showFrom || PHASE !== 'pre');
 
 // ---------------------------------------------------------------------------
 // Pages
@@ -301,14 +344,14 @@ const pages = [];
     ['/editions/', 'Editions and platforms compared', 'Standard $79.99, Ultimate $99.99, what the $20 upgrade adds, and which consoles get it.'],
     ['/cars/', 'The real cars behind GTA 6\'s cars', `${CAR_TOTAL} cars from the trailers and edition listings, each matched to a real model and honestly rated.`],
     ['/file-size/', 'File size and console requirements', 'Up to 212 GB to pre-load, no disc, 30 fps target, PS5 Pro extras, Xbox One via cloud.'],
-    ['/faq/', 'Everything confirmed so far', '18 straight answers with sources, and a clear list of what is still not announced.'],
+    ['/faq/', 'Everything confirmed so far', `${FAQ_ITEMS.length} straight answers with sources, and a clear list of what is still not announced.`],
   ];
   const cardHtml = cards.map(([href, h, p]) => `<li class="tool-row"><a href="${href}"><h2>${esc(h)}</h2><p>${esc(p)}</p></a></li>`).join('\n');
   const hero = `<section class="hero" aria-labelledby="hero-h">
   <div class="sky" aria-hidden="true"></div>
   <img class="skyline" src="/assets/skyline.svg" alt="" width="1600" height="420">
   <div class="wrap hero-inner">
-    <h1 id="hero-h">GTA 6 unlocks at midnight on November 19, wherever you are</h1>
+    <h1 id="hero-h">${esc(PHASE === 'all' ? facts.launchState.h1All : 'GTA 6 unlocks at midnight on November 19, wherever you are')}</h1>
     ${countdownBlock('hero')}
   </div>
 </section>
@@ -379,15 +422,20 @@ ${tableRows}
   ${zoneNotesHtml('launch zone note')}
 </section>
 <section aria-labelledby="tips-h">
-  <h2 id="tips-h">Be ready at midnight</h2>
+${PHASE === 'pre' ? `  <h2 id="tips-h">Be ready at midnight</h2>
   <ul class="ticks">
     <li>Pre-load now: it needs up to 212 GB. ${srcLinks(['rs_preload_nov10'], 'launch tip size')}</li>
     <li>PS5: turn on auto-downloads and leave the console on or in Rest Mode. Xbox: turn on automatic updates and use Sleep mode. ${srcLinks(['rs_support_preload'], 'launch tip auto')}</li>
     <li>Code-in-box buyers: there is no disc. Redeem the code as soon as you have it so the pre-load can start. ${srcLinks(['rs_preload_now', 'rs_store_game'], 'launch tip code')}</li>
-  </ul>
+  </ul>` : `  <h2 id="tips-h">Before you play</h2>
+  <ul class="ticks">
+    <li>PS5: install the latest system software first. PlayStation Support US said on X (Nov 17) that an update is required before playing GTA VI, as reported by Kotaku. ${srcLinks(['ps_support_x_update', 'kotaku_ps5_update'], 'launch tip ps update')}</li>
+    <li>Not downloaded yet? Clear up to 212 GB of free space, Rockstar's pre-load figure. ${srcLinks(['rs_preload_nov10'], 'launch tip size')}</li>
+    <li>Code-in-box buyers: there is no disc. Redeem the code to start the download. ${srcLinks(['rs_preload_now', 'rs_store_game'], 'launch tip code')}</li>
+  </ul>`}
   <p>Full storage details: <a href="/file-size/">GTA 6 file size and requirements</a>.</p>
 </section>
-${sourcesSection(collectSrc(L.confirmed, [L.conflict]).concat(['rs_preload_nov10', 'rs_support_preload', 'rs_preload_now', 'rs_store_game'], ZONE_SRC), 'launch sources')}`;
+${sourcesSection(collectSrc(L.confirmed, [L.conflict]).concat(['rs_preload_nov10', ...(PHASE === 'pre' ? ['rs_support_preload'] : ['ps_support_x_update', 'kotaku_ps5_update']), 'rs_preload_now', 'rs_store_game'], ZONE_SRC), 'launch sources')}`;
   pages.push({
     urlPath: '/launch-time/', file: 'launch-time/index.html', countdown: true,
     title: 'GTA 6 Release Time in Every Time Zone (Live Countdown)',
@@ -407,15 +455,12 @@ ${sourcesSection(collectSrc(L.confirmed, [L.conflict]).concat(['rs_preload_nov10
   if (!/1:00 AM ET/.test(CLOUD.value) || !['static', 'before', 'after'].every((k) => /1:00 AM ET/.test(OY.cloud[k]))) throw new Error('Build blocked: out-yet cloud wording does not match the Xbox Cloud fact.');
   if (!['usWest', 'usEast', 'usOther'].every((k) => /05:00 UTC on Nov 19/.test(OY.ps[k]))) throw new Error('Build blocked: out-yet PS wording does not match the PS Store instant.');
   // out-yet.js may not carry factual wording of its own.
-  const jsText = outYetBuf.toString('utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, ''); // comments are not shown to visitors
-  const literals = jsText.match(/'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"/g) || [];
-  const offenders = literals.filter((x) => /\w+\s+\w+/.test(x) && /PlayStation|PS5|Xbox|Rockstar|UTC|\bET\b|Nov|midnight|unlock|out now/i.test(x));
-  if (offenders.length) throw new Error(`Build blocked: out-yet.js contains unsourced wording: ${offenders.join(', ')}`);
+  assertNoWording(outYetBuf, 'out-yet.js');
   const strings = { status: OY.status, cloud: OY.cloud, ps: OY.ps };
   for (const g of Object.values(strings)) delete g._note;
   const tableRows = ZONE_ROWS.map((r) => {
     const iso = new Date(r.utc).toISOString();
-    return `<tr data-tz="${esc(r.tz)}"><th scope="row">${esc(r.city)}</th><td data-label="Unlocks (local)">${esc(zoneLocal(r))}</td><td data-label="In UTC">${esc(fmtUtc(r.utc))}</td><td class="oy-cell" data-label="Out yet?" data-oy-cell="${esc(iso)}">${esc(OY.status.cellStatic)}</td></tr>`;
+    return `<tr data-tz="${esc(r.tz)}"><th scope="row">${esc(r.city)}</th><td data-label="Unlocks (local)">${esc(zoneLocal(r))}</td><td data-label="In UTC">${esc(fmtUtc(r.utc))}</td><td class="oy-cell${PHASE === 'all' ? ' oy-yes' : ''}" data-label="Out yet?" data-oy-cell="${esc(iso)}">${esc(PHASE === 'all' ? OY.status.cellOut : OY.status.cellStatic)}</td></tr>`;
   }).join('\n');
   const first = ZONE_ROWS[0];
   // Layout-shift guard: each live slot also holds every text it can show (filled with sample values), hidden and
@@ -424,14 +469,15 @@ ${sourcesSection(collectSrc(L.confirmed, [L.conflict]).concat(['rs_preload_nov10
   const fillT = (t) => String(t).replace(/\{(\w+)\}/g, (m, k) => (k in SAMPLE ? SAMPLE[k] : m));
   const slot = (tag, cls, attrs, shown, variants, id = '') => `<${tag}${id ? ` id="${id}"` : ''} class="${cls} oy-slot"><span ${attrs}>${esc(shown)}</span>${[shown, ...variants].map((v) => `<span class="oy-ghost" aria-hidden="true">${esc(fillT(v))}</span>`).join('')}</${tag}>`;
   const st = OY.status;
+  const all = PHASE === 'all';
   const psVariants = ['static', 'usWest', 'usEast', 'usOther', 'multi', 'single'].map((k) => (k === 'static' ? OY.ps.static : `${OY.ps[k]} ${OY.ps.tail}`));
   const body = `
 ${pageHeader('Launch day', 'Is GTA 6 out yet where you are?', 'Rockstar\'s rule: <strong>GTA VI unlocks at midnight local time on Thursday, November 19, 2026</strong>, on PS5 and Xbox Series X|S. This page checks your device\'s time zone live. Nothing is stored or sent anywhere.')}
-<section class="oy" aria-labelledby="oy-h" data-outyet data-target-local="2026-11-19T00:00:00" data-cloud-utc="${esc(CLOUD.utc)}" data-ps-us-utc="${esc(PS_US_UTC)}" data-strings="${esc(JSON.stringify(strings))}">
-  ${slot('h2', 'oy-title', 'data-oy-title', st.staticTitle, [st.titleBefore, st.titleBeforeCaveat, st.titleAfter, st.titleAfterCaveat], 'oy-h')}
-  ${slot('p', 'oy-timer', 'data-oy-timer', st.staticTimer, [st.timerBefore, st.timerAfter])}
-  ${slot('p', 'oy-msg', 'data-oy-msg role="status"', st.staticMsg, [st.msgBefore, st.msgAfter])}
-  ${slot('p', 'oy-world', 'data-oy-world', `First unlock: ${first.city} (${fmtUtc(first.utc)}).`, [st.worldNone, st.worldSome, st.worldAll])}
+<section class="oy${all ? ' is-out' : ''}" aria-labelledby="oy-h" data-outyet data-target-local="2026-11-19T00:00:00" data-cloud-utc="${esc(CLOUD.utc)}" data-ps-us-utc="${esc(PS_US_UTC)}" data-last-utc="${esc(LAST_ISO)}" data-strings="${esc(JSON.stringify(strings))}">
+  ${slot('h2', 'oy-title', 'data-oy-title', all ? st.staticTitleAll : st.staticTitle, [st.staticTitle, st.staticTitleAll, st.titleBefore, st.titleBeforeCaveat, st.titleAfter, st.titleAfterCaveat, st.titleAll], 'oy-h')}
+  ${slot('p', 'oy-timer', 'data-oy-timer', all ? st.staticTimerAll : st.staticTimer, [st.staticTimer, st.staticTimerAll, st.timerBefore, st.timerAfter])}
+  ${slot('p', 'oy-msg', 'data-oy-msg role="status"', all ? st.staticMsgAll : st.staticMsg, [st.staticMsg, st.staticMsgAll, st.msgBefore, st.msgAfter])}
+  ${slot('p', 'oy-world', 'data-oy-world', all ? st.worldAll.replace('{total}', String(ZONE_ROWS.length)) : `First unlock: ${first.city} (${fmtUtc(first.utc)}).`, [`First unlock: ${first.city} (${fmtUtc(first.utc)}).`, st.worldNone, st.worldSome, st.worldAll])}
   <p class="oy-src">${srcLinks(OY.status.src, 'out-yet rule')}</p>
 </section>
 <div class="oy-grid">
@@ -659,12 +705,12 @@ ${sourcesSection(collectSrc(S, facts.autoDownload, facts.platforms).concat(['rs_
 
 // FAQ --------------------------------------------------------------------------
 {
-  const items = facts.faq.map((f, i) => `<details class="faq-item"${i < 3 ? ' open' : ''}>
+  const items = FAQ_ITEMS.map((f, i) => `<details class="faq-item"${i < 3 ? ' open' : ''}>
   <summary><span>${esc(f.q)}</span> ${chip(f.status)}</summary>
   <div class="faq-a"><p>${esc(f.a)}</p><p>${srcLinks(f.src, `faq ${i}`)}</p></div>
 </details>`).join('\n');
   const body = `
-${pageHeader('Confirmed facts', 'GTA 6: everything confirmed so far', `${facts.faq.length} common questions answered only from official announcements, with a source on every answer. If Rockstar hasn't said it, we mark it <span class="chip chip-unknown">Not announced</span>.`)}
+${pageHeader('Confirmed facts', 'GTA 6: everything confirmed so far', `${FAQ_ITEMS.length} common questions answered only from official announcements, with a source on every answer. If Rockstar hasn't said it, we mark it <span class="chip chip-unknown">Not announced</span>.`)}
 <section class="faq" aria-label="Questions and answers">
 ${items}
 </section>
@@ -672,7 +718,7 @@ ${items}
   <h2 id="norumor-h">What we leave out on purpose</h2>
   <p>Leaked footage, unofficial playtime estimates, PC release rumors and "insider" claims. They change daily and often turn out wrong. When Rockstar confirms something, it goes here with a source.</p>
 </section>
-${sourcesSection(collectSrc(facts.faq), 'faq sources')}`;
+${sourcesSection(collectSrc(FAQ_ITEMS), 'faq sources')}`;
   pages.push({
     urlPath: '/faq/', file: 'faq/index.html',
     title: 'GTA 6: Everything Confirmed So Far (Sourced FAQ)',
@@ -819,3 +865,4 @@ console.log(`Built ${pages.length + 1} pages into dist/ (as of ${AS_OF}).`);
 console.log(`Sources cited: ${usedSources.size}. Unused sources: ${unused.length ? unused.join(', ') : 'none'}.`);
 console.log(`Base URL: ${SITE_URL}${SITE_URL === PLACEHOLDER_URL ? '  <-- PLACEHOLDER: set SITE_URL before production' : ''}`);
 console.log(`Indexing: ${INDEXABLE ? 'ON' : 'OFF (noindex + robots Disallow)'}`);
+console.log(`Launch phase for no-JS text: ${PHASE} (build clock ${new Date(NOW_MS).toISOString()}${process.env.BUILD_NOW ? ', from BUILD_NOW' : ''}).`);

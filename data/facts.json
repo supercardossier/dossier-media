@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-18",
+  "asOf": "2026-11-19",
   "launch": {
     "confirmed": [
       {
@@ -31,7 +31,7 @@
         "status": "confirmed"
       },
       {
-        "label": "Pre-load (already open)",
+        "label": "Pre-load (opened Nov 10)",
         "value": "PS5: from midnight local time, Nov 10. Xbox Series X|S: from 12:00 AM GMT, Nov 10 (global).",
         "src": ["rs_support_times", "rs_preload_nov10"],
         "status": "confirmed"
@@ -39,8 +39,8 @@
     ],
     "conflict": {
       "title": "Not settled yet: countries with more than one time zone",
-      "body": "Rockstar says the game unlocks at midnight local time in all regions. PlayStation's blog describes a \"rolling midnight launch by country\", running \"as respective countries hit midnight\". In single-time-zone countries both mean the same thing. In the US, Canada, Australia, Brazil and Mexico they could differ: if PlayStation unlocks a whole country at once, western time zones would get the game earlier than their own local midnight (for example, the US West Coast at 9:00 PM PT on Nov 18, if the US store follows Eastern Time). Digital Foundry asked Rockstar to clarify on Nov 10. On launch eve (Nov 18) we re-checked Rockstar Support (still marked last updated Nov 3), the PlayStation Blog post and Digital Foundry's article: none of them has published an answer. The table below uses Rockstar's rule. The countdown on your console's store page is the final word. One clue: the US PlayStation Store game page's data lists the release as 05:00 UTC on Nov 19 (midnight Eastern) for the whole US store, which would match \"by country\" for PS5 in the US. That is page metadata (read on Nov 16 and again on Nov 18, unchanged), not an announcement.",
-      "src": ["rs_support_times", "ps_blog_preload", "df_times", "ps_game_page"],
+      "body": "Rockstar says the game unlocks at midnight local time in all regions, and PlayStation's own US support page for the game says the same: it \"releases at midnight local time on November 19, 2026, on PlayStation®5 consoles\". But PlayStation's blog describes a \"rolling midnight launch by country\", running \"as respective countries hit midnight\". In single-time-zone countries both mean the same thing. In the US, Canada, Australia, Brazil and Mexico they could differ: if PlayStation unlocks a whole country at once, western time zones would get the game earlier than their own local midnight (for example, the US West Coast at 9:00 PM PT on Nov 18, if the US store follows Eastern Time). One clue: the US PlayStation Store game page's data lists the release as 05:00 UTC on Nov 19 (midnight Eastern) for the whole US store. That is page metadata (read on Nov 16 and Nov 18), not an announcement. Digital Foundry asked Rockstar to clarify on Nov 10. On launch day (Nov 19) Rockstar's times article was unchanged (still marked last updated Nov 3). Press reports disagree: Vice wrote on Nov 19 that the game unlocked in California at 9 PM PT on Nov 18, while Newsweek wrote on Nov 18 that US players get it at midnight local time, with the East Coast three hours ahead of the West. Neither Rockstar nor PlayStation has published a per-country time, so we don't state one. The table below uses Rockstar's rule. The countdown on your console's store page is the final word.",
+      "src": ["rs_support_times", "ps_support_gta", "ps_blog_preload", "df_times", "ps_game_page", "vice_us_out", "newsweek_us"],
       "status": "conflict",
       "psUsStoreUtc": "2026-11-19T05:00:00Z"
     },
@@ -68,7 +68,8 @@
       { "city": "Vancouver, Canada", "tz": "America/Vancouver", "label": "PCT (UTC−7)", "note": "B.C. stopped changing clocks on Nov 1, 2026, so Vancouver unlocks an hour before Los Angeles.", "src": ["bc_gov_pct"] },
       { "city": "Los Angeles / Seattle (PT)", "tz": "America/Los_Angeles" },
       { "city": "Anchorage, Alaska", "tz": "America/Anchorage" },
-      { "city": "Honolulu, Hawaii", "tz": "Pacific/Honolulu" }
+      { "city": "Honolulu, Hawaii", "tz": "Pacific/Honolulu" },
+      { "city": "Pago Pago, American Samoa / Niue", "tz": "Pacific/Pago_Pago" }
     ]
   },
   "editions": [
@@ -146,7 +147,8 @@
     { "label": "PS5 Pro extras", "value": "PSSR upscaling for clarity and ray-traced shadows (Pro only)", "src": ["rs_preload_now", "ps_blog_preload"], "status": "confirmed" },
     { "label": "Xbox One", "value": "Not installable: play by cloud streaming only, at Series S settings", "src": ["xbox_wire_cloud"], "status": "confirmed" },
     { "label": "Remote Play", "value": "Supported on PlayStation and Xbox", "src": ["rs_preload_now"], "status": "confirmed" },
-    { "label": "Day-one patch size", "value": "Not announced by Rockstar (no official patch size or patch notes as of Nov 18)", "src": ["rs_support_preload"], "status": "unknown" },
+    { "label": "PS5 system software update", "value": "PlayStation Support US said in a post on X on Nov 17 that a PS5 system software update \"is required before playing Grand Theft Auto VI\" (reported by Kotaku; checked Nov 19). Keep automatic system updates on.", "src": ["ps_support_x_update", "kotaku_ps5_update"], "status": "reported" },
+    { "label": "Day-one patch size", "value": "Not announced by Rockstar (no official patch size or patch notes as of Nov 19)", "src": ["rs_support_preload"], "status": "unknown" },
     { "label": "Final installed size after updates", "value": "Not announced (Rockstar only gives the pre-load figure)", "src": ["rs_support_preload"], "status": "unknown" },
     { "label": "PC system requirements", "value": "Not announced (no PC version announced)", "src": ["rs_preorder"], "status": "unknown" }
   ],
@@ -156,11 +158,13 @@
   ],
   "faq": [
     { "q": "When does GTA 6 come out?", "a": "Thursday, November 19, 2026, on PlayStation 5 and Xbox Series X|S.", "src": ["rs_nov19", "rs_preorder"], "status": "confirmed" },
+    { "q": "Is GTA 6 out now?", "a": "It rolls out by time zone. By Rockstar's rule it unlocks at midnight local time on November 19 wherever you are. PlayStation says its rollout began in New Zealand (11:00 UTC on Nov 18); the last inhabited time zones (UTC−11, such as American Samoa) reach midnight at 11:00 UTC on Nov 19, our conversion. After that it is out in every inhabited time zone on PS5 and Xbox Series X|S. Our \"Out yet?\" page checks your own time zone live.", "src": ["rs_support_times", "ps_blog_preload"], "status": "confirmed", "showFrom": "launch" },
     { "q": "What time does GTA 6 unlock?", "a": "Midnight local time on November 19 in all regions, per Rockstar. PlayStation says its rolling launch begins at 12:00 AM NZDT in New Zealand (11:00 UTC on Nov 18, our conversion) and goes \"by country\", which may matter in countries with several time zones; see our launch-time page.", "src": ["rs_support_times", "ps_blog_preload"], "status": "confirmed" },
     { "q": "How much does GTA 6 cost?", "a": "$79.99 for the Standard Edition and $99.99 for the Ultimate Edition in the US. Xbox sells the Ultimate upgrade for $20.00.", "src": ["ps_game_page", "xbox_game_page", "xbox_upgrade"], "status": "confirmed" },
     { "q": "Is GTA 6 on PS4, Xbox One or PC?", "a": "Not on PS4. Xbox One can only stream it through Xbox Cloud Gaming. A PC version has not been announced.", "src": ["ps_game_page", "xbox_wire_cloud", "rs_preorder"], "status": "confirmed" },
     { "q": "Is there a disc version?", "a": "No disc has been announced. The physical version is a download code in a box, available from November 12.", "src": ["rs_store_game", "rs_preorder"], "status": "confirmed" },
     { "q": "How big is the download?", "a": "The pre-load needs up to 212 GB of free space, depending on your console.", "src": ["rs_preload_nov10", "rs_support_preload"], "status": "confirmed" },
+    { "q": "Do I need a PS5 system update to play?", "a": "PlayStation Support US said in a post on X on Nov 17 that a PS5 system software update \"is required before playing Grand Theft Auto VI\" and should be downloaded before midnight on November 19 (reported by Kotaku; checked Nov 19). PlayStation's GTA VI support page also lists \"Your system software is up to date\" as a download check. Update in Settings > System > System Software > System Software Update and Settings, where you can also turn on automatic updates.", "src": ["ps_support_x_update", "kotaku_ps5_update", "ps_support_gta"], "status": "reported" },
     { "q": "Is GTA 6 single-player or online?", "a": "Rockstar calls Grand Theft Auto VI \"a single player experience\". No online mode for GTA VI has been announced.", "src": ["rs_preorder", "ps_game_page"], "status": "confirmed" },
     { "q": "Where is GTA 6 set?", "a": "The state of Leonida, including modern-day Vice City.", "src": ["rs_nov19", "rs_trailer1"], "status": "confirmed" },
     { "q": "Who are the main characters?", "a": "Jason and Lucia. Xbox's store media names them Jason Duval and Lucia Caminos.", "src": ["rs_vi_site", "xbox_game_page"], "status": "confirmed" },
@@ -169,11 +173,29 @@
     { "q": "What do you get for pre-ordering?", "a": "The Vintage Vice City Pack ('55 Vapid Stanier Sedan and garage, outfits and hairstyles, an exclusive weapon pattern) for purchases before Nov 20, plus a free month of GTA+ with digital pre-orders.", "src": ["rs_preorder", "rs_store_game"], "status": "confirmed" },
     { "q": "How many times was GTA 6 delayed?", "a": "Twice. Trailer 1 (Dec 5, 2023) said 2025. On May 2, 2025 Rockstar moved it to May 26, 2026. On Nov 6, 2025 it moved again to November 19, 2026.", "src": ["rs_trailer1", "rs_may26", "rs_nov19"], "status": "confirmed" },
     { "q": "Is there an official soundtrack album?", "a": "Yes. Grand Theft Auto VI: The Album (34 tracks, with Atlantic Records) launches November 19.", "src": ["rs_album"], "status": "confirmed" },
-    { "q": "Will there be an official map?", "a": "Rockstar says a printable cover-art poster and map of Leonida will be a free download on the official site on November 19, and a physical double-sided poster will sell for $0.99 at the Rockstar Store shortly after launch.", "src": ["rs_preload_nov10"], "status": "confirmed" },
+    { "q": "Will there be an official map?", "a": "Rockstar says a printable cover-art poster and map of Leonida will be a free download on the official site on November 19, and a physical double-sided poster will sell for $0.99 at the Rockstar Store shortly after launch. When we checked Rockstar's GTA VI media page at 05:42 UTC on Nov 19, the map was not posted yet.", "src": ["rs_preload_nov10", "rs_vi_media"], "status": "confirmed" },
     { "q": "Can I play on Xbox One?", "a": "Only through Xbox Cloud Gaming, from 1:00 AM ET on November 19, using Xbox Series S graphics settings. You still need to buy the game.", "src": ["xbox_wire_cloud"], "status": "confirmed" },
     { "q": "How long is the story?", "a": "Not announced by Rockstar. We don't repeat unofficial hour counts.", "src": ["rs_vi_site"], "status": "unknown" },
     { "q": "When is the PC version?", "a": "Not announced. Any date you see is a rumor until Rockstar says so.", "src": ["rs_preorder"], "status": "unknown" }
   ],
+  "launchState": {
+    "_note": "Every sentence the countdown sign (home hero and /launch-time/) can show lives here with its sources. countdown.js only picks a string and fills {placeholders}. The build refuses countdown.js if it contains its own factual wording. UTC times for the first and last zones are our conversions of Rockstar's rule.",
+    "src": ["rs_support_times", "ps_blog_preload"],
+    "topBefore": "Open at midnight",
+    "topAfter": "Open now",
+    "outBig": "Out now",
+    "outHere": "in your time zone",
+    "outAll": "everywhere",
+    "rollBig": "Rolling out",
+    "rollSmall": "at midnight local time, Nov 19",
+    "noteStatic": "Counting down to 12:00 AM on Thursday, Nov 19, 2026 in your own time zone, which is when Rockstar says the game unlocks.",
+    "noteRolling": "By Rockstar's rule GTA VI unlocks at midnight local time on Nov 19 in each time zone. PlayStation says the rollout began in New Zealand (11:00 UTC on Nov 18); the last inhabited time zones (UTC−11) reach midnight at 11:00 UTC on Nov 19.",
+    "noteAllStatic": "By Rockstar's rule GTA VI has been out in every inhabited time zone on PS5 and Xbox Series X|S since 11:00 UTC on Nov 19, when midnight reached the last one (UTC−11).",
+    "noteBefore": "Counting down to 12:00 AM on Thu, Nov 19, 2026 in your time zone{zone}, which is {utc}. Rockstar says the game unlocks at midnight local time.",
+    "noteHere": "It is past midnight on Nov 19 in your time zone{zone}, so by Rockstar's rule GTA VI is out for you on PS5 and Xbox Series X|S. The last time zones unlock at {last} your time.",
+    "noteAll": "Midnight on Nov 19 has passed in every inhabited time zone, so by Rockstar's rule GTA VI is out everywhere on PS5 and Xbox Series X|S (since {last} your time).",
+    "h1All": "GTA 6 is out now on PS5 and Xbox Series X|S"
+  },
   "outYet": {
     "_note": "Every sentence the /out-yet/ page shows lives here with its sources. out-yet.js only picks a string and fills {placeholders} with times computed on the visitor's device. The build refuses out-yet.js if it contains its own factual wording.",
     "status": {
@@ -194,7 +216,11 @@
       "msgAfter": "It is past midnight on Nov 19 where you are{zone}, so by Rockstar's midnight-local rule GTA VI is out on PS5 and Xbox Series X|S. If your console still shows a countdown, that countdown is the final word.",
       "worldNone": "Not out anywhere in our table yet. New Zealand is first.",
       "worldSome": "Out in {n} of the {total} places in our table so far.",
-      "worldAll": "Out in all {total} places in our table.",
+      "worldAll": "Out everywhere: midnight has passed in all {total} places in our table, down to the last inhabited time zone (UTC−11).",
+      "titleAll": "Yes, it's out everywhere",
+      "staticTitleAll": "Yes, it's out everywhere",
+      "staticTimerAll": "Unlocked in every inhabited time zone",
+      "staticMsgAll": "By Rockstar's midnight-local rule, midnight on Nov 19 has passed in every inhabited time zone (the last, UTC−11, at 11:00 UTC on Nov 19, our conversion), so GTA VI is out on PS5 and Xbox Series X|S everywhere. If your console still shows a countdown, that countdown is the final word.",
       "cellOut": "Out now",
       "cellNotYet": "Not yet (in {left})",
       "cellStatic": "From the time shown"
@@ -211,12 +237,15 @@
       "src": [
         "ps_blog_preload",
         "ps_game_page",
-        "rs_support_times"
+        "rs_support_times",
+        "ps_support_gta",
+        "vice_us_out",
+        "newsweek_us"
       ],
-      "static": "PlayStation describes a \"rolling midnight launch by country\". In countries with several time zones (the US, Canada, Australia, Brazil, Mexico) PS5 might unlock a whole country at once, so it could arrive at a different moment than your local midnight. That is not confirmed. Your console's own store countdown is the final word.",
-      "usWest": "You are in a US time zone west of Eastern. Rockstar's rule gives you midnight local time on both consoles. PlayStation describes a launch \"by country\": if your PlayStation account is on the US store and that store unlocks the whole country at once, as its page data (05:00 UTC on Nov 19) hints, PS5 could unlock at {psus} your time, before your own midnight. That is not confirmed.",
+      "static": "PlayStation's US support page says \"midnight local time\", but its blog describes a \"rolling midnight launch by country\". In countries with several time zones (the US, Canada, Australia, Brazil, Mexico) PS5 might unlock a whole country at once, so it could arrive at a different moment than your local midnight. That is not confirmed. Your console's own store countdown is the final word.",
+      "usWest": "You are in a US time zone west of Eastern. Rockstar's rule, and PlayStation's US support page, give you midnight local time. PlayStation's blog describes a launch \"by country\": if your PlayStation account is on the US store and that store unlocks the whole country at once, as its page data (05:00 UTC on Nov 19) hints, PS5 would unlock at {psus} your time, before your own midnight. Press reports disagree on which happened, so it is not confirmed.",
       "usEast": "You are on US Eastern time. If your PlayStation account is on the US store and that store unlocks the whole country at once, its page data (05:00 UTC on Nov 19) points to midnight Eastern, which is your own midnight too.",
-      "usOther": "Your time zone is a US time zone or territory outside the mainland zones. PlayStation describes a launch \"by country\": if your PlayStation account is on the US store and that store unlocks the whole country at once, as its page data (05:00 UTC on Nov 19) hints, PS5 may arrive at a different moment than your own midnight ({psus} your time). That is not confirmed.",
+      "usOther": "Your time zone is a US time zone or territory outside the mainland zones. PlayStation describes a launch \"by country\": if your PlayStation account is on the US store and that store unlocks the whole country at once, as its page data (05:00 UTC on Nov 19) hints, PS5 may arrive at a different moment than your own midnight ({psus} your time). Press reports disagree, so it is not confirmed.",
       "multi": "{country} has several time zones. PlayStation's \"by country\" wording could mean PS5 unlocks there at a different moment than your local midnight. No per-country time has been published, so we show Rockstar's midnight-local rule.",
       "single": "If your country has a single time zone, PlayStation's \"by country\" wording and Rockstar's \"midnight local time\" mean the same moment for you.",
       "tail": "Your console's own store countdown is the final word."
