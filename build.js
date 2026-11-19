@@ -763,6 +763,8 @@ for (const f of ['favicon.svg', 'og.png', '66a8619d4867c953e5cea981e7b50c5a.txt'
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, 'assets', f));
   else console.warn(`WARNING: src/assets/${f} missing`);
 }
+// IndexNow: the key file must sit at the site root to cover every URL.
+fs.copyFileSync(path.join(ROOT, 'src/assets/66a8619d4867c953e5cea981e7b50c5a.txt'), path.join(DIST, '66a8619d4867c953e5cea981e7b50c5a.txt'));
 for (const f of ['skyline.svg', 'grain.svg']) fs.copyFileSync(path.join(ROOT, 'src/assets', f), path.join(DIST, 'assets', f));
 fs.mkdirSync(path.join(DIST, 'assets/fonts'), { recursive: true });
 for (const f of fs.readdirSync(path.join(ROOT, 'src/assets/fonts'))) {
