@@ -1,0 +1,112 @@
+{
+  "_note": "GTA VI money-making methods (story mode), Nov 21, 2026. Read Nov 21 ~05:15-05:40 UTC via WebSearch/WebFetch. Rockstar has published no payout tables, so payouts and unlock points come from named guide sites and are compared side by side. Status per fact: 'agree' = at least two named sources give the same figure or chapter; 'disagree' = named sources give different figures (all shown); 'single' = only one named source states it; 'unknown' = no source states it yet; 'official' = Rockstar itself (Support article or a Rockstar developer quoted by press). Our own wording throughout; no guide prose or lists copied (no per-location lists). 'from' = earliest story stage the method is open (1-4 = chapter, 5 = story finished), or null when no source states it; it drives the page's stage filter. Never add leaked, datamined or rumored figures.",
+  "asOf": "2026-11-24",
+  "stages": [
+    { "n": 1, "label": "Chapter 1" },
+    { "n": 2, "label": "Chapter 2" },
+    { "n": 3, "label": "Chapter 3" },
+    { "n": 4, "label": "Chapter 4 or later" },
+    { "n": 5, "label": "Story finished" }
+  ],
+  "official": [
+    { "id": "matters", "text": "Rockstar North co-studio head Rob Nelson told IGN that money matters more in this story than in earlier GTA games, and that in parts of the game you need to make money to move the missions forward. He named boosting and selling cars and robbing places as ways to earn it.", "status": "reported", "src": ["gr_money_matters"] },
+    { "id": "offmission", "text": "In pre-launch coverage Nelson is also quoted calling making money off-mission \"an important part of the game\", and saying you learn robbery spots in play and from other characters.", "status": "reported", "src": ["tt_economy"] },
+    { "id": "buckme", "text": "Rockstar Support: the BuckMe account has a limit that rises as the main story progresses. Payments that cannot land because the Checking account is full are processed after the next story upgrade.", "status": "confirmed", "src": ["rs_support_buckme"] },
+    { "id": "patch1", "text": "Rockstar's first launch update (Nov 23, PS5 and Xbox Series X|S) fixed partners not handing over bags for you to sell to fences, and the game not autosaving correctly. If a robbery bag would not reach a fence before, update the game and try again.", "status": "confirmed", "src": ["rs_support_launch_updates"] }
+  ],
+  "methods": [
+    {
+      "id": "stores", "name": "Robbing small stores", "from": 1,
+      "opens": { "text": "From the start (Chapter 1).", "status": "agree", "src": ["ppx_money", "alcast_money"] },
+      "pay": { "text": "Small. GTABase puts local stores at a couple of thousand dollars at most; AlcastHQ also calls stick-ups small money.", "status": "agree", "src": ["gtabase_money", "alcast_money"] }
+    },
+    {
+      "id": "gangops", "name": "Raiding gang operations", "from": 1,
+      "opens": { "text": "From the start; marked on the map with a yellow icon. 39 locations.", "status": "agree", "src": ["ppx_money", "alcast_robberies", "ig_money", "ign_100_guide"] },
+      "pay": { "text": "IGN: close to $2,000 for one Chapter 1 operation (the fishing shacks). No other guide gives a figure yet. The loot is cash from a safe plus narcotics you sell to a dealer (Tyrone, Dunk or Donnie, per AlcastHQ).", "status": "single", "src": ["ign_money_early", "ig_money", "alcast_money"] }
+    },
+    {
+      "id": "races", "name": "Street races", "from": 1,
+      "opens": { "text": "40 race locations; PowerPyx lists races under Chapter 1.", "status": "agree", "src": ["ppx_money", "ig_money"] },
+      "pay": { "text": "No prize figure published yet. Insider Gaming notes an entry fee and a vehicle rental fee.", "status": "unknown", "src": ["ig_money"] }
+    },
+    {
+      "id": "moses", "name": "Selling stolen cars to Moses", "from": 2,
+      "opens": { "text": "Early in Chapter 2, after the story mission that introduces Moses. He only takes cars without a tracker.", "status": "agree", "src": ["ppx_money", "beebom_money", "ig_money", "pcg_money"] },
+      "pay": { "text": "PowerPyx and Insider Gaming: about $1,000 or more per car. Beebom: regular cars at fences, about $1,000. PC Gamer: one to a few thousand. VGC: $1,000 to $5,000 on average. AlcastHQ: often over $10,000.", "status": "disagree", "src": ["ppx_money", "beebom_money", "ig_money", "pcg_money", "vgc_money", "alcast_money"] },
+      "notes": [ { "text": "There is a wait between sales: PowerPyx puts it at about 2 minutes; VGC says sleeping at a safehouse ends it.", "status": "agree", "src": ["ppx_money", "vgc_money"] } ]
+    },
+    {
+      "id": "hunting", "name": "Hunting for Bret (Jason)", "from": 2,
+      "opens": { "text": "Early in the story, when Jason meets Bret: Chapter 2 per PC Gamer.", "status": "agree", "src": ["pcg_money", "beebom_money"] },
+      "pay": { "text": "Hundreds to thousands per animal. PC Gamer's writer was paid $2,500 for one boar.", "status": "single", "src": ["pcg_money"] }
+    },
+    {
+      "id": "paynspray", "name": "Selling tracked cars at Pay 'n' Spray", "from": 3,
+      "opens": { "text": "Early in Chapter 3, per PowerPyx. For cars with a standard tracker.", "status": "single", "src": ["ppx_money"] },
+      "pay": { "text": "Around $4,000 for a good car.", "status": "agree", "src": ["ppx_money", "ig_money"] }
+    },
+    {
+      "id": "jewelry", "name": "Jewelry store robberies", "from": 3,
+      "opens": { "text": "Chapter 3, after the mission \"Yasmani's Jewelry Jobs\". Yasmani buys the jewelry.", "status": "agree", "src": ["ppx_money", "alcast_robberies", "ig_money"] },
+      "pay": { "text": "PowerPyx, AlcastHQ and Insider Gaming: $10,000 to $25,000 per robbery. Beebom: $10,000 to $20,000.", "status": "disagree", "src": ["ppx_money", "alcast_robberies", "ig_money", "beebom_money"] }
+    },
+    {
+      "id": "backdoor", "name": "Robbing stores through the back door", "from": 3,
+      "opens": { "text": "Chapter 3, once you have the snap gun.", "status": "single", "src": ["pcg_money"] },
+      "pay": { "text": "$6,000 to $15,000.", "status": "single", "src": ["pcg_money"] }
+    },
+    {
+      "id": "randy", "name": "Supercars for Randy's wish list", "from": 3,
+      "opens": { "text": "Partway through Chapter 3; he takes cars with an advanced tracker.", "status": "agree", "src": ["ppx_money", "ig_money", "beebom_money", "pcg_money", "ign_randy"] },
+      "pay": { "text": "$30,000 or more for a car in perfect condition.", "status": "agree", "src": ["ppx_money", "ig_money"] },
+      "notes": [ { "text": "How many cars: PowerPyx, Insider Gaming, Beebom and PC Gamer say his wish list has 18. IGN's car-location guide (Nov 22) shows 20, counting the first one, the Zorrusso, and states no total.", "status": "disagree", "src": ["ppx_money", "ig_money", "beebom_money", "pcg_money", "ign_randy"] } ]
+    },
+    {
+      "id": "smallbanks", "name": "Small banks and Payday Loans", "from": 3,
+      "opens": { "text": "Chapter 3, after the mission \"Credit Check\". 14 small banks and 7 Payday Loans.", "status": "agree", "src": ["ppx_banks", "alcast_robberies", "ign_100_guide"] },
+      "pay": { "text": "PowerPyx lists $5,000 to $45,000 per small bank.", "status": "single", "src": ["ppx_banks"] },
+      "notes": [ { "text": "PowerPyx and AlcastHQ both say bank cash is paid in marked bills that must be fenced.", "status": "agree", "src": ["ppx_banks", "alcast_robberies"] } ]
+    },
+    {
+      "id": "pete", "name": "Drop runs for Pilot Pete", "from": 4,
+      "opens": { "text": "You meet him in Chapter 3; regular work starts in Chapter 4.", "status": "single", "src": ["pcg_money"] },
+      "pay": { "text": "$10,000 to $20,000 per run.", "status": "single", "src": ["pcg_money"] }
+    },
+    {
+      "id": "vaults", "name": "Large bank vaults", "from": 4,
+      "opens": { "text": "Near the end of Chapter 4, after the optional mission \"That's Where The Money Is...\". 8 vaults.", "status": "agree", "src": ["ppx_banks", "alcast_robberies", "ign_100_guide"] },
+      "pay": { "text": "PowerPyx and AlcastHQ: up to $205,000 per vault. Insider Gaming: up to $200,000.", "status": "disagree", "src": ["ppx_banks", "alcast_robberies", "ig_money"] },
+      "notes": [ { "text": "PowerPyx, AlcastHQ and Insider Gaming say a vault robbery gives you a 4-star wanted level straight away; Beebom says it can.", "status": "agree", "src": ["ppx_banks", "alcast_robberies", "ig_money", "beebom_money"] } ]
+    },
+    {
+      "id": "criminals", "name": "Robbing other criminals", "from": null,
+      "opens": { "text": "No source says when this opens.", "status": "unknown", "src": ["pcg_money"] },
+      "pay": { "text": "$1,000 to $15,000, more than most robbery spots.", "status": "single", "src": ["pcg_money"] }
+    },
+    {
+      "id": "derby", "name": "Demolition derby at Ambrosia Raceway", "from": null,
+      "opens": { "text": "No source says when this opens.", "status": "unknown", "src": ["pcg_money", "beebom_money"] },
+      "pay": { "text": "$3,800 to $6,300 per win; the figure-eight track pays about double the oval.", "status": "single", "src": ["pcg_money"] }
+    },
+    {
+      "id": "cheat", "name": "Money cheat", "from": 5,
+      "opens": { "text": "Only after you finish the story.", "status": "agree", "src": ["ig_money", "gtabase_money"] },
+      "pay": { "text": "$250,000 each time.", "status": "agree", "src": ["ig_money", "gtabase_money", "alcast_money"] },
+      "notes": [ { "text": "Insider Gaming says trophy and achievement progress stops for the rest of that session.", "status": "single", "src": ["ig_money"] } ]
+    }
+  ],
+  "tips": [
+    { "id": "ch1", "text": "Don't farm cash in Chapter 1: PowerPyx says you lose it when the chapter ends.", "status": "single", "src": ["ppx_money"] },
+    { "id": "ch3pay", "text": "The story itself pays $120,000 at the end of Chapter 3, per PowerPyx.", "status": "single", "src": ["ppx_money"] },
+    { "id": "tip", "text": "Yasmani sells a security van tip for $10,000 once you have robbed two Payday Loans for him.", "status": "agree", "src": ["ppx_banks", "alcast_robberies"] },
+    { "id": "carry", "text": "You can carry up to $20,000 in cash at a time (AlcastHQ; GTABase says $20,000 per character).", "status": "agree", "src": ["alcast_money", "gtabase_money"] },
+    { "id": "bigbuys", "text": "PowerPyx: anything over $1,000 is paid through BuckMe; pocket cash covers items up to $999. Money moved into Family Savings can never be taken out.", "status": "single", "src": ["ppx_buckme"] }
+  ],
+  "notes": {
+    "coverage": { "text": "Coverage on Nov 23: 15 ways to make money in story mode, each with when it opens and what it pays, compared across eight named guide sites, plus what Rockstar has said. Not yet: per-location lists and any official payout table (Rockstar has not published one).", "src": ["rs_support_buckme", "ppx_money", "pcg_money"] },
+    "method": { "text": "Rockstar has not published payouts, so every figure here is what a named guide site reported in the first days after launch, with its date. Where guides give different numbers we show all of them. Payouts can also change with game updates.", "src": ["ppx_money", "pcg_money", "beebom_money", "ig_money", "alcast_money", "gtabase_money", "ign_money_early", "vgc_money"] },
+    "independence": { "text": "Several guides publish the same figures (for example $10,000 to $25,000 for jewelry stores). Matching numbers can mean they were checked separately, or that one guide copied another, so \"Guides agree\" means at least two named sources state it, not that Rockstar confirmed it.", "src": ["ppx_money", "ig_money", "alcast_robberies"] },
+    "tracker": { "text": "Fencing money also counts toward 100% completion (for example $100,000 of jewelry and $200,000 of vehicles fenced), so the money you make here moves your completion too.", "src": ["ign_100_guide", "alcast_robberies"] }
+  }
+}

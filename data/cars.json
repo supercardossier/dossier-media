@@ -34,8 +34,8 @@
           "role": "Ultimate Edition: \"Grotti's signature mid '90s sports car\" with a retro-futuristic livery",
           "real": null,
           "match": "none",
-          "why": "No outlet has tied this exact model to a real car. (The Drive matched the older Grotti Cheetah Classic to the Ferrari Testarossa; see Trailer 1 below.) Separately, West Coast Customs built a real-life Grotti Cheetah, described by Hypebeast as a mid-engined '90s supercar with a 4.9-liter naturally aspirated V8.",
-          "src": ["ps_game_page", "hypebeast_wcc"]
+          "why": "No car outlet had tied this exact model to a real car by Nov 17. (The Drive matched the older Grotti Cheetah Classic to the Ferrari Testarossa; see Trailer 1 below.) Since launch, the guide sites GTABase and GamerBlurb say the '95 is based on the Testarossa too (see the finder above). Separately, West Coast Customs built a real-life Grotti Cheetah, described by Hypebeast as a mid-engined '90s supercar with a 4.9-liter naturally aspirated V8.",
+          "src": ["ps_game_page", "hypebeast_wcc", "gtabase_vehicles", "gamerblurb_cars"]
         },
         {
           "game": "'67 Vapid Dominator Buggy",

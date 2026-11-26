@@ -1,0 +1,71 @@
+{
+  "_note": "GTA VI game updates (title updates), newest first. Read Nov 24, 2026 ~05:15-05:30 UTC: Rockstar Support's 'Grand Theft Auto VI Launch Updates' page in Chrome on the Mac (read-only), and press pages via WebSearch/WebFetch (no billed tools). Rockstar publishes the fix list only; version numbers and download sizes come from named outlets, which mostly credit community trackers (PlayStation Game Size, Tex2) that read the console stores. Status per field: 'confirmed' = Rockstar or PlayStation/Xbox itself; 'agree' = two or more publishers state the same, each with its own 'claims' note; 'disagree' = publishers differ (all figures shown); 'single' = one publisher only. Never add leaked or datamined patch contents. 'versions' keys must match 'platforms'. Fix 'tool' links point at our own pages only.",
+  "asOf": "2026-11-24",
+  "platforms": [
+    { "id": "ps5", "label": "PS5 / PS5 Pro" },
+    { "id": "xbox", "label": "Xbox Series X|S" }
+  ],
+  "updates": [
+    {
+      "id": "u3",
+      "date": "2026-11-23",
+      "name": "First launch update",
+      "versions": {
+        "ps5": { "v": "01.002.002", "status": "agree", "src": ["vice_patch1", "playerone_patch1", "beebom_patches"], "claims": { "vice_patch1": "PS5 version 01.002.002", "playerone_patch1": "PS5 version 01.002.002", "beebom_patches": "Version 01.002.002, November 23, 2026" } },
+        "xbox": { "v": "1.0.2.2", "status": "agree", "src": ["vice_patch1", "playerone_patch1"], "claims": { "vice_patch1": "Xbox Series X|S version 1.0.2.2", "playerone_patch1": "Xbox Series X|S version 1.0.2.2" } }
+      },
+      "size": { "text": "About 604 MB on PS5 and 1.6 GB on Xbox Series X|S. Rockstar lists no download sizes.", "status": "agree", "src": ["beebom_patches", "playerone_patch1"], "claims": { "beebom_patches": "603.8 MB (PS5), 1.6 GB (Xbox Series X|S)", "playerone_patch1": "about 604 MB (PS5), 1.6 GB (Xbox), per Game Rant" } },
+      "notes": {
+        "status": "confirmed",
+        "src": ["rs_support_launch_updates"],
+        "fixes": [
+          { "id": "crash", "area": "Stability", "text": "Several issues that made the game crash." },
+          { "id": "weather", "area": "World", "text": "The weather not changing for long stretches." },
+          { "id": "autosave", "area": "Saving", "text": "The game not autosaving correctly." },
+          { "id": "calls", "area": "Story", "text": "Phone calls not triggering, including calls that move the story on or unlock missions." },
+          { "id": "wanted", "area": "Police", "text": "Being unable to lose your Wanted Level." },
+          { "id": "deadlift", "area": "Activities", "text": "Being unable to use the deadlift bar at the Gym." },
+          { "id": "bags", "area": "Robberies", "text": "Partners not handing over bags, so you could not sell them to fences.", "tool": { "href": "/money/", "label": "money guide: fences and robberies" } }
+        ]
+      },
+      "extra": [
+        { "text": "Shacknews and PC Guide reprint the same seven fixes and Vice summarizes them; all three link to Rockstar Support.", "status": "agree", "src": ["shacknews_patch1", "vice_patch1", "pcguide_patch1"], "claims": { "shacknews_patch1": "seven fixes, links Rockstar Support's launch updates page", "vice_patch1": "phone call, autosave and crash fixes, links Rockstar's launch update notes", "pcguide_patch1": "seven fixes, credited to Rockstar Games Support" } },
+        { "text": "Rockstar has not said when the next update will arrive or which missions the phone-call bug affected.", "status": "single", "src": ["playerone_patch1"] }
+      ]
+    },
+    {
+      "id": "u2",
+      "date": "2026-11-16",
+      "name": "Second pre-launch update",
+      "versions": {
+        "ps5": { "v": "01.002.001", "status": "agree", "src": ["redbull_patches", "beebom_patches", "ofzen_patches"], "claims": { "redbull_patches": "Version 01.002.001, November 16, 2026", "beebom_patches": "Version 01.002.001, November 16, 2026", "ofzen_patches": "01.002.001, November 16, 2026" } },
+        "xbox": { "v": "1.0.2.1", "status": "single", "src": ["timesaver_patches"] }
+      },
+      "size": { "text": "About 602 MB on PS5 and about 1.6 GB on Xbox Series X|S.", "status": "agree", "src": ["beebom_patches", "redbull_patches", "ofzen_patches"], "claims": { "beebom_patches": "602.5 MB (PS5), 1.59 GB (Xbox Series X|S)", "redbull_patches": "approx. 602 MB (PS5), approx. 1.6 GB (Xbox)", "ofzen_patches": "602.5 MB (PS5), 1.59 GB (Xbox Series X|S)" } },
+      "notes": { "status": "none", "text": "Rockstar published no patch notes for this update, so what it changed is not known.", "src": ["redbull_patches", "beebom_patches", "ofzen_patches"], "claims": { "redbull_patches": "Rockstar has not published any patch notes", "beebom_patches": "Rockstar hasn't released any official patch notes", "ofzen_patches": "no official patch notes for either update" } },
+      "extra": [
+        { "text": "On PS5 it reached players in waves over about a day rather than all at once.", "status": "agree", "src": ["redbull_patches", "timesaver_patches"], "claims": { "redbull_patches": "phased rollout", "timesaver_patches": "PS5 in three waves, 10:00 UTC Nov 16 to 10:00 UTC Nov 17" } }
+      ]
+    },
+    {
+      "id": "u1",
+      "date": "2026-11-13",
+      "name": "First pre-launch update",
+      "versions": {
+        "ps5": { "v": "01.002.000", "status": "agree", "src": ["mp1st_1002", "redbull_patches", "beebom_patches"], "claims": { "mp1st_1002": "the game moves to 1.002.000 on PS5", "redbull_patches": "Version 01.002.000, November 13, 2026", "beebom_patches": "Version 01.002.000, November 13, 2026" } },
+        "xbox": null
+      },
+      "size": { "text": "About 1.07 GB on PS5. For Xbox Series X|S, Red Bull and Timesaver say about 2.18 GB, while Beebom and Of Zen and Computing say about 1.07 GB.", "status": "disagree", "src": ["redbull_patches", "timesaver_patches", "beebom_patches", "ofzen_patches"] },
+      "notes": { "status": "none", "text": "Rockstar published no patch notes for this update, so what it changed is not known.", "src": ["mp1st_1002", "redbull_patches"], "claims": { "mp1st_1002": "no patch notes have been published", "redbull_patches": "Rockstar has yet to publish patch notes" } },
+      "extra": [
+        { "text": "About half of PS5 players got it first and the rest about 11 hours later.", "status": "agree", "src": ["mp1st_1002", "redbull_patches"], "claims": { "mp1st_1002": "available to about 50% of users first, the rest after roughly 11 hours", "redbull_patches": "two waves, the second about eleven hours later" } }
+      ]
+    }
+  ],
+  "howto": { "text": "PlayStation's steps to check for a game update on PS5: highlight the game, press the Options button and select Check for Update.", "status": "confirmed", "src": ["ps_support_check_update"] },
+  "system": { "text": "Not a game update, but needed too: PlayStation Support US said on Nov 17 that a PS5 system software update is required before playing Grand Theft Auto VI.", "status": "reported", "src": ["ps_support_x_update", "kotaku_ps5_update"] },
+  "notes": {
+    "coverage": { "text": "Coverage on Nov 24: 3 game updates since Nov 13, two before launch and one after. Rockstar published patch notes only for the Nov 23 update.", "src": ["rs_support_launch_updates", "beebom_patches", "redbull_patches"] },
+    "independence": { "text": "Version numbers and sizes come from outlets that mostly credit the same community trackers reading the PlayStation and Xbox stores (PlayStation Game Size, Tex2), so \"Guides agree\" means two named publishers state it, not that Rockstar confirmed it. Sizes are download sizes and can differ a little by region.", "src": ["mp1st_1002", "playerone_patch1", "timesaver_patches"] }
+  }
+}

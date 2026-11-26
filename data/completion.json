@@ -1,0 +1,70 @@
+{
+  "_note": "GTA VI 100% completion categories. Targets and weights come from IGN's Official GTA VI Guide (the guide Rockstar named in its Nov 19 launch post), '100 Percent Guide' page, updated Nov 19, 2026 11:34 AM EST, read Nov 20, 2026 ~05:30 UTC. Only categories, targets and weights are stated here (re-read on IGN in Chrome Nov 20 ~06:40 UTC; 'conflict' marks rows where GTAbase's checklist gives a different target); no item lists yet. Never add leaked, datamined or rumored entries. 'weightStated: false' marks a weight the source table leaves blank (shown as inferred). 'guide' is an optional IGN Official Guide page for that category (path under https://www.ign.com/wikis/gta-6/), only for pages seen in the guide's own table of contents.",
+  "asOf": "2026-11-24",
+  "src": ["ign_100_guide"],
+  "storageKey": "gta6tools.completion.v1",
+  "groups": [
+    {
+      "id": "story",
+      "title": "Story and tasks",
+      "items": [
+        { "id": "story", "name": "Story Completion", "target": 100, "unit": "percent", "weight": 50 },
+        { "id": "optional", "name": "Optional Missions", "target": 100, "unit": "percent", "weight": 6, "guide": "Optional_Missions", "conflict": { "text": "IGN's Official Guide counts all Optional Missions (100%), in its table and its section text (unchanged in its Nov 23 update, re-read Nov 24). GTAbase's checklist instead lists \"100 Optional Tasks Completed\", and PowerPyx's checklist (updated Nov 21) and Destructoid also say 100 optional tasks. Push Square and Shacknews (both Nov 18) give the same figure as GTAbase. Not settled; your in-game Stats menu is the final word.", "src": ["ign_100_guide", "gtabase_100", "ppx_100", "destructoid_100", "pushsquare_100", "shacknews_100"] } },
+        { "id": "illegal", "name": "Illegal Operations", "target": 39, "unit": "count", "weight": 3 },
+        { "id": "banks", "name": "Bank Robberies", "target": 22, "unit": "count", "weight": 2 },
+        { "id": "payday", "name": "Payday Loan Jobs", "target": 7, "unit": "count", "weight": 2 },
+        { "id": "smash", "name": "Smash 'n' Grabs", "target": 34, "unit": "count", "weight": 2 },
+        { "id": "stickups", "name": "Stick Ups", "target": 100, "unit": "count", "weight": 2, "conflict": { "text": "IGN's Official Guide says at least 100 Stick Ups (unchanged in its Nov 23 update, re-read Nov 24). GTAbase's checklist, AlcastHQ's robberies guide and PowerPyx's checklist (updated Nov 21) instead say 50 of 91 Stick Ups fully completed, and Destructoid says 50. Push Square and Shacknews (both Nov 18) give the same figure as GTAbase. Not settled; your in-game Stats menu is the final word.", "src": ["ign_100_guide", "gtabase_100", "alcast_robberies", "ppx_100", "destructoid_100", "pushsquare_100", "shacknews_100"] } },
+        { "id": "narcotics", "name": "Narcotics Fenced", "target": 100000, "unit": "dollars", "weight": 2 },
+        { "id": "jewelry", "name": "Jewelry Fenced", "target": 100000, "unit": "dollars", "weight": 2 },
+        { "id": "bills", "name": "Marked Bills Fenced", "target": 100000, "unit": "dollars", "weight": 2, "conflict": { "text": "IGN's Official Guide says $100,000 (unchanged in its Nov 23 update, re-read Nov 24). GTAbase's checklist, AlcastHQ's robberies guide, PowerPyx's checklist (updated Nov 21) and Destructoid instead say $250,000. Push Square and Shacknews (both Nov 18) give the same figure as GTAbase. Not settled; your in-game Stats menu is the final word.", "src": ["ign_100_guide", "gtabase_100", "alcast_robberies", "ppx_100", "destructoid_100", "pushsquare_100", "shacknews_100"] } },
+        { "id": "vaults", "name": "Vaults Hit", "target": 8, "unit": "count", "weight": 2 },
+        { "id": "vehfenced", "name": "Vehicles Fenced", "target": 200000, "unit": "dollars", "weight": 2 }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration and activities",
+      "items": [
+        { "id": "kenton", "name": "Kenton Sets", "target": 5, "unit": "count", "weight": 1, "guide": "Kenton%27s_Treasures" },
+        { "id": "cards", "name": "Collectible Card Sets", "target": 15, "unit": "count", "weight": 1, "guide": "Collectible_Cards" },
+        { "id": "waink", "name": "WAiNK Locations Scanned", "target": 100, "unit": "count", "weight": 1 },
+        { "id": "underwater", "name": "Underwater Discoveries", "target": 33, "unit": "count", "weight": 1 },
+        { "id": "magazines", "name": "Magazines", "target": 30, "unit": "count", "weight": 1 },
+        { "id": "meditation", "name": "Meditation Spots", "target": 15, "unit": "count", "weight": 1 },
+        { "id": "flamingos", "name": "Cocaine Flamingos Destroyed", "target": 100, "unit": "count", "weight": 1 },
+        { "id": "playlists", "name": "Unique Playlists", "target": 2, "unit": "count", "weight": 1 },
+        { "id": "styles", "name": "Discovered Styles", "target": 70, "unit": "count", "weight": 1 },
+        { "id": "races", "name": "Unique Races Won", "target": 30, "unit": "count", "weight": 1, "guide": "Racing" },
+        { "id": "racechal", "name": "Race Challenge Gold Medals", "target": 10, "unit": "count", "weight": 1, "guide": "Racing_Challenges" },
+        { "id": "shooting", "name": "Shooting Range Gold Medals", "target": 42, "unit": "count", "weight": 1, "guide": "Shooting_Ranges" },
+        { "id": "arcade", "name": "Arcade Games Completed", "target": 4, "unit": "count", "weight": 1 },
+        { "id": "pool", "name": "Pool Opponents Defeated", "target": 5, "unit": "count", "weight": 1 },
+        { "id": "golf", "name": "Golf Locations Played", "target": 2, "unit": "count", "weight": 1 },
+        { "id": "hoops", "name": "Basketball Hoops", "target": 90, "unit": "count", "weight": 1 },
+        { "id": "drones", "name": "Top Fun Drone Time Trials", "target": 42, "unit": "count", "weight": 1, "guide": "Top_Fun_Drones" },
+        { "id": "stunts", "name": "Stunts", "target": 300, "unit": "count", "weight": 1, "guide": "Stunts" },
+        { "id": "challenges", "name": "Challenges", "target": 70, "unit": "count", "weight": 1, "guide": "Challenges" },
+        { "id": "bret", "name": "Bret's Target Decks", "target": 15, "unit": "count", "weight": 1 }
+      ]
+    },
+    {
+      "id": "discover",
+      "title": "Discoveries",
+      "items": [
+        { "id": "vehicles", "name": "Vehicles Discovered", "target": 200, "unit": "count", "weight": 1 },
+        { "id": "weapons", "name": "Weapons Discovered", "target": 50, "unit": "count", "weight": 1 },
+        { "id": "animals", "name": "Animals Discovered", "target": 100, "unit": "count", "weight": 1, "weightStated": false }
+      ]
+    }
+  ],
+  "notes": {
+    "official": { "text": "Rockstar's launch post (Nov 19) tells players to check out \"IGN\u2019s Official Grand Theft Auto VI Guide, launching today with walkthroughs of the first two chapters\"; the same sentence mentions an interactive map of Leonida.", "src": ["rs_launch_nov19"] },
+    "categories": { "text": "IGN's Official Guide lists 35 categories that count toward 100% completion, each with a target and a weight. The weights it states add up to 99%; the Animals Discovered weight is left blank in its table.", "src": ["ign_100_guide"] },
+    "inferred": { "text": "We show Animals Discovered as 1% because that is the only value that brings the total to 100%. This is our inference, not a stated figure.", "src": ["ign_100_guide"] },
+    "stats": { "text": "IGN says the game shows your own progress toward 100% in the Stats menu once you complete the story, and that the Platinum trophy requires The Long Road trophy, which is 100% completion.", "src": ["ign_100_guide"] },
+    "partial": { "text": "Our estimate gives partial credit inside each category (for example 11 of 22 bank robberies counts as half of that category's 2%). The guide gives targets and weights, not how the game counts an unfinished category, so treat the percentage as an estimate and the in-game Stats menu as the final word.", "src": ["ign_100_guide"] },
+    "conflicts": { "text": "Three targets are disputed between guides: Optional Missions, Stick Ups and Marked Bills Fenced. GTAbase's checklist has the same 35 categories and the same weights as IGN's Official Guide, but different targets for those three rows (and some different names). PowerPyx's checklist (updated Nov 21), Destructoid, Push Square and Shacknews side with GTAbase on all three; AlcastHQ's robberies guide sides with GTAbase on Stick Ups and Marked Bills. IGN updated its page on Nov 23 (6:23 AM EST) and still gives its own figures (re-read Nov 24). We still show IGN's figures, marked \"Guides disagree\" on each row.", "src": ["ign_100_guide", "gtabase_100", "alcast_robberies", "ppx_100", "destructoid_100", "pushsquare_100", "shacknews_100"] },
+    "coverage": { "text": "Coverage on Nov 23: all 35 categories with their targets and weights (three targets disputed, see below). Not yet: item-by-item lists (which mission, which card, which hoop). Those will be added only from verified sources as the guides fill in.", "src": ["ign_100_guide", "rs_launch_nov19"] }
+  }
+}

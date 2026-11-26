@@ -1,0 +1,2145 @@
+{
+  "_note": "GTA VI vehicle finder data, Nov 22, 2026 (Nov 24: speed, class and real-life fields re-sourced to GTABase's vehicle database after GTABase rewrote its fastest list on Nov 22). Read Nov 22 ~05:15-05:35 UTC via WebSearch/WebFetch (no Chrome, no billed tools). Rockstar has published no vehicle list, prices or stats, so each field comes from named guide sites with its date, compared where more than one reports it. Status per field: 'official' = Rockstar or a console store; 'agree' = two or more different publishers say the same, and every cited source carries its own 'claims' note (our short record of what that source states, read Nov 22), so the agreement can be checked per source; 'disagree' = sources give different answers (all shown; can be two pages of one publisher); 'single' = one guide only. A field set to null means no source we read reports it: the page says so instead of guessing. 'classes' are the filter groups the class text names (empty when no class is reported). 'speed' is the in-game Speed stat out of 10 as GTABase and GamerBlurb print it, not a measured top speed. 'price' is GTABase's in-game scan: sell value of a stolen car, cost to register it as yours, and its tracker. 'cars' links a row to a car on the real-cars list below (data/cars.json, journalists' matches) as '<section id>/<game name>'. Our own wording throughout; no guide prose or per-location lists copied; no images. Pre-launch lists that mix in leaks (Beebom's vehicles list, TechWiser, RankedBoost) and AI-written guides are not used. Never add leaked, datamined or rumored vehicles.",
+  "asOf": "2026-11-24",
+  "classes": [
+    {
+      "id": "super",
+      "label": "Super"
+    },
+    {
+      "id": "sports",
+      "label": "Sports"
+    },
+    {
+      "id": "muscle",
+      "label": "Muscle"
+    },
+    {
+      "id": "coupe",
+      "label": "Coupes"
+    },
+    {
+      "id": "sedan",
+      "label": "Sedans"
+    },
+    {
+      "id": "suv",
+      "label": "SUVs"
+    },
+    {
+      "id": "offroad",
+      "label": "Off-road"
+    },
+    {
+      "id": "military",
+      "label": "Military"
+    },
+    {
+      "id": "bike",
+      "label": "Motorcycles"
+    },
+    {
+      "id": "water",
+      "label": "Boats and kayaks"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "infernus96",
+      "name": "Pegassi Infernus '96",
+      "classes": [
+        "super"
+      ],
+      "class": {
+        "text": "Super.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_infernus",
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Super (vehicle database)",
+          "gtabase_infernus": "class: Super",
+          "gtabase_expensive": "class: Super",
+          "ign_vehicles": "type: Super"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 17160,
+        "register": 34750,
+        "tracker": "Advanced",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "gtabase_infernus",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $17,160, register $34,750, tracker advanced",
+          "gtabase_infernus": "sell $17,160, register $34,750, tracker advanced",
+          "ign_vehicles": "sell $17,160, register $34,750, tracker advanced"
+        }
+      },
+      "speed": {
+        "value": 7.1,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 7.1/10",
+          "ign_vehicles": "Speed 7.1 in its vehicle table",
+          "gtabase_vehicles": "Speed 7.1 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Lamborghini Diablo. GTABase also names the Cizeta V16T and Ferrari Testarossa.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "based on the Lamborghini Diablo and other exotic sports cars of the era",
+          "gtabase_vehicles": "based on a Lamborghini Diablo, Cizeta V16T, Ferrari Testarossa"
+        }
+      }
+    },
+    {
+      "id": "cheetah95",
+      "name": "Grotti Cheetah '95",
+      "classes": [
+        "super"
+      ],
+      "class": {
+        "text": "Super.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Super",
+          "gtabase_expensive": "class: Super",
+          "ign_vehicles": "type: Super"
+        }
+      },
+      "get": {
+        "text": "Ultimate Edition car. It opens in Chapter 5 at the Pegassi Residences building.",
+        "status": "agree",
+        "src": [
+          "dexerto_ultimate",
+          "redbull_ultimate"
+        ],
+        "claims": {
+          "dexerto_ultimate": "'95 Grotti Cheetah: available from the Pegassi Residences in Chapter 5",
+          "redbull_ultimate": "obtained from the Pegassi Residences building in Chapter 5"
+        }
+      },
+      "notes": [
+        {
+          "text": "Xbox Wire's Ultimate Edition listing calls it Grotti's signature mid-'90s sports car.",
+          "status": "official",
+          "src": [
+            "xbox_wire_cloud"
+          ]
+        }
+      ],
+      "price": {
+        "sell": 16775,
+        "register": 32750,
+        "tracker": "Advanced",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $16,775, register $32,750, tracker advanced",
+          "ign_vehicles": "sell $16,775, register $32,750, tracker advanced"
+        }
+      },
+      "speed": {
+        "value": 6.6,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 6.6/10",
+          "ign_vehicles": "Speed 6.6 in its vehicle table",
+          "gtabase_vehicles": "Speed 6.6 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Ferrari Testarossa. GTABase also names the 512 BB.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "inspired by classic Ferrari models, including the Testarossa",
+          "gtabase_vehicles": "based on a Ferrari Testarossa, 512 BB"
+        }
+      },
+      "cars": "official/'95 Grotti Cheetah"
+    },
+    {
+      "id": "comet88",
+      "name": "Pfister Comet '88",
+      "classes": [
+        "sports"
+      ],
+      "class": {
+        "text": "Sports.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_expensive",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gtabase_expensive": "class: Sports",
+          "gamerblurb_cars": "a sports car",
+          "gtabase_vehicles": "class: Sports"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 17050,
+        "register": 34250,
+        "tracker": "Advanced",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $17,050, register $34,250, tracker advanced",
+          "ign_vehicles": "sell $17,050, register $34,250, tracker advanced"
+        }
+      },
+      "speed": {
+        "value": 6.1,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 6.1/10",
+          "ign_vehicles": "Speed 6.1 in its vehicle table",
+          "gtabase_vehicles": "Speed 6.1 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Porsche 911. GTABase is more specific: a Rauh-Welt-style 930.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Porsche 911-inspired design",
+          "gtabase_vehicles": "based on a Rauh-Welt Porsche 911 930"
+        }
+      }
+    },
+    {
+      "id": "coquette64",
+      "name": "Invetero Coquette '64",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Muscle",
+          "gtabase_expensive": "class: Muscle",
+          "ign_vehicles": "type: Muscle"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 12320,
+        "register": 29150,
+        "tracker": "Standard",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $12,320, register $29,150, tracker standard",
+          "ign_vehicles": "sell $12,320, register $29,150, tracker standard"
+        }
+      },
+      "speed": {
+        "value": 5.9,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 5.9/10",
+          "ign_vehicles": "Speed 5.9 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.9 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Chevrolet Corvette C2.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Chevrolet Corvette C2-inspired",
+          "gtabase_vehicles": "based on a Chevrolet Corvette C2"
+        }
+      }
+    },
+    {
+      "id": "elegy90",
+      "name": "Annis Elegy '90",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Coupes",
+          "dexerto_cars": "listed under coupes",
+          "ign_vehicles": "type: Coupe"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 4235,
+        "register": 14250,
+        "tracker": "Standard",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.5,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 5.5/10",
+          "ign_vehicles": "Speed 5.5 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.5 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Nissan Skyline GT-R.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Nissan Skyline GT-R-inspired",
+          "gtabase_vehicles": "based on a Nissan Skyline GT-R"
+        }
+      }
+    },
+    {
+      "id": "buffalo19",
+      "name": "Bravado Buffalo '19",
+      "classes": [
+        "muscle",
+        "sedan"
+      ],
+      "class": {
+        "text": "Sedan per GTABase's vehicle database, Dexerto and IGN; GamerBlurb calls it a muscle car.",
+        "status": "disagree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "dexerto_cars",
+          "ign_vehicles"
+        ]
+      },
+      "get": null,
+      "price": {
+        "sell": 3555,
+        "register": 11250,
+        "tracker": "Standard",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.5,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 5.5/10",
+          "ign_vehicles": "Speed 5.5 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.5 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Dodge Charger (GTABase: the 2015 model).",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Dodge Charger-inspired design",
+          "gtabase_vehicles": "based on a 2015 Dodge Charger"
+        }
+      }
+    },
+    {
+      "id": "stallion68",
+      "name": "Classique Stallion '68",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "type: Muscle",
+          "gtabase_vehicles": "class: Muscle"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 3190,
+        "register": 10650,
+        "tracker": "Standard",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.5,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 5.5/10",
+          "ign_vehicles": "Speed 5.5 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.5 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Oldsmobile Cutlass ('68-'71) and the '70 Plymouth Hemi Barracuda.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "hermes50",
+      "name": "Albany Hermes '50",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "class: Muscle",
+          "ign_vehicles": "type: Muscle",
+          "gtabase_vehicles": "class: Muscle"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 6435,
+        "register": 21650,
+        "tracker": "Standard",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $6,435, register $21,650, tracker standard",
+          "ign_vehicles": "sell $6,435, register $21,650, tracker standard"
+        }
+      },
+      "speed": {
+        "value": 5.5,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 5.5/10",
+          "ign_vehicles": "Speed 5.5 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.5 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "1949 Mercury Eight.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "gauntlet69",
+      "name": "Bravado Gauntlet Custom '69",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "class: Muscle",
+          "ign_vehicles": "type: Muscle",
+          "gtabase_vehicles": "class: Muscle"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 7095,
+        "register": 23750,
+        "tracker": "Standard",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $7,095, register $23,750, tracker standard",
+          "ign_vehicles": "sell $7,095, register $23,750, tracker standard"
+        }
+      },
+      "speed": {
+        "value": 5.4,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 5.4/10",
+          "ign_vehicles": "Speed 5.4 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.4 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "First-generation Dodge Challenger.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Dodge Challenger-inspired",
+          "gtabase_vehicles": "based on a first-generation Dodge Challenger"
+        }
+      }
+    },
+    {
+      "id": "astron",
+      "name": "Pfister Astron",
+      "classes": [
+        "suv"
+      ],
+      "class": {
+        "text": "SUV.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under SUVs",
+          "gamerblurb_cars": "an SUV",
+          "gtabase_vehicles": "class: SUVs"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 4620,
+        "register": 15500,
+        "tracker": "Standard",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.3,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 5.3/10",
+          "ign_vehicles": "Speed 5.3 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.3 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Porsche Macan.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Porsche Macan-inspired styling",
+          "gtabase_vehicles": "based on a Porsche Macan"
+        }
+      }
+    },
+    {
+      "id": "drafter",
+      "name": "Obey 8F Drafter",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Coupes",
+          "dexerto_cars": "listed under coupes",
+          "ign_vehicles": "type: Coupe"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 5555,
+        "register": 18650,
+        "tracker": "Standard",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.3,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 5.3/10",
+          "ign_vehicles": "Speed 5.3 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.3 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Audi RS5 coupe (GTABase: the 2018 model).",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Audi RS5-inspired",
+          "gtabase_vehicles": "based on a 2018 Audi RS5 Coupe"
+        }
+      }
+    },
+    {
+      "id": "buffalo07",
+      "name": "Bravado Buffalo '07",
+      "classes": [
+        "sports",
+        "sedan"
+      ],
+      "class": {
+        "text": "Sedan per GTABase's vehicle database and IGN; GTABase's own Buffalo '07 page says Sports.",
+        "status": "disagree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_buffalo07",
+          "ign_vehicles"
+        ]
+      },
+      "get": null,
+      "price": null,
+      "speed": {
+        "value": 5.2,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 5.2 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.2 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Dodge Charger.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "tulip72",
+      "name": "Declasse Tulip '72",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Muscle Cars",
+          "gtabase_vehicles": "class: Muscle"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 2805,
+        "register": 9400,
+        "tracker": "Standard",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.1,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 5.1 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.1 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "1972 Chevrolet Chevelle Malibu or 1972 Oldsmobile Cutlass Supreme.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      },
+      "cars": "trailer1/Declasse Tulip (getaway car)"
+    },
+    {
+      "id": "dominator65",
+      "name": "Vapid Dominator '65",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Muscle Cars",
+          "gtabase_vehicles": "class: Muscle"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 2035,
+        "register": 6900,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.1,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 5.1 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.1 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "First-generation Ford Mustang.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "penumbra97",
+      "name": "Maibatsu Penumbra FF '97",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Coupes",
+          "dexerto_cars": "lists a Maibatsu Penumbra under coupes",
+          "ign_vehicles": "type: Coupe ('97 Penumbra FF)"
+        }
+      },
+      "get": {
+        "text": "A green Fast & Furious tribute version (Paul Walker's Mitsubishi Eclipse) sits in a villa garage on Vespucci Island, Vice City. AlcastHQ names the model; Jalopnik calls it the 1995 Eclipse.",
+        "status": "agree",
+        "src": [
+          "alcast_paulwalker",
+          "jalopnik_paulwalker"
+        ],
+        "claims": {
+          "alcast_paulwalker": "the Maibatsu 97 Penumbra FF (Paul Walker car) is in the garage of a villa on Vespucci Island",
+          "jalopnik_paulwalker": "the Fast and Furious Eclipse is in the garage of a house in the middle of Vespucci Island"
+        }
+      },
+      "price": {
+        "sell": 2035,
+        "register": 6750,
+        "tracker": "None",
+        "status": "agree",
+        "src": [
+          "gtabase_penumbra",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_penumbra": "stolen sell value $2,035, cost to register $6,750, tracker none",
+          "ign_vehicles": "sell $2,035, register $6,750, tracker none"
+        }
+      },
+      "speed": {
+        "value": 5.1,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 5.1 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.1 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Second-generation Mitsubishi Eclipse or Eagle Talon.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      },
+      "notes": [
+        {
+          "text": "AlcastHQ: you can take it once you can roam freely; use the big garage door (the side door sets off an alarm), and register it at a Pay 'n' Spray (from Chapter 2) to keep it.",
+          "status": "single",
+          "src": [
+            "alcast_paulwalker"
+          ]
+        },
+        {
+          "text": "GTABase lists that green tribute car as its own variant, \"Penumbra (Paul Walker Tribute)\", with a Speed stat of 7.2, not 5.1. The class, price and speed on this row are the standard Penumbra FF '97's.",
+          "status": "single",
+          "src": [
+            "gtabase_penumbra_tribute"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "picador72",
+      "name": "Declasse Picador '72",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Muscle Cars",
+          "gtabase_vehicles": "class: Muscle"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 2970,
+        "register": 9900,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.1,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 5.1 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.1 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Chevrolet El Camino.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "feroci98",
+      "name": "Karin Feroci '98",
+      "classes": [
+        "sedan"
+      ],
+      "class": {
+        "text": "Sedan.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Sedans",
+          "gtabase_vehicles": "class: Sedans"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 935,
+        "register": 3150,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.0,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 5.0 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.0 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "First-generation Lexus GS 300.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "injection73",
+      "name": "BF Injection '73",
+      "classes": [
+        "offroad"
+      ],
+      "class": {
+        "text": "Off-road.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "type: Off-Road",
+          "gtabase_vehicles": "class: Off-Road"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 1430,
+        "register": 4650,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 5.0,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 5.0 in its vehicle table",
+          "gtabase_vehicles": "Speed 5.0 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Volkswagen Beetle \"Baja Bug\" builds.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "apoc",
+      "name": "Übermacht Apoc",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Coupes",
+          "gtabase_vehicles": "class: Coupes"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 1760,
+        "register": 6000,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.8,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.8 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.8 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "BMW M6 (E63).",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "sentinel85",
+      "name": "Übermacht Sentinel '85",
+      "classes": [
+        "sports"
+      ],
+      "class": {
+        "text": "Sports.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Sports",
+          "ign_vehicles": "type: Sports"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 1760,
+        "register": 6000,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.7,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.7 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.7 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "BMW E30 M3.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      },
+      "cars": "extended/Sentinel convertible"
+    },
+    {
+      "id": "ganado70",
+      "name": "Vapid Ganado '70",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Muscle Cars",
+          "gtabase_vehicles": "class: Muscle"
+        }
+      },
+      "get": {
+        "text": "Jason's personal vehicle: you start with it.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Jason's personal vehicle",
+          "gtabase_vehicles": "how to get: Jason's Personal Vehicle"
+        }
+      },
+      "notes": [
+        {
+          "text": "Ultimate Edition: the free Retro Build is applied at Coastal Auto Care in Key Lento, in Chapter 1.",
+          "status": "single",
+          "src": [
+            "redbull_ultimate"
+          ]
+        }
+      ],
+      "price": {
+        "sell": 1980,
+        "register": 6500,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.7,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 4.7/10",
+          "ign_vehicles": "Speed 4.7 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.7 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "1970 Ford Ranchero. GTABase also names the 1969-70 Mercury Cougar.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gamerblurb_cars",
+          "pcg_cars"
+        ],
+        "claims": {
+          "gamerblurb_cars": "classic Ford Ranchero-inspired appearance",
+          "pcg_cars": "a brand-new car based on the 1970 Ford Ranchero",
+          "gtabase_vehicles": "based on a 1970 Ford Ranchero, 1969-1970 Mercury Cougar"
+        }
+      },
+      "cars": "official/Vapid Ganado"
+    },
+    {
+      "id": "lasso90",
+      "name": "Willard Lasso '90",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Coupes",
+          "gtabase_vehicles": "class: Coupes"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 4125,
+        "register": 13750,
+        "tracker": "Standard",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.7,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.7 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.7 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Buick Reatta convertible.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "arcturus93",
+      "name": "Dundreary Arcturus '93",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Coupes",
+          "gtabase_vehicles": "class: Coupes"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 990,
+        "register": 3250,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.7,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.7 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.7 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Lincoln Mark VIII.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "animus",
+      "name": "Obey Animus",
+      "classes": [
+        "sedan"
+      ],
+      "class": {
+        "text": "Sedan.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Sedans",
+          "gtabase_vehicles": "class: Sedans"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 2585,
+        "register": 8650,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.6,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.6 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.6 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Second-generation Audi A7 / RS7.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "impaler20",
+      "name": "Declasse Impaler '20",
+      "classes": [
+        "sedan"
+      ],
+      "class": {
+        "text": "Sedan.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "type: Sedan",
+          "gtabase_vehicles": "class: Sedans"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 1595,
+        "register": 5400,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.6,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.6 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.6 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Tenth-generation Chevrolet Impala.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "stanier98",
+      "name": "Vapid Stanier '98",
+      "classes": [
+        "sedan"
+      ],
+      "class": {
+        "text": "Sedan.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Sedans",
+          "gtabase_vehicles": "class: Sedans"
+        }
+      },
+      "get": null,
+      "price": null,
+      "speed": {
+        "value": 4.5,
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      },
+      "real": {
+        "text": "Ford Crown Victoria.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "blista85",
+      "name": "Dinka Blista '85",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Coupes",
+          "dexerto_cars": "listed under coupes",
+          "ign_vehicles": "type: Coupe"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 825,
+        "register": 2750,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.5,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.5 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.5 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "First-generation Honda CRX.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "ruiner82",
+      "name": "Imponte Ruiner '82",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "dexerto_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_vehicles": "class: Coupes",
+          "dexerto_cars": "listed under coupes",
+          "ign_vehicles": "type: Coupe"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 1925,
+        "register": 6400,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.5,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.5 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.5 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "Pontiac Trans Am / Chevrolet Camaro.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "impalersz95",
+      "name": "Declasse Impaler SZ '95",
+      "classes": [
+        "muscle",
+        "sedan"
+      ],
+      "class": {
+        "text": "Sedan per GTABase's vehicle database, Dexerto and IGN; GTABase's own Impaler SZ '95 page says Muscle.",
+        "status": "disagree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_impalersz",
+          "dexerto_cars",
+          "ign_vehicles"
+        ]
+      },
+      "get": null,
+      "price": {
+        "sell": 1595,
+        "register": 5400,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 4.5,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.5 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.5 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "1994-96 Chevrolet Impala SS.",
+        "status": "single",
+        "src": [
+          "gtabase_vehicles"
+        ]
+      }
+    },
+    {
+      "id": "transgressor67",
+      "name": "Sirius Transgressor '67",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "gtabase_expensive",
+          "pcg_cars"
+        ],
+        "claims": {
+          "gtabase_expensive": "class: Muscle",
+          "pcg_cars": "the Sirius: this muscle car",
+          "gtabase_vehicles": "class: Muscle"
+        }
+      },
+      "get": {
+        "text": "Ultimate Edition car. PC Gamer lists a Sirius in the Ultimate Edition's Classic Car Collection.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "pcg_cars"
+        ],
+        "claims": {
+          "pcg_cars": "the Sirius is listed as part of the Classic Car Collection available in the Ultimate Edition",
+          "gtabase_vehicles": "how to get: Ultimate Edition"
+        }
+      },
+      "notes": [
+        {
+          "text": "The Classic Car Collection opens in Chapter 2, after you collect the Dominator Buggy.",
+          "status": "agree",
+          "src": [
+            "dexerto_ultimate",
+            "redbull_ultimate"
+          ],
+          "claims": {
+            "dexerto_ultimate": "Classic Car Collection: available in Chapter 2 after collecting the Dominator Buggy",
+            "redbull_ultimate": "Classic Car Collection: unlocked after Wyman contacts you, once you have the Dominator"
+          }
+        },
+        {
+          "text": "IGN: Wyman restores one after you scan wrecks of it with the WAiNK app, in an Ultimate Edition quest that opens after the Chapter 2 mission Thrillbillies.",
+          "status": "single",
+          "src": [
+            "ign_wyman"
+          ]
+        }
+      ],
+      "price": {
+        "sell": 6060,
+        "register": 21500,
+        "tracker": "None",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $6,060, register $21,500, tracker none",
+          "ign_vehicles": "sell $6,060, register $21,500, tracker none"
+        }
+      },
+      "speed": {
+        "value": 4.5,
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "ign_vehicles": "Speed 4.5 in its vehicle table",
+          "gtabase_vehicles": "Speed 4.5 out of 10 in its vehicle database"
+        }
+      },
+      "real": {
+        "text": "GTABase: 1970 Mercury Cougar. PC Gamer: it looks like a classic Dodge Charger.",
+        "status": "disagree",
+        "src": [
+          "gtabase_vehicles",
+          "pcg_cars"
+        ]
+      }
+    },
+    {
+      "id": "bandito77",
+      "name": "BF Bandito '77",
+      "classes": [
+        "offroad"
+      ],
+      "class": {
+        "text": "Off-road.",
+        "status": "agree",
+        "src": [
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "picks it as an off-road car",
+          "ign_vehicles": "type: Off-Road"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 1430,
+        "register": 4750,
+        "tracker": "None",
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "speed": {
+        "value": 3.6,
+        "status": "agree",
+        "src": [
+          "gamerblurb_cars",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gamerblurb_cars": "Speed 3.6/10",
+          "ign_vehicles": "Speed 3.6 in its vehicle table"
+        }
+      },
+      "real": null
+    },
+    {
+      "id": "patriot92",
+      "name": "Mammoth Patriot '92",
+      "classes": [
+        "military"
+      ],
+      "class": {
+        "text": "Military.",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "class: Military",
+          "ign_vehicles": "type: Military"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 10835,
+        "register": null,
+        "tracker": "Military",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $10,835, register not listed, tracker military",
+          "ign_vehicles": "sell $10,835, register not listed, tracker military"
+        }
+      },
+      "speed": null,
+      "real": null
+    },
+    {
+      "id": "hustler32",
+      "name": "Vapid Hustler '32",
+      "classes": [
+        "coupe"
+      ],
+      "class": {
+        "text": "Coupe.",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "class: Coupe",
+          "ign_vehicles": "type: Coupe"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 6545,
+        "register": 21900,
+        "tracker": "Standard",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $6,545, register $21,900, tracker standard",
+          "ign_vehicles": "sell $6,545, register $21,900, tracker standard"
+        }
+      },
+      "speed": {
+        "value": 3.2,
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "real": null
+    },
+    {
+      "id": "devanity59",
+      "name": "Albany DeVanity '59",
+      "classes": [
+        "muscle"
+      ],
+      "class": {
+        "text": "Muscle.",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "class: Muscle",
+          "ign_vehicles": "type: Muscle"
+        }
+      },
+      "get": null,
+      "price": {
+        "sell": 6490,
+        "register": 21750,
+        "tracker": "Standard",
+        "status": "agree",
+        "src": [
+          "gtabase_expensive",
+          "ign_vehicles"
+        ],
+        "claims": {
+          "gtabase_expensive": "sell $6,490, register $21,750, tracker standard",
+          "ign_vehicles": "sell $6,490, register $21,750, tracker standard"
+        }
+      },
+      "speed": {
+        "value": 4.4,
+        "status": "single",
+        "src": [
+          "ign_vehicles"
+        ]
+      },
+      "real": null
+    },
+    {
+      "id": "buggy67",
+      "name": "'67 Vapid Dominator Buggy",
+      "classes": [
+        "offroad"
+      ],
+      "class": {
+        "text": "Off-road.",
+        "status": "agree",
+        "src": [
+          "dexerto_cars",
+          "pcg_cars"
+        ],
+        "claims": {
+          "dexerto_cars": "listed under Off-Road Vehicles",
+          "pcg_cars": "a truck with big off-road tyres"
+        }
+      },
+      "get": {
+        "text": "Ultimate Edition car. It opens in Chapter 2 when you visit the Mud Club (with Wyman, per Red Bull), and comes with a garage.",
+        "status": "agree",
+        "src": [
+          "dexerto_ultimate",
+          "redbull_ultimate"
+        ],
+        "claims": {
+          "dexerto_ultimate": "Dominator Buggy and garage: available after visiting the Mud Club in Chapter 2",
+          "redbull_ultimate": "visit the Mud Club with Wyman in Chapter 2 to unlock it; it comes with a garage"
+        }
+      },
+      "price": null,
+      "speed": null,
+      "real": null,
+      "cars": "official/'67 Vapid Dominator Buggy",
+      "notes": [
+        {
+          "text": "IGN: after the Chapter 2 mission Thrillbillies, Wyman sends a waypoint to the Paradise RV Park garage, where he has left the buggy.",
+          "status": "single",
+          "src": [
+            "ign_wyman"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stanier55",
+      "name": "'55 Vapid Stanier",
+      "classes": [],
+      "class": null,
+      "get": {
+        "text": "Pre-order bonus (Vintage Vice City Pack), with its own garage, for purchases before Nov 20, 2026. No guide we read says where it appears in the game.",
+        "status": "official",
+        "src": [
+          "rs_store_game",
+          "rs_preorder"
+        ]
+      },
+      "price": null,
+      "speed": null,
+      "real": {
+        "text": "1955 Ford Crown Victoria.",
+        "status": "single",
+        "src": [
+          "pcg_cars"
+        ]
+      },
+      "cars": "official/'55 Vapid Stanier Sedan"
+    },
+    {
+      "id": "enduro",
+      "name": "Dinka Enduro",
+      "classes": [
+        "bike"
+      ],
+      "class": {
+        "text": "Motorcycle (Xbox Wire's Ultimate Edition listing: an Army fatigue-tinged Dinka Enduro motorcycle).",
+        "status": "official",
+        "src": [
+          "xbox_wire_cloud"
+        ]
+      },
+      "get": {
+        "text": "Ultimate Edition: at Jason's safehouse, outside or under his house, in Chapter 1; Red Bull says it can only be used during Chapter 1.",
+        "status": "single",
+        "src": [
+          "redbull_ultimate"
+        ]
+      },
+      "price": null,
+      "speed": null,
+      "real": null,
+      "cars": "official/Dinka Enduro"
+    },
+    {
+      "id": "kayak",
+      "name": "Crest Kayak",
+      "classes": [
+        "water"
+      ],
+      "class": {
+        "text": "Kayak (Xbox Wire's Ultimate Edition listing).",
+        "status": "official",
+        "src": [
+          "xbox_wire_cloud"
+        ]
+      },
+      "get": {
+        "text": "Ultimate Edition: at Jason's safehouse, outside or under his house, in Chapter 1; Red Bull says it can only be used during Chapter 1.",
+        "status": "single",
+        "src": [
+          "redbull_ultimate"
+        ]
+      },
+      "price": null,
+      "speed": null,
+      "real": null
+    },
+    {
+      "id": "squalo",
+      "name": "Shitzu Squalo",
+      "classes": [
+        "water"
+      ],
+      "class": {
+        "text": "Watercraft (Xbox Wire's Ultimate Edition listing).",
+        "status": "official",
+        "src": [
+          "xbox_wire_cloud"
+        ]
+      },
+      "get": {
+        "text": "Ultimate Edition: from Chapter 4, at a dock in Washington Beach.",
+        "status": "agree",
+        "src": [
+          "dexerto_ultimate",
+          "redbull_ultimate"
+        ],
+        "claims": {
+          "dexerto_ultimate": "Shitzu Squalo: available from a Washington Beach dock in Chapter 4",
+          "redbull_ultimate": "at a dock in Washington Beach Canal, from Chapter 4"
+        }
+      },
+      "price": null,
+      "speed": null,
+      "real": null,
+      "cars": "official/Shitzu Squalo"
+    },
+    {
+      "id": "rhino",
+      "name": "Hauners Rhino Tank",
+      "classes": [],
+      "class": null,
+      "get": {
+        "text": "Spawned with a cheat. The cheat list appears in the Progress menu once you finish the story.",
+        "status": "agree",
+        "src": [
+          "gtabase_vehicles",
+          "tt_cheats"
+        ],
+        "claims": {
+          "gtabase_vehicles": "Rhino Tank: a cheat spawn, unlocked after finishing the story (Progress Menu > Cheats)",
+          "tt_cheats": "a Cheats List menu appears under the Progress menu once the story is complete; the Hauners Rhino Tank is one of the vehicle cheats"
+        }
+      },
+      "price": null,
+      "speed": null,
+      "real": null,
+      "notes": [
+        {
+          "text": "TweakTown adds that each cheat has its own challenge too: the Rhino Tank's needs all survival challenges completed.",
+          "status": "single",
+          "src": [
+            "tt_cheats"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "steal",
+      "text": "No dealerships: you get cars by stealing them, then registering them at a Pay 'n' Spray to keep them.",
+      "status": "single",
+      "src": [
+        "gtabase_vehicles"
+      ]
+    },
+    {
+      "id": "scan",
+      "text": "Scanning a car with the WAiNK phone app shows its stats, condition and security before you try to take it.",
+      "status": "single",
+      "src": [
+        "gtabase_stealing"
+      ]
+    },
+    {
+      "id": "register",
+      "text": "An in-game phone app shows what a car would resell for and what it costs to register it as yours.",
+      "status": "single",
+      "src": [
+        "gr_steal"
+      ]
+    },
+    {
+      "id": "tracker",
+      "text": "Cars with a standard or advanced tracker can't be modified until you register them. Registering and selling open up as the story goes on.",
+      "status": "single",
+      "src": [
+        "gtabase_stealing"
+      ]
+    },
+    {
+      "id": "lost",
+      "text": "A stolen car you haven't registered is gone for good if you lose or wreck it; registered personal vehicles can always be recovered.",
+      "status": "single",
+      "src": [
+        "gtabase_stealing"
+      ]
+    },
+    {
+      "id": "where",
+      "text": "Hunting for an exotic? GTABase's tip: watch Vice City traffic and the hotel strip on Ocean Drive, where it keeps seeing Pfister, Grotti, Enus and Ocelot models.",
+      "status": "single",
+      "src": [
+        "gtabase_expensive"
+      ]
+    }
+  ],
+  "notes": {
+    "coverage": {
+      "text": "Coverage on Nov 24: 40 vehicles named by guide sites, almost all in the first days after launch, with class, how to get it, price, speed stat and real-life inspiration wherever a guide states them. Blank means no guide we read reports it yet. Not yet: per-car spawn locations (one so far, where two guides agree), measured top speeds, and the full roster (GTABase's database now lists 590 vehicles of every kind; this finder covers the 40 cars at least one guide described in detail).",
+      "src": [
+        "gtabase_vehicles",
+        "gtabase_expensive",
+        "dexerto_cars",
+        "ign_vehicles"
+      ]
+    },
+    "speed": {
+      "text": "The speed figure is the in-game Speed stat out of 10, as GTABase, IGN's Official Guide and GamerBlurb print it. Nobody has published measured top speeds yet. GTABase's ranked fastest list (rewritten Nov 22) now covers the whole roster and puts late-game supercars far above the cars here: Andrew Node's Truffade Thrax at 9.2 and three Progen Emerus variants at 8.9 (GTABase only so far).",
+      "src": [
+        "gtabase_fastest",
+        "gtabase_vehicles",
+        "ign_vehicles",
+        "gamerblurb_cars"
+      ]
+    },
+    "price": {
+      "text": "Prices are in-game scans published by GTABase and IGN's Official Guide: what a stolen car sells for and what it costs to register as yours. There are no showroom prices because there are no dealerships, per GTABase.",
+      "src": [
+        "gtabase_expensive",
+        "ign_vehicles",
+        "gtabase_vehicles"
+      ]
+    },
+    "independence": {
+      "text": "IGN's and GamerBlurb's figures match GTABase's exactly wherever they overlap. That most likely means each read the same in-game stat screen, but one could also have copied another, so \"Guides agree\" means two named publishers state it, not that Rockstar confirmed it.",
+      "src": [
+        "gtabase_vehicles",
+        "ign_vehicles",
+        "gamerblurb_cars"
+      ]
+    },
+    "supercars": {
+      "text": "Supercars from the trailers, such as the Furia, Zorrusso and Tempesta, appear in Dexerto's post-launch list, but no guide has published their stats, prices or where to find them yet. Dexerto also gives some of them different makers (Piccia Furia, Granforma Zorrusso) from the names car outlets used in 2023. Their real-life matches are in the trailer sections below.",
+      "src": [
+        "dexerto_cars",
+        "drive_t1"
+      ]
+    }
+  }
+}

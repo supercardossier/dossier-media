@@ -139,7 +139,7 @@
     "publisher": "Xbox Wire",
     "url": "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/",
     "published": "2026-11-10",
-    "checked": "2026-11-18",
+    "checked": "2026-11-22",
     "kind": "official"
   },
   "rs_album": {
@@ -229,7 +229,7 @@
     "publisher": "Rockstar Games",
     "url": "https://www.rockstargames.com/VI/media",
     "published": null,
-    "checked": "2026-11-19",
+    "checked": "2026-11-20",
     "kind": "official",
     "live_page": true
   },
@@ -256,5 +256,451 @@
     "published": "2026-11-17",
     "checked": "2026-11-19",
     "kind": "press"
+  },
+  "rs_launch_nov19": {
+    "title": "Grand Theft Auto VI Now Available",
+    "publisher": "Rockstar Newswire",
+    "url": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available",
+    "published": "2026-11-19",
+    "checked": "2026-11-20",
+    "kind": "official"
+  },
+  "rs_support_home": {
+    "title": "Rockstar Games Customer Support (GTA VI articles: Installation Support, Error Troubleshooting)",
+    "publisher": "Rockstar Support",
+    "url": "https://support.rockstargames.com/",
+    "published": null,
+    "checked": "2026-11-20",
+    "kind": "official",
+    "live_page": true
+  },
+  "ign_100_guide": {
+    "title": "GTA 6 100 Percent Guide (IGN Official Grand Theft Auto VI Guide; updated Nov 23, 2026 6:23 AM EST, read in Chrome Nov 24)",
+    "publisher": "IGN",
+    "url": "https://www.ign.com/wikis/gta-6/GTA_6_100_Percent_Guide",
+    "published": "2026-11-19",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "gtabase_100": {
+    "title": "GTA 6 100% Completion Guide & Interactive Checklist",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/articles/gta-6/gta-6-100-completion-guide-interactive-checklist",
+    "published": null,
+    "checked": "2026-11-20",
+    "kind": "press",
+    "undated": true
+  },
+  "rs_support_buckme": {
+    "title": "Cannot put any more money in my BuckMe account in Grand Theft Auto VI",
+    "publisher": "Rockstar Support",
+    "url": "https://support.rockstargames.com/articles/5hSbxodEFeNbU1wARy1p4X/cannot-put-any-more-money-in-my-buckme-account-in-grand-theft-auto-vi",
+    "published": "2026-11-19",
+    "checked": "2026-11-21",
+    "kind": "official"
+  },
+  "gr_money_matters": {
+    "title": "GTA 6 boss says \"we have made money matter more in this story than in previous Grand Theft Auto games\" (quotes Rob Nelson's IGN interview)",
+    "publisher": "GamesRadar+",
+    "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-boss-says-we-have-made-money-matter-more-in-this-story-than-in-previous-grand-theft-auto-games/",
+    "published": "2026-10-07",
+    "checked": "2026-11-21",
+    "kind": "press"
+  },
+  "tt_economy": {
+    "title": "GTA 6's illicit criminal economy, robberies and money explained by Rockstar",
+    "publisher": "TweakTown",
+    "url": "https://www.tweaktown.com/news/113368/gta-6s-illicit-criminal-economy-robberies-and-money-explained-by-rockstar/index.html",
+    "published": "2026-08-31",
+    "checked": "2026-11-21",
+    "kind": "press"
+  },
+  "pcg_money": {
+    "title": "GTA 6: The fastest ways to make money",
+    "publisher": "PC Gamer",
+    "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-how-to-make-money/",
+    "published": "2026-11-18",
+    "checked": "2026-11-21",
+    "kind": "press"
+  },
+  "beebom_money": {
+    "title": "How to Make Money Fast in GTA 6: Best Money-Making Methods (updated Nov 20, 2026)",
+    "publisher": "Beebom",
+    "url": "https://beebom.com/make-money-in-gta-6/",
+    "published": "2026-11-20",
+    "checked": "2026-11-21",
+    "kind": "press"
+  },
+  "ig_money": {
+    "title": "GTA 6 Money-Making Guide: Quickest Ways To Earn Money In GTA 6",
+    "publisher": "Insider Gaming",
+    "url": "https://insider-gaming.com/gta-6-money-making/",
+    "published": null,
+    "checked": "2026-11-21",
+    "kind": "press",
+    "undated": true
+  },
+  "ppx_money": {
+    "title": "GTA 6 Money Guide - How to Get Money Fast (updated Nov 19, 2026)",
+    "publisher": "PowerPyx",
+    "url": "https://www.powerpyx.com/gta-6-money-guide-how-to-get-money-fast/",
+    "published": "2026-11-19",
+    "checked": "2026-11-21",
+    "kind": "press"
+  },
+  "ppx_banks": {
+    "title": "GTA 6 All Bank Jobs Locations (Bank Vaults) (updated Nov 19, 2026)",
+    "publisher": "PowerPyx",
+    "url": "https://www.powerpyx.com/gta-6-all-bank-jobs-locations-bank-vaults/",
+    "published": "2026-11-19",
+    "checked": "2026-11-21",
+    "kind": "press"
+  },
+  "ppx_buckme": {
+    "title": "GTA 6 Buck Me (Set Up Bank Account) Walkthrough",
+    "publisher": "PowerPyx",
+    "url": "https://www.powerpyx.com/gta-6-buck-me-set-up-bank-account-walkthrough/",
+    "published": "2026-11-18",
+    "checked": "2026-11-21",
+    "kind": "press"
+  },
+  "alcast_robberies": {
+    "title": "GTA 6 Robberies Guide",
+    "publisher": "AlcastHQ",
+    "url": "https://alcasthq.com/gta-6-robberies/",
+    "published": null,
+    "checked": "2026-11-21",
+    "kind": "press",
+    "undated": true
+  },
+  "alcast_money": {
+    "title": "How to Make Money in GTA 6",
+    "publisher": "AlcastHQ",
+    "url": "https://alcasthq.com/?p=87542",
+    "published": null,
+    "checked": "2026-11-21",
+    "kind": "press",
+    "undated": true
+  },
+  "gtabase_money": {
+    "title": "How to Make Money in GTA 6: Full Money Making Guide (updated Nov 22, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/articles/gta-6/how-to-make-money-in-gta-6-full-money-making-guide",
+    "published": "2026-11-22",
+    "checked": "2026-11-23",
+    "kind": "press"
+  },
+  "gtabase_fastest": {
+    "title": "GTA 6 Fastest Cars: Ranked List by Top Speed (rewritten, \"Last Updated: November 22, 2026\"; ranks the whole roster by in-game Speed stat, read Nov 24, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed",
+    "published": "2026-11-22",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "gtabase_expensive": {
+    "title": "Most Expensive Vehicles to Steal and Sell in GTA 6 (updated Nov 19, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/articles/gta-6/most-expensive-vehicles-to-steal-and-sell-in-gta-6",
+    "published": "2026-11-19",
+    "checked": "2026-11-22",
+    "kind": "press"
+  },
+  "gtabase_infernus": {
+    "title": "Pegassi Infernus '96 (GTA 6 vehicle page; undated; class now Super, read Nov 24, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/vehicles/gta-6/infernus-classic",
+    "published": null,
+    "checked": "2026-11-24",
+    "kind": "press",
+    "undated": true
+  },
+  "gtabase_vehicles": {
+    "title": "GTA 6 Cars & Vehicles Database: Full List & Stats (590 vehicles with class, Speed stat and real-life basis; undated, read in Chrome Nov 24, 2026 ~05:20 UTC)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/gta-6/vehicles/",
+    "published": null,
+    "checked": "2026-11-24",
+    "kind": "press",
+    "undated": true
+  },
+  "gtabase_stealing": {
+    "title": "GTA 6 Car Stealing Guide: Hotwiring, Trackers & Selling Cars (updated Nov 21, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/articles/gta-6/gta-6-car-stealing-guide-how-to-steal-sell-keep-vehicles",
+    "published": "2026-11-21",
+    "checked": "2026-11-22",
+    "kind": "press"
+  },
+  "dexerto_cars": {
+    "title": "GTA 6 cars (wiki, updated Nov 21, 2026)",
+    "publisher": "Dexerto",
+    "url": "https://www.dexerto.com/wikis/gta-6/vehicles/cars/",
+    "published": "2026-11-21",
+    "checked": "2026-11-22",
+    "kind": "press"
+  },
+  "dexerto_ultimate": {
+    "title": "How to get GTA 6 Ultimate Edition content (undated, read Nov 22, 2026 ~05:30 UTC; re-read ~06:05 UTC)",
+    "publisher": "Dexerto",
+    "url": "https://www.dexerto.com/wikis/gta-6/how-to-get-ultimate-edition-content/",
+    "published": null,
+    "checked": "2026-11-22",
+    "kind": "press",
+    "undated": true
+  },
+  "redbull_ultimate": {
+    "title": "GTA 6: All Ultimate Edition bonus content and where to find it",
+    "publisher": "Red Bull Gaming (Chris Jecks)",
+    "url": "https://www.redbull.com/gb-en/gta-6-ultimate-edition-bonuses",
+    "published": "2026-11-19",
+    "checked": "2026-11-22",
+    "kind": "press"
+  },
+  "gamerblurb_cars": {
+    "title": "GTA 6 Best Cars: Top Vehicles for Every Purpose",
+    "publisher": "GamerBlurb",
+    "url": "https://gamerblurb.com/articles/gta-6-best-cars-top-vehicles-for-every-purpose",
+    "published": "2026-11-19",
+    "checked": "2026-11-22",
+    "kind": "press"
+  },
+  "tt_cheats": {
+    "title": "GTA 6 has 61 cheats, but you'll have to beat the story before using any of them",
+    "publisher": "TweakTown (Jak Connor)",
+    "url": "https://www.tweaktown.com/news/114769/gta-6-has-61-cheats-but-youll-have-to-beat-the-story-before-using-any-of-them/index.html",
+    "published": "2026-11-18",
+    "checked": "2026-11-22",
+    "kind": "press"
+  },
+  "gr_steal": {
+    "title": "GTA 6: how to steal cars",
+    "publisher": "GamesRadar+ (Iain Wilson)",
+    "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-how-to-steal-cars/",
+    "published": "2026-08-28",
+    "checked": "2026-11-22",
+    "kind": "press"
+  },
+  "pcg_cars": {
+    "title": "The confirmed list of cars for GTA 6 so far (from trailers and official screenshots; updated Nov 9, 2026)",
+    "publisher": "PC Gamer (Sarah James)",
+    "url": "https://www.pcgamer.com/gta-6-cars-list",
+    "published": "2026-11-09",
+    "checked": "2026-11-22",
+    "kind": "press"
+  },
+  "ign_vehicles": {
+    "title": "Vehicles: sortable vehicle table (IGN Official Grand Theft Auto VI Guide, updated Nov 21, 2026; read Nov 23 in Chrome)",
+    "publisher": "IGN",
+    "url": "https://www.ign.com/wikis/gta-6/Vehicles",
+    "published": "2026-11-21",
+    "checked": "2026-11-23",
+    "kind": "press"
+  },
+  "ign_wyman": {
+    "title": "Wyman's Cars (Ultimate Edition Exclusive) (IGN Official Grand Theft Auto VI Guide, updated Nov 19, 2026)",
+    "publisher": "IGN",
+    "url": "https://www.ign.com/wikis/gta-6/Wyman's_Cars_(Ultimate_Edition_Exclusive)",
+    "published": "2026-11-19",
+    "checked": "2026-11-23",
+    "kind": "press"
+  },
+  "ign_randy": {
+    "title": "Randy's Wish List: All Randy's Car Locations (IGN Official Grand Theft Auto VI Guide, updated Nov 22, 2026)",
+    "publisher": "IGN",
+    "url": "https://www.ign.com/wikis/gta-6/Randy's_Wish_List_-_All_Randy's_Car_Locations",
+    "published": "2026-11-22",
+    "checked": "2026-11-23",
+    "kind": "press"
+  },
+  "ign_money_early": {
+    "title": "Best Ways to Make Money Early (IGN Official Grand Theft Auto VI Guide, updated Nov 19, 2026)",
+    "publisher": "IGN",
+    "url": "https://www.ign.com/wikis/gta-6/Best_Ways_to_Make_Money_Early",
+    "published": "2026-11-19",
+    "checked": "2026-11-23",
+    "kind": "press"
+  },
+  "gtabase_penumbra": {
+    "title": "Maibatsu Penumbra FF (GTA 6 vehicle page; undated, read Nov 23, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/vehicles/gta-6/penumbra-ff",
+    "published": null,
+    "checked": "2026-11-23",
+    "kind": "press",
+    "undated": true
+  },
+  "alcast_paulwalker": {
+    "title": "GTA 6 Paul Walker Car Guide (undated, read Nov 23, 2026)",
+    "publisher": "AlcastHQ",
+    "url": "https://alcasthq.com/?p=87696",
+    "published": null,
+    "checked": "2026-11-23",
+    "kind": "press",
+    "undated": true
+  },
+  "jalopnik_paulwalker": {
+    "title": "Where To Find The Paul Walker 'Fast And Furious' Tribute Car In GTA 6",
+    "publisher": "Jalopnik",
+    "url": "https://www.jalopnik.com/2322396/gta-6-grand-theft-auto-paul-walker-fast-and-furious-toyota-supra-turbo-tribute/",
+    "published": "2026-11-19",
+    "checked": "2026-11-23",
+    "kind": "press"
+  },
+  "vgc_money": {
+    "title": "How to make money in GTA 6",
+    "publisher": "Video Games Chronicle",
+    "url": "https://www.videogameschronicle.com/guide/how-to-make-money-in-gta-6/",
+    "published": "2026-11-19",
+    "checked": "2026-11-23",
+    "kind": "press"
+  },
+  "ppx_100": {
+    "title": "GTA 6 100% Completion Checklist (updated Nov 21, 2026)",
+    "publisher": "PowerPyx",
+    "url": "https://www.powerpyx.com/gta-6-100-completion-checklist/",
+    "published": "2026-11-21",
+    "checked": "2026-11-23",
+    "kind": "press"
+  },
+  "destructoid_100": {
+    "title": "GTA 6: everything for 100 percent completion (undated, read Nov 23, 2026)",
+    "publisher": "Destructoid",
+    "url": "https://www.destructoid.com/gta-6-everything-100-percent-completion/",
+    "published": null,
+    "checked": "2026-11-23",
+    "kind": "press",
+    "undated": true
+  },
+  "rs_support_launch_updates": {
+    "title": "Grand Theft Auto VI Launch Updates (PS5 / Xbox Series X|S): Nov 23, 2026 update notes",
+    "publisher": "Rockstar Support",
+    "url": "https://support.rockstargames.com/articles/sN5pEdFYZdlvijKXd6xpJ/grand-theft-auto-vi-launch-updates-ps5-xbox-series-x-or-s",
+    "published": "2026-11-23",
+    "checked": "2026-11-24",
+    "kind": "official"
+  },
+  "gtabase_penumbra_tribute": {
+    "title": "Maibatsu Penumbra (Paul Walker Tribute) (GTA 6 vehicle page; undated, read Nov 24, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/gta-6/vehicles/penumbra-paul-walker-tribute",
+    "published": null,
+    "checked": "2026-11-24",
+    "kind": "press",
+    "undated": true
+  },
+  "pushsquare_100": {
+    "title": "GTA 6: 100% Completion Checklist (WIP) (Sammy Barker, Nov 18, 2026)",
+    "publisher": "Push Square",
+    "url": "https://www.pushsquare.com/guides/gta-6-100percent-completion-checklist",
+    "published": "2026-11-18",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "shacknews_100": {
+    "title": "GTA 6 100% Completion checklist (Sam Chandler, Nov 18, 2026)",
+    "publisher": "Shacknews",
+    "url": "https://www.shacknews.com/article/151397/gta6-100-percent-checklist",
+    "published": "2026-11-18",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "vice_patch1": {
+    "title": "GTA 6 Update Fixes Phone Call Bugs That Blocked Story Progress (Brent Koepp, Nov 23, 2026)",
+    "publisher": "Vice",
+    "url": "https://www.vice.com/en/article/gta-6-patch-notes-update-phone-call-fix/",
+    "published": "2026-11-23",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "playerone_patch1": {
+    "title": "GTA 6's First Post-Launch Update Fixes Broken Story Phone Calls and Autosaves (Theo Stering, Nov 23, 2026)",
+    "publisher": "Player.One",
+    "url": "https://www.player.one/gta-6s-first-post-launch-update-fixes-broken-story-phone-calls-autosaves-just-four-days-after-164566",
+    "published": "2026-11-23",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "shacknews_patch1": {
+    "title": "Grand Theft Auto 6 Launch Update patch notes (TJ Denzer, Nov 23, 2026)",
+    "publisher": "Shacknews",
+    "url": "https://www.shacknews.com/article/151462/gta-6-launch-update-patch-notes",
+    "published": "2026-11-23",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "pcguide_patch1": {
+    "title": "GTA 6 gets its first update for PS5 and Xbox Series X|S to fix game crashes, weather bugs, and more (Abdul Haddi, Nov 23, 2026)",
+    "publisher": "PC Guide",
+    "url": "https://www.pcguide.com/news/gta-6-gets-its-first-update-for-ps5-and-xbox-series-xs-to-fix-game-crashes-weather-bugs-and-more/",
+    "published": "2026-11-23",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "beebom_patches": {
+    "title": "GTA 6 Patch Notes and Updates Tracker (Sagnik Adhikary, published Nov 18, updated Nov 23, 2026)",
+    "publisher": "Beebom",
+    "url": "https://beebom.com/gta-6-patch-notes-updates-tracker/",
+    "published": "2026-11-23",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "redbull_patches": {
+    "title": "GTA 6 updates and patch notes (Phil Briel, Nov 19, 2026)",
+    "publisher": "Red Bull Gaming",
+    "url": "https://www.redbull.com/ca-en/gta-6-updates-patch-notes",
+    "published": "2026-11-19",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "mp1st_1002": {
+    "title": "GTA 6 Receives Update 1.002 and It Looks Like Rockstar Might Be Rolling Out Patches in Waves (Alex Co, Nov 13, 2026)",
+    "publisher": "MP1st",
+    "url": "https://mp1st.com/?p=318409",
+    "published": "2026-11-13",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "timesaver_patches": {
+    "title": "GTA 6 update patch notes (Sam Okonkwo, published Nov 13, updated Nov 19, 2026)",
+    "publisher": "Timesaver",
+    "url": "https://timesaver.gg/blog/gta-6-update-patch-notes",
+    "published": "2026-11-19",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "ofzen_patches": {
+    "title": "GTA 6 Patch Notes and Updates Tracker: Two Patches Land (Tyler Hanson, Nov 18, 2026)",
+    "publisher": "Of Zen and Computing",
+    "url": "https://www.ofzenandcomputing.com/gta-6-patch-notes-and-updates-tracker/",
+    "published": "2026-11-18",
+    "checked": "2026-11-24",
+    "kind": "press"
+  },
+  "ps_support_check_update": {
+    "title": "How to check for updates on PS5 consoles and PS4 consoles (PlayStation Support, Jul 5, 2024)",
+    "publisher": "PlayStation Support (US)",
+    "url": "https://www.playstation.com/en-us/support/hardware/playstation-system-software-application-version/",
+    "published": "2024-07-05",
+    "checked": "2026-11-24",
+    "kind": "official"
+  },
+  "gtabase_buffalo07": {
+    "title": "Bravado Buffalo '07 (GTA 6 vehicle page; undated; \"Vehicle Class: Sports\", read Nov 24, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/gta-6/vehicles/buffalo",
+    "published": null,
+    "checked": "2026-11-24",
+    "kind": "press",
+    "undated": true
+  },
+  "gtabase_impalersz": {
+    "title": "Declasse Impaler SZ '95 (GTA 6 vehicle page; undated; \"Vehicle Class: Muscle\", read Nov 24, 2026)",
+    "publisher": "GTABase",
+    "url": "https://www.gtabase.com/vehicles/gta-6/impaler-sz",
+    "published": null,
+    "checked": "2026-11-24",
+    "kind": "press",
+    "undated": true
   }
 }
